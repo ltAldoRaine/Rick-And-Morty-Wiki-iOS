@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23A344" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="RMCharacterRequestEntity" representedClassName="RMCharacterRequestEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="character_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="response" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="RMCharacterResponseEntity" inverseName="request" inverseEntity="RMCharacterResponseEntity"/>
+    </entity>
+    <entity name="RMCharacterResponseEntity" representedClassName="RMCharacterResponseEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="character_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="created" optional="YES" attributeType="String"/>
+        <attribute name="episode" optional="YES" attributeType="Transformable" customClassName="[String]"/>
+        <attribute name="gender" optional="YES" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="String" customClassName="[Int]"/>
+        <attribute name="location" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="origin" optional="YES" attributeType="String"/>
+        <attribute name="species" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="request" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RMCharacterRequestEntity" inverseName="response" inverseEntity="RMCharacterRequestEntity"/>
+        <relationship name="rmCharactersPageResponse" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RMCharactersPageResponseEntity" inverseName="results" inverseEntity="RMCharactersPageResponseEntity"/>
+        <relationship name="rmCharactersResponse" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RMCharactersResponseEntity" inverseName="results" inverseEntity="RMCharactersResponseEntity"/>
+    </entity>
+    <entity name="RMCharactersPageInfoResponseEntity" representedClassName="RMCharactersPageInfoResponseEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="count" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="next" optional="YES" attributeType="String"/>
+        <attribute name="pages" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="prev" optional="YES" attributeType="String"/>
+        <relationship name="response" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RMCharactersPageResponseEntity" inverseName="info" inverseEntity="RMCharactersPageResponseEntity"/>
+    </entity>
+    <entity name="RMCharactersPageRequestEntity" representedClassName="RMCharactersPageRequestEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="page" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="query" optional="YES" attributeType="String"/>
+        <relationship name="response" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="RMCharactersPageResponseEntity" inverseName="request" inverseEntity="RMCharactersPageResponseEntity"/>
+    </entity>
+    <entity name="RMCharactersPageResponseEntity" representedClassName="RMCharactersPageResponseEntity" syncable="YES" codeGenerationType="class">
+        <relationship name="info" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="RMCharactersPageInfoResponseEntity" inverseName="response" inverseEntity="RMCharactersPageInfoResponseEntity"/>
+        <relationship name="request" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="RMCharactersPageRequestEntity" inverseName="response" inverseEntity="RMCharactersPageRequestEntity"/>
+        <relationship name="results" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="RMCharacterResponseEntity" inverseName="rmCharactersPageResponse" inverseEntity="RMCharacterResponseEntity"/>
+    </entity>
+    <entity name="RMCharactersRequestEntity" representedClassName="RMCharactersRequestEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="characters_ids" optional="YES" attributeType="String"/>
+        <relationship name="response" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="RMCharactersResponseEntity" inverseName="request" inverseEntity="RMCharactersResponseEntity"/>
+    </entity>
+    <entity name="RMCharactersResponseEntity" representedClassName="RMCharactersResponseEntity" syncable="YES" codeGenerationType="class">
+        <relationship name="request" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="RMCharactersRequestEntity" inverseName="response" inverseEntity="RMCharactersRequestEntity"/>
+        <relationship name="results" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="RMCharacterResponseEntity" inverseName="rmCharactersResponse" inverseEntity="RMCharacterResponseEntity"/>
+    </entity>
+    <entity name="RMEpisodeRequestEntity" representedClassName="RMEpisodeRequestEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="episode_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="response" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="RMEpisodeResponseEntity" inverseName="request" inverseEntity="RMEpisodeResponseEntity"/>
+    </entity>
+    <entity name="RMEpisodeResponseEntity" representedClassName="RMEpisodeResponseEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="airDate" optional="YES" attributeType="String"/>
+        <attribute name="characters" optional="YES" attributeType="Transformable" customClassName="[String]"/>
+        <attribute name="created" optional="YES" attributeType="String"/>
+        <attribute name="episode" optional="YES" attributeType="String"/>
+        <attribute name="episode_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="request" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RMEpisodeRequestEntity" inverseName="response" inverseEntity="RMEpisodeRequestEntity"/>
+        <relationship name="rmEpisodesResponse" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RMEpisodesResponseEntity" inverseName="results" inverseEntity="RMEpisodesResponseEntity"/>
+    </entity>
+    <entity name="RMEpisodesRequestEntity" representedClassName="RMEpisodesRequestEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="episodes_ids" optional="YES" attributeType="String"/>
+        <relationship name="response" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="RMEpisodesResponseEntity" inverseName="request" inverseEntity="RMEpisodesResponseEntity"/>
+    </entity>
+    <entity name="RMEpisodesResponseEntity" representedClassName="RMEpisodesResponseEntity" syncable="YES" codeGenerationType="class">
+        <relationship name="request" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="RMEpisodesRequestEntity" inverseName="response" inverseEntity="RMEpisodesRequestEntity"/>
+        <relationship name="results" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="RMEpisodeResponseEntity" inverseName="rmEpisodesResponse" inverseEntity="RMEpisodeResponseEntity"/>
+    </entity>
+</model>
