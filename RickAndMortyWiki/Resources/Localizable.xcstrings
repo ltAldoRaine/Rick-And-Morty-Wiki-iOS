@@ -1,0 +1,24 @@
+{
+  "sourceLanguage" : "es",
+  "strings" : {
+    "Characters" : {
+
+    },
+    "Error" : {
+
+    },
+    "Failed loading characters" : {
+
+    },
+    "Filter results" : {
+
+    },
+    "No internet connection" : {
+
+    },
+    "Search Characters" : {
+
+    }
+  },
+  "version" : "1.0"
+}

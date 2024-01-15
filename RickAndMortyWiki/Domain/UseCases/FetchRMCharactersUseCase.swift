@@ -2,7 +2,7 @@
 //  FetchRMCharactersUseCase.swift
 //  RickAndMortyWiki
 //
-//  Created by Beka Gelashvili on 14.01.24.
+//  Created by Beka Gelashvili on 15.01.24.
 //
 
 import Foundation
@@ -10,26 +10,26 @@ import Foundation
 protocol FetchRMCharactersUseCase {
     func execute(
         requestValue: [Int],
-        cached: @escaping ([RMEpisode]) -> Void,
-        completion: @escaping (Result<[RMEpisode], Error>) -> Void
+        cached: @escaping ([RMCharacter]) -> Void,
+        completion: @escaping (Result<[RMCharacter], Error>) -> Void
     ) -> Cancellable?
 }
 
 final class DefaultFetchRMCharactersUseCase: FetchRMCharactersUseCase {
-    private let rmEpisodesRepository: RMEpisodesRepository
+    private let rmCharactersRepository: RMCharactersRepository
 
     init(
-        rmEpisodesRepository: RMEpisodesRepository
+        rmCharactersRepository: RMCharactersRepository
     ) {
-        self.rmEpisodesRepository = rmEpisodesRepository
+        self.rmCharactersRepository = rmCharactersRepository
     }
 
     func execute(
         requestValue: [Int],
-        cached: @escaping ([RMEpisode]) -> Void,
-        completion: @escaping (Result<[RMEpisode], Error>) -> Void
+        cached: @escaping ([RMCharacter]) -> Void,
+        completion: @escaping (Result<[RMCharacter], Error>) -> Void
     ) -> Cancellable? {
-        return rmEpisodesRepository.fetchRMEpisodesByIds(
+        return rmCharactersRepository.fetchRMCharactersByIds(
             ids: requestValue,
             cached: cached,
             completion: { result in
