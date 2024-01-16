@@ -13,7 +13,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var appFlowCoordinator: AppFlowCoordinator?
     var window: UIWindow?
 
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+    private func openWindow(with scene: UIScene) {
         guard let scene = (scene as? UIWindowScene) else { return }
 
         AppAppearance.setupAppearance()
@@ -32,6 +32,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         appFlowCoordinator?.start()
 
         window?.makeKeyAndVisible()
+    }
+
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        openWindow(with: scene)
+    }
+
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        openWindow(with: scene)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {}

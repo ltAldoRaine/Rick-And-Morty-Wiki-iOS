@@ -23,10 +23,9 @@ final class DefaultRMPosterImagesRepository {
 extension DefaultRMPosterImagesRepository: RMPosterImagesRepository {
     func fetchImage(
         with imagePath: String,
-        width: Int,
         completion: @escaping (Result<Data, Error>) -> Void
     ) -> Cancellable? {
-        let endpoint = APIEndpoints.getRMCharacterPoster(path: imagePath, width: width)
+        let endpoint = APIEndpoints.getRMCharacterPoster(path: imagePath)
 
         let task = RepositoryTask()
 

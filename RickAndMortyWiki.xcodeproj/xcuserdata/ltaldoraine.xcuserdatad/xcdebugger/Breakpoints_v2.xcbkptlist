@@ -3,4 +3,22 @@
    uuid = "8650D319-8907-4266-804F-F70B8FEC5142"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0FA02C07-B194-4A20-BCFE-C5DB3CA712D6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RickAndMortyWiki/Data/Repositories/DefaultRMPosterImagesRepository.swift"
+            startingColumnNumber = "24"
+            endingColumnNumber = "36"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "fetchImage(with:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

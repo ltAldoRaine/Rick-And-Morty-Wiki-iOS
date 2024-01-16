@@ -24,7 +24,7 @@ struct APIEndpoints {
 
     static func getRMCharacters(with rmCharactersPageRequestDTO: RMCharactersPageRequestDTO) -> Endpoint<RMCharactersPageResponseDTO> {
         return Endpoint(
-            path: "characters",
+            path: "character",
             method: .get,
             queryParametersEncodable: rmCharactersPageRequestDTO
         )
@@ -44,16 +44,9 @@ struct APIEndpoints {
         )
     }
 
-    static func getRMCharacterPoster(path: String, width: Int) -> Endpoint<Data> {
-        let sizes = [92, 154, 185, 342, 500, 780]
-
-        let closestWidth = sizes
-            .enumerated()
-            .min { abs($0.1 - width) < abs($1.1 - width) }?
-            .element ?? sizes.first!
-
+    static func getRMCharacterPoster(path: String) -> Endpoint<Data> {
         return Endpoint(
-            path: "t/p/w\(closestWidth)\(path)",
+            path: path,
             method: .get,
             responseDecoder: RawDataResponseDecoder()
         )

@@ -13,22 +13,18 @@ final class AppAppearance {
         if #available(iOS 15, *) {
             let appearance = UINavigationBarAppearance()
 
-            appearance.configureWithOpaqueBackground()
-            appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-            appearance.backgroundColor = .red
+            appearance.backgroundColor = ColorHelper.backgroundColorOne.color
+            appearance.titleTextAttributes = [.foregroundColor: ColorHelper.textColorOne.color]
+            appearance.largeTitleTextAttributes = [.foregroundColor: ColorHelper.textColorOne.color]
 
             UINavigationBar.appearance().standardAppearance = appearance
             UINavigationBar.appearance().scrollEdgeAppearance = appearance
+            UINavigationBar.appearance().prefersLargeTitles = true
         } else {
-            UINavigationBar.appearance().barTintColor = .black
-            UINavigationBar.appearance().tintColor = .white
-            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
+            UINavigationBar.appearance().barTintColor = ColorHelper.textColorOne.color
+            UINavigationBar.appearance().tintColor = ColorHelper.textColorOne.color
+            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: ColorHelper.textColorOne.color]
+            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: ColorHelper.textColorOne.color]
         }
-    }
-}
-
-extension UINavigationController {
-    @objc override open var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
 }

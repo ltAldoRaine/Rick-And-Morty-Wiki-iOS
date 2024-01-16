@@ -2,22 +2,64 @@
   "sourceLanguage" : "es",
   "strings" : {
     "Characters" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Caracteres"
+          }
+        }
+      }
     },
     "Error" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
+          }
+        }
+      }
     },
     "Failed loading characters" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error al cargar personajes\n"
+          }
+        }
+      }
     },
-    "Filter results" : {
-
+    "No data available" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Datos no disponibles"
+          }
+        }
+      }
     },
     "No internet connection" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin conexión a Internet"
+          }
+        }
+      }
     },
-    "Search Characters" : {
-
+    "Search" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buscar"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

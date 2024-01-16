@@ -78,7 +78,7 @@ final class CharactersSceneDIContainer: CharactersFilterFlowCoordinatorDependenc
     // MARK: - Characters List
 
     func makeCharactersListViewController(actions: CharactersListViewModelActions) -> CharactersListViewController {
-        CharactersListViewController.create(
+        CharactersListViewController(
             with: makeCharactersListViewModel(actions: actions),
             posterImagesRepository: makeRMPosterImagesRepository()
         )
@@ -94,8 +94,9 @@ final class CharactersSceneDIContainer: CharactersFilterFlowCoordinatorDependenc
     // MARK: - Character Details
 
     func makeCharacterDetailsViewController(character: RMCharacter) -> UIViewController {
-        CharacterDetailsViewController.create(
-            with: makeCharacterDetailsViewModel(character: character)
+        CharacterDetailsViewController(
+            with: makeCharacterDetailsViewModel(character: character),
+            posterImagesRepository: makeRMPosterImagesRepository()
         )
     }
 

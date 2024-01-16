@@ -28,6 +28,17 @@ extension RMCharactersPageResponseDTO {
             case dead
             case unknown
             case none = ""
+
+            init(from decoder: Decoder) throws {
+                let container = try decoder.singleValueContainer()
+                let rawString = try container.decode(String.self)
+
+                if let statusDTO = StatusDTO(rawValue: rawString.lowercased()) {
+                    self = statusDTO
+                } else {
+                    self = .none
+                }
+            }
         }
 
         enum GenderDTO: String, Decodable {
@@ -36,6 +47,17 @@ extension RMCharactersPageResponseDTO {
             case genderless
             case unknown
             case none = ""
+
+            init(from decoder: Decoder) throws {
+                let container = try decoder.singleValueContainer()
+                let rawString = try container.decode(String.self)
+
+                if let genderDTO = GenderDTO(rawValue: rawString.lowercased()) {
+                    self = genderDTO
+                } else {
+                    self = .none
+                }
+            }
         }
 
         struct RMCharacterOriginDto: Decodable {
