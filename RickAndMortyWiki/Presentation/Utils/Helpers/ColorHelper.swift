@@ -20,6 +20,7 @@ enum ColorHelper: String {
     case textColorThree
     case textColorTwo
     case warningColor
+    case test
 
     var color: UIColor {
         UIColor(named: rawValue.capitalizingFirstLetter()) ?? .clear

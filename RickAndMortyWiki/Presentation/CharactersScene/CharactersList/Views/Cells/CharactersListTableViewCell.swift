@@ -107,7 +107,7 @@ final class CharactersListTableViewCell: UITableViewCell {
     }()
 
     private lazy var originStackView: UIStackView = {
-        let originStackView: UIStackView = UIStackView(arrangedSubviews: [originTitleLabel, originLabel])
+        let originStackView: UIStackView = UIStackView(arrangedSubviews: [lastKnowLocationTitleLabel, lastKnowLocationLabel])
 
         originStackView.axis = .vertical
         originStackView.spacing = 2.0
@@ -115,23 +115,23 @@ final class CharactersListTableViewCell: UITableViewCell {
         return originStackView
     }()
 
-    private lazy var originTitleLabel: UILabel = {
-        let originTitleLabel: UILabel = UILabel()
+    private lazy var lastKnowLocationTitleLabel: UILabel = {
+        let lastKnowLocationTitleLabel: UILabel = UILabel()
 
-        originTitleLabel.text = "Last known location:"
-        originTitleLabel.textColor = ColorHelper.textColorTwo.color
-        originTitleLabel.font = FontHelper.latoRegular(14.0).font
+        lastKnowLocationTitleLabel.text = StringHelper.lastKnownLocation
+        lastKnowLocationTitleLabel.textColor = ColorHelper.textColorTwo.color
+        lastKnowLocationTitleLabel.font = FontHelper.latoRegular(14.0).font
 
-        return originTitleLabel
+        return lastKnowLocationTitleLabel
     }()
 
-    private lazy var originLabel: UILabel = {
-        let originLabel: UILabel = UILabel()
+    private lazy var lastKnowLocationLabel: UILabel = {
+        let lastKnowLocationLabel: UILabel = UILabel()
 
-        originLabel.textColor = ColorHelper.textColorOne.color
-        originLabel.font = FontHelper.latoRegular(14.0).font
+        lastKnowLocationLabel.textColor = ColorHelper.textColorOne.color
+        lastKnowLocationLabel.font = FontHelper.latoRegular(14.0).font
 
-        return originLabel
+        return lastKnowLocationLabel
     }()
 
     private var viewModel: CharactersListItemViewModel!
@@ -190,7 +190,7 @@ final class CharactersListTableViewCell: UITableViewCell {
 
     private func updateLabels() {
         nameLabel.text = viewModel.name
-        originLabel.text = viewModel.origin
+        lastKnowLocationLabel.text = viewModel.location
         statusLabel.text = "\(viewModel.status.rawValue.capitalizingFirstLetter()) - \(viewModel.species)"
     }
 

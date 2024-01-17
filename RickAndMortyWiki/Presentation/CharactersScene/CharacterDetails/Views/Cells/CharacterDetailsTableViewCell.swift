@@ -26,10 +26,43 @@ final class CharacterDetailsTableViewCell: UITableViewCell {
     }()
 
     private lazy var vStackView: UIStackView = {
+        let leadingVStackView: UIStackView = UIStackView(arrangedSubviews: [
+            originStackView,
+            lastKnowLocationStackView
+        ])
+
+        leadingVStackView.axis = .vertical
+
+        let trailingVStackView: UIStackView = UIStackView(arrangedSubviews: [
+            episodesQuantityStackView,
+            genderStackView
+        ])
+
+        trailingVStackView.axis = .vertical
+
+        let separatorView = UIView()
+
+        separatorView.translatesAutoresizingMaskIntoConstraints = false
+        separatorView.backgroundColor = ColorHelper.inputsStrokesButtonsColor.color
+
+        NSLayoutConstraint.activate([
+            separatorView.widthConstraint(constant: 1.0)
+        ])
+
+        let hStackView: UIStackView = UIStackView(arrangedSubviews: [
+            leadingVStackView,
+            separatorView,
+            trailingVStackView
+        ])
+
+        hStackView.axis = .horizontal
+        hStackView.distribution = .equalSpacing
+        hStackView.spacing = 5.0
+
         let vStackView: UIStackView = UIStackView(arrangedSubviews: [
             posterImageContainer,
             statusContainer,
-            originStackView
+            hStackView
         ])
 
         vStackView.axis = .vertical
@@ -91,7 +124,7 @@ final class CharacterDetailsTableViewCell: UITableViewCell {
         statusView.layer.cornerRadius = 15.0
 
         NSLayoutConstraint.activate([
-            statusView.widthConstraint(constant: 150.0),
+            statusView.widthConstraint(constant: 200.0),
             statusView.heightConstraint(constant: 40.0)
         ])
 
@@ -104,7 +137,7 @@ final class CharacterDetailsTableViewCell: UITableViewCell {
         let statusLabel: UILabel = UILabel()
 
         statusLabel.textColor = ColorHelper.textColorThree.color
-        statusLabel.font = FontHelper.latoBold(14.0).font
+        statusLabel.font = FontHelper.latoBold(15.0).font
 
         return statusLabel
     }()
@@ -121,9 +154,9 @@ final class CharacterDetailsTableViewCell: UITableViewCell {
     private lazy var originTitleLabel: UILabel = {
         let originTitleLabel: UILabel = UILabel()
 
-        originTitleLabel.text = StringHelper.lastKnownLocation
+        originTitleLabel.text = StringHelper.origin
         originTitleLabel.textColor = ColorHelper.textColorTwo.color
-        originTitleLabel.font = FontHelper.latoRegular(14.0).font
+        originTitleLabel.font = FontHelper.latoRegular(15.0).font
 
         return originTitleLabel
     }()
@@ -132,9 +165,96 @@ final class CharacterDetailsTableViewCell: UITableViewCell {
         let originLabel: UILabel = UILabel()
 
         originLabel.textColor = ColorHelper.textColorOne.color
-        originLabel.font = FontHelper.latoRegular(14.0).font
+        originLabel.font = FontHelper.latoBold(15.0).font
 
         return originLabel
+    }()
+
+    private lazy var lastKnowLocationStackView: UIStackView = {
+        let lastKnowLocationStackView: UIStackView = UIStackView(arrangedSubviews: [lastKnowLocationTitleLabel, lastKnowLocationLabel])
+
+        lastKnowLocationStackView.axis = .vertical
+        lastKnowLocationStackView.spacing = 2.0
+
+        return lastKnowLocationStackView
+    }()
+
+    private lazy var lastKnowLocationTitleLabel: UILabel = {
+        let lastKnowLocationTitleLabel: UILabel = UILabel()
+
+        lastKnowLocationTitleLabel.text = StringHelper.lastKnownLocation
+        lastKnowLocationTitleLabel.textColor = ColorHelper.textColorTwo.color
+        lastKnowLocationTitleLabel.font = FontHelper.latoRegular(15.0).font
+
+        return lastKnowLocationTitleLabel
+    }()
+
+    private lazy var lastKnowLocationLabel: UILabel = {
+        let lastKnowLocationLabel: UILabel = UILabel()
+
+        lastKnowLocationLabel.textColor = ColorHelper.textColorOne.color
+        lastKnowLocationLabel.font = FontHelper.latoBold(15.0).font
+
+        return lastKnowLocationLabel
+    }()
+
+    private lazy var episodesQuantityStackView: UIStackView = {
+        let episodesQuantityStackView: UIStackView = UIStackView(arrangedSubviews: [episodesQuantityTitleLabel, episodesQuantityLabel])
+
+        episodesQuantityStackView.axis = .vertical
+        episodesQuantityStackView.spacing = 2.0
+
+        return episodesQuantityStackView
+    }()
+
+    private lazy var episodesQuantityTitleLabel: UILabel = {
+        let episodesQuantityTitleLabel: UILabel = UILabel()
+
+        episodesQuantityTitleLabel.text = StringHelper.numberOfEpisodes
+        episodesQuantityTitleLabel.textColor = ColorHelper.textColorTwo.color
+        episodesQuantityTitleLabel.font = FontHelper.latoRegular(15.0).font
+
+        return episodesQuantityTitleLabel
+    }()
+
+    private lazy var episodesQuantityLabel: UILabel = {
+        let episodesQuantityLabel: UILabel = UILabel()
+
+        episodesQuantityLabel.textColor = ColorHelper.textColorOne.color
+        episodesQuantityLabel.font = FontHelper.latoBold(15.0).font
+        episodesQuantityLabel.textAlignment = .right
+
+        return episodesQuantityLabel
+    }()
+
+    private lazy var genderStackView: UIStackView = {
+        let genderStackView: UIStackView = UIStackView(arrangedSubviews: [genderTitleLabel, genderLabel])
+
+        genderStackView.axis = .vertical
+        genderStackView.spacing = 2.0
+
+        return genderStackView
+    }()
+
+    private lazy var genderTitleLabel: UILabel = {
+        let genderTitleLabel: UILabel = UILabel()
+
+        genderTitleLabel.text = StringHelper.gender
+        genderTitleLabel.textColor = ColorHelper.textColorTwo.color
+        genderTitleLabel.font = FontHelper.latoRegular(15.0).font
+        genderTitleLabel.textAlignment = .right
+
+        return genderTitleLabel
+    }()
+
+    private lazy var genderLabel: UILabel = {
+        let genderLabel: UILabel = UILabel()
+
+        genderLabel.textColor = ColorHelper.textColorOne.color
+        genderLabel.font = FontHelper.latoBold(15.0).font
+        genderLabel.textAlignment = .right
+
+        return genderLabel
     }()
 
     private var viewModel: CharactersListItemViewModel!
@@ -192,8 +312,11 @@ final class CharacterDetailsTableViewCell: UITableViewCell {
     }
 
     private func updateLabels() {
-        originLabel.text = viewModel.origin
         statusLabel.text = "\(viewModel.status.rawValue.capitalizingFirstLetter()) - \(viewModel.species)"
+        originLabel.text = viewModel.origin
+        lastKnowLocationLabel.text = viewModel.location
+        episodesQuantityLabel.text = "\(viewModel.episode.count)"
+        genderLabel.text = viewModel.gender.rawValue.capitalizingFirstLetter()
     }
 
     private func updateStatusViewBackgroundColor() {

@@ -70,7 +70,7 @@ extension UIView {
         container.addSubview(self)
 
         NSLayoutConstraint.activate([
-            NSLayoutConstraint(item: self, attribute: .centerX, relatedBy: .equal, toItem: container, attribute: .centerX, multiplier: 1, constant: constant)
+            centerX(container, constant: constant)
         ])
     }
 
@@ -82,7 +82,7 @@ extension UIView {
         container.addSubview(self)
 
         NSLayoutConstraint.activate([
-            NSLayoutConstraint(item: self, attribute: .centerY, relatedBy: .equal, toItem: container, attribute: .centerY, multiplier: 1, constant: constant)
+            centerY(container, constant: constant)
         ])
     }
 
@@ -94,8 +94,8 @@ extension UIView {
         container.addSubview(self)
 
         NSLayoutConstraint.activate([
-            NSLayoutConstraint(item: self, attribute: .centerX, relatedBy: .equal, toItem: container, attribute: .centerX, multiplier: 1, constant: xConstant),
-            NSLayoutConstraint(item: self, attribute: .centerY, relatedBy: .equal, toItem: container, attribute: .centerY, multiplier: 1, constant: yConstant)
+            centerX(container, constant: xConstant),
+            centerY(container, constant: yConstant)
         ])
     }
 
@@ -125,5 +125,13 @@ extension UIView {
 
     func aspectRatio(_ ratio: CGFloat) -> NSLayoutConstraint {
         NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: self, attribute: .width, multiplier: ratio, constant: 0)
+    }
+
+    func centerX(_ toItem: UIView, constant: CGFloat = 0) -> NSLayoutConstraint {
+        NSLayoutConstraint(item: self, attribute: .centerX, relatedBy: .equal, toItem: toItem, attribute: .centerX, multiplier: 1, constant: constant)
+    }
+
+    func centerY(_ toItem: UIView, constant: CGFloat = 0) -> NSLayoutConstraint {
+        NSLayoutConstraint(item: self, attribute: .centerY, relatedBy: .equal, toItem: toItem, attribute: .centerY, multiplier: 1, constant: constant)
     }
 }

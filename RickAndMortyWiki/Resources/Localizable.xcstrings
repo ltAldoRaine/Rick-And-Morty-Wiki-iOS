@@ -31,6 +31,9 @@
         }
       }
     },
+    "Gender:" : {
+
+    },
     "Last known location:" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -58,6 +61,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sin conexión a Internet"
+          }
+        }
+      }
+    },
+    "Number of episodes:" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Número de episodios:"
+          }
+        }
+      }
+    },
+    "Origin:" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Origen:"
           }
         }
       }

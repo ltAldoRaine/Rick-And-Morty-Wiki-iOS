@@ -15,4 +15,7 @@ struct StringHelper {
     static let noInternetConnection = NSLocalizedString("No internet connection", comment: "")
     static let failedLoadingCharacters = NSLocalizedString("Failed loading characters", comment: "")
     static let lastKnownLocation = NSLocalizedString("Last known location:", comment: "")
+    static let origin = NSLocalizedString("Origin:", comment: "")
+    static let numberOfEpisodes = NSLocalizedString("Number of episodes:", comment: "")
+    static let gender = NSLocalizedString("Gender:", comment: "")
 }
