@@ -74,6 +74,7 @@ final class CharactersListViewController: UIViewController, Alertable {
 
         emptyDataLabel.backgroundColor = .white
         emptyDataLabel.textAlignment = .center
+        emptyDataLabel.font = FontHelper.latoMedium(20.0).font
 
         return emptyDataLabel
     }()

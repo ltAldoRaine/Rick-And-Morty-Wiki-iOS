@@ -104,6 +104,12 @@ extension CharactersListTableViewController {
             return UITableViewCell()
         }
 
+        guard let item = viewModel.items[safe: indexPath.row] else {
+            assertionFailure("Unable to access element at index \(indexPath.row). Index is out of bounds.")
+
+            return UITableViewCell()
+        }
+
         cell.configure(with: viewModel.items[indexPath.row],
                        posterImagesRepository: posterImagesRepository)
 

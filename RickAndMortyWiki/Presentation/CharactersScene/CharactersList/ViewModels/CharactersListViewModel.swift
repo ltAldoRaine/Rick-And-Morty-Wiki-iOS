@@ -194,7 +194,9 @@ extension DefaultCharactersListViewModel {
     }
 
     func didSelectItem(at index: Int) {
-        actions?.showCharacterDetails(pages.characters[index])
+        guard let character = pages.characters[safe: index] else { return }
+
+        actions?.showCharacterDetails(character)
     }
 }
 

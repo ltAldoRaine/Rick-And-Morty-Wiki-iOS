@@ -32,6 +32,7 @@
 		3D26B4FA2B5406A7008D8B53 /* RMCharactersPageResponseEntity+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26B4F92B5406A7008D8B53 /* RMCharactersPageResponseEntity+Mapping.swift */; };
 		3D26B4FC2B5406CA008D8B53 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26B4FB2B5406CA008D8B53 /* CoreDataStorage.swift */; };
 		3D4ABFA82B57A05E00CCFAAA /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4ABFA72B57A05E00CCFAAA /* StringHelper.swift */; };
+		3D4ABFAA2B57E5F100CCFAAA /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4ABFA92B57E5F100CCFAAA /* Collection+Extensions.swift */; };
 		3DBCB7922B553F4900BD3306 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCB7912B553F4900BD3306 /* AppAppearance.swift */; };
 		3DBCB7942B5540EC00BD3306 /* AppConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCB7932B5540EC00BD3306 /* AppConfigurations.swift */; };
 		3DBCB7962B55431C00BD3306 /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCB7952B55431C00BD3306 /* AppFlowCoordinator.swift */; };
@@ -137,6 +138,7 @@
 		3D26B4F92B5406A7008D8B53 /* RMCharactersPageResponseEntity+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RMCharactersPageResponseEntity+Mapping.swift"; sourceTree = "<group>"; };
 		3D26B4FB2B5406CA008D8B53 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		3D4ABFA72B57A05E00CCFAAA /* StringHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelper.swift; sourceTree = "<group>"; };
+		3D4ABFA92B57E5F100CCFAAA /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 		3DBCB7912B553F4900BD3306 /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
 		3DBCB7932B5540EC00BD3306 /* AppConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurations.swift; sourceTree = "<group>"; };
 		3DBCB7952B55431C00BD3306 /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -543,6 +545,7 @@
 				3DBCB7DC2B55A10500BD3306 /* UITableViewController+Extensions.swift */,
 				3DBCB7C42B556E6800BD3306 /* UIView+Extensions.swift */,
 				3DBCB7D52B559F9800BD3306 /* UIViewController+Extensions.swift */,
+				3D4ABFA92B57E5F100CCFAAA /* Collection+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -901,6 +904,7 @@
 				3D26B4F22B540489008D8B53 /* APIEndpoints.swift in Sources */,
 				3DBCB7C12B556BD300BD3306 /* CharactersListTableViewCell.swift in Sources */,
 				3DEF01D42B543FE600DD587B /* RMCharacterResponseStorage.swift in Sources */,
+				3D4ABFAA2B57E5F100CCFAAA /* Collection+Extensions.swift in Sources */,
 				3DDA5D572B56D36C00D8A5C7 /* FontHelper.swift in Sources */,
 				3DDA5D4C2B56BA9500D8A5C7 /* ColorHelper.swift in Sources */,
 				3DEF01EC2B54565D00DD587B /* CoreDataRMCharacterResponseStorage.swift in Sources */,
