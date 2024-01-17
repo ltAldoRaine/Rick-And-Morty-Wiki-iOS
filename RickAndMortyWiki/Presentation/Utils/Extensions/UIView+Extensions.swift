@@ -9,7 +9,11 @@ import UIKit
 
 extension UIView {
     func fixInViewSafe(
-        _ container: UIView?
+        _ container: UIView?,
+        top: CGFloat = 0,
+        trailing: CGFloat = 0,
+        bottom: CGFloat = 0,
+        leading: CGFloat = 0
     ) {
         guard let container else { return }
 
@@ -20,10 +24,20 @@ extension UIView {
 
         let guide = container.safeAreaLayoutGuide
 
-        trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
-        leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
-        topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
-        bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
+        let topAnchor = topAnchor.constraint(equalTo: guide.topAnchor)
+        let trailingAnchor = trailingAnchor.constraint(equalTo: guide.trailingAnchor)
+        let bottomAnchor = bottomAnchor.constraint(equalTo: guide.bottomAnchor)
+        let leadingAnchor = leadingAnchor.constraint(equalTo: guide.leadingAnchor)
+
+        topAnchor.constant += top
+        trailingAnchor.constant += trailing
+        bottomAnchor.constant += bottom
+        leadingAnchor.constant += leading
+
+        trailingAnchor.isActive = true
+        leadingAnchor.isActive = true
+        topAnchor.isActive = true
+        bottomAnchor.isActive = true
     }
 
     func fixInView(
@@ -45,6 +59,43 @@ extension UIView {
             trailingConstraint(toItem: container, constant: trailing),
             bottomContstrain(toItem: container, constant: bottom),
             leadingConstraint(toItem: container, constant: leading)
+        ])
+    }
+
+    func fixCenterX(_ container: UIView?, constant: CGFloat = 0) {
+        guard let container else { return }
+
+        translatesAutoresizingMaskIntoConstraints = false
+
+        container.addSubview(self)
+
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(item: self, attribute: .centerX, relatedBy: .equal, toItem: container, attribute: .centerX, multiplier: 1, constant: constant)
+        ])
+    }
+
+    func fixCenterY(_ container: UIView?, constant: CGFloat = 0) {
+        guard let container else { return }
+
+        translatesAutoresizingMaskIntoConstraints = false
+
+        container.addSubview(self)
+
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(item: self, attribute: .centerY, relatedBy: .equal, toItem: container, attribute: .centerY, multiplier: 1, constant: constant)
+        ])
+    }
+
+    func fixCenterXAndY(_ container: UIView?, xConstant: CGFloat = 0, yConstant: CGFloat = 0) {
+        guard let container else { return }
+
+        translatesAutoresizingMaskIntoConstraints = false
+
+        container.addSubview(self)
+
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(item: self, attribute: .centerX, relatedBy: .equal, toItem: container, attribute: .centerX, multiplier: 1, constant: xConstant),
+            NSLayoutConstraint(item: self, attribute: .centerY, relatedBy: .equal, toItem: container, attribute: .centerY, multiplier: 1, constant: yConstant)
         ])
     }
 

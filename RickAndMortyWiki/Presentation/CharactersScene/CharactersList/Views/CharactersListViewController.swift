@@ -54,6 +54,8 @@ final class CharactersListViewController: UIViewController, Alertable {
 
     private lazy var charactersContainerView: UIView = {
         let charactersContainerView: UIView = UIView()
+        
+        charactersContainerView.translatesAutoresizingMaskIntoConstraints = false
 
         charactersTableViewController.view.fixInView(charactersContainerView, top: 15.0, trailing: -15.0, leading: 15.0)
 

@@ -110,7 +110,7 @@ extension CharactersListTableViewController {
             return UITableViewCell()
         }
 
-        cell.configure(with: viewModel.items[indexPath.row],
+        cell.configure(with: item,
                        posterImagesRepository: posterImagesRepository)
 
         return cell

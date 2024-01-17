@@ -33,6 +33,8 @@
 		3D26B4FC2B5406CA008D8B53 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26B4FB2B5406CA008D8B53 /* CoreDataStorage.swift */; };
 		3D4ABFA82B57A05E00CCFAAA /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4ABFA72B57A05E00CCFAAA /* StringHelper.swift */; };
 		3D4ABFAA2B57E5F100CCFAAA /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4ABFA92B57E5F100CCFAAA /* Collection+Extensions.swift */; };
+		3D4ABFAD2B57F9CF00CCFAAA /* CharacterDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4ABFAC2B57F9CF00CCFAAA /* CharacterDetailsTableViewCell.swift */; };
+		3D4ABFAF2B57FA5F00CCFAAA /* CharacterDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4ABFAE2B57FA5F00CCFAAA /* CharacterDetailsTableViewController.swift */; };
 		3DBCB7922B553F4900BD3306 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCB7912B553F4900BD3306 /* AppAppearance.swift */; };
 		3DBCB7942B5540EC00BD3306 /* AppConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCB7932B5540EC00BD3306 /* AppConfigurations.swift */; };
 		3DBCB7962B55431C00BD3306 /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCB7952B55431C00BD3306 /* AppFlowCoordinator.swift */; };
@@ -139,6 +141,8 @@
 		3D26B4FB2B5406CA008D8B53 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		3D4ABFA72B57A05E00CCFAAA /* StringHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelper.swift; sourceTree = "<group>"; };
 		3D4ABFA92B57E5F100CCFAAA /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
+		3D4ABFAC2B57F9CF00CCFAAA /* CharacterDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		3D4ABFAE2B57FA5F00CCFAAA /* CharacterDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsTableViewController.swift; sourceTree = "<group>"; };
 		3DBCB7912B553F4900BD3306 /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
 		3DBCB7932B5540EC00BD3306 /* AppConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurations.swift; sourceTree = "<group>"; };
 		3DBCB7952B55431C00BD3306 /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -345,6 +349,8 @@
 			isa = PBXGroup;
 			children = (
 				3DBCB7AE2B555A2C00BD3306 /* CharacterDetailsViewController.swift */,
+				3D4ABFAE2B57FA5F00CCFAAA /* CharacterDetailsTableViewController.swift */,
+				3D4ABFAB2B57F9A600CCFAAA /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -498,6 +504,14 @@
 				3D26B4F92B5406A7008D8B53 /* RMCharactersPageResponseEntity+Mapping.swift */,
 			);
 			path = EntityMapping;
+			sourceTree = "<group>";
+		};
+		3D4ABFAB2B57F9A600CCFAAA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3D4ABFAC2B57F9CF00CCFAAA /* CharacterDetailsTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		3DBCB7972B55475E00BD3306 /* DIContainer */ = {
@@ -914,6 +928,8 @@
 				3D26B4D72B53F3EB008D8B53 /* FetchRMEpisodesUseCase.swift in Sources */,
 				3DBCB7962B55431C00BD3306 /* AppFlowCoordinator.swift in Sources */,
 				3DDFF60E2B542C8700136E70 /* CoreDataRMEpisodesResponseStorage.swift in Sources */,
+				3D4ABFAF2B57FA5F00CCFAAA /* CharacterDetailsTableViewController.swift in Sources */,
+				3D4ABFAD2B57F9CF00CCFAAA /* CharacterDetailsTableViewCell.swift in Sources */,
 				3DBCB7AD2B555A1500BD3306 /* CharacterDetailsViewModel.swift in Sources */,
 				3DEF01D22B543FC900DD587B /* RMEpisodeResponseStorage.swift in Sources */,
 				3DBCB7D22B559DBF00BD3306 /* Alertable.swift in Sources */,
