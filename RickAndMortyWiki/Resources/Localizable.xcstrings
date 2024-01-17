@@ -31,6 +31,17 @@
         }
       }
     },
+    "Last known location:" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Última ubicación conocida:"
+          }
+        }
+      }
+    },
     "No data available" : {
       "localizations" : {
         "es" : {

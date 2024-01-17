@@ -13,6 +13,8 @@ protocol CharacterDetailsViewModelInput {
 }
 
 protocol CharacterDetailsViewModelOutput {
+    var item: CharactersListItemViewModel? { get }
+
     var itemPublisher: AnyPublisher<CharactersListItemViewModel?, Never> { get }
 }
 

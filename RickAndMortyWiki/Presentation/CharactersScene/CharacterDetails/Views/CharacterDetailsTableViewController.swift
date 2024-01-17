@@ -45,9 +45,7 @@ final class CharacterDetailsTableViewController: UITableViewController {
 
     private func setupViews() {
         tableView.estimatedRowHeight = CharacterDetailsTableViewCell.defaultHeight
-
-//        tableView.rowHeight = UITableView.automaticDimension
-        tableView.rowHeight = CharacterDetailsTableViewCell.defaultHeight
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorStyle = .none
         tableView.backgroundColor = .clear
 //
@@ -76,6 +74,10 @@ extension CharacterDetailsTableViewController {
             assertionFailure("Cannot dequeue reusable cell \(CharacterDetailsTableViewCell.self) with reuseIdentifier: \(CharacterDetailsTableViewCell.reuseIdentifier)")
 
             return UITableViewCell()
+        }
+
+        if let item = viewModel.item {
+            cell.configure(with: item, posterImagesRepository: posterImagesRepository)
         }
 
         return cell

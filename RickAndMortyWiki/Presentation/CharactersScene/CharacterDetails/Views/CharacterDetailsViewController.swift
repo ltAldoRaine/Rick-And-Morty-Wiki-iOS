@@ -26,7 +26,7 @@ final class CharacterDetailsViewController: UIViewController {
 
         characterDetailsContainerView.translatesAutoresizingMaskIntoConstraints = false
 
-        characterDetailsTableViewController.view.fixInView(characterDetailsContainerView, top: 20.0, trailing: -15.0, leading: 15.0)
+        characterDetailsTableViewController.view.fixInView(characterDetailsContainerView)
 
         return characterDetailsContainerView
     }()

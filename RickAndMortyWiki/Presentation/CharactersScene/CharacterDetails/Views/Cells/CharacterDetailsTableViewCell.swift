@@ -11,7 +11,7 @@ final class CharacterDetailsTableViewCell: UITableViewCell {
     // MARK: - Properties
 
     static let reuseIdentifier = String(describing: CharacterDetailsTableViewCell.self)
-    static let defaultHeight: CGFloat = 150.0
+    static let defaultHeight: CGFloat = 200.0
 
     private let mainQueue: DispatchQueueType = DispatchQueue.main
 
@@ -27,7 +27,9 @@ final class CharacterDetailsTableViewCell: UITableViewCell {
 
     private lazy var vStackView: UIStackView = {
         let vStackView: UIStackView = UIStackView(arrangedSubviews: [
-            posterImageContainer
+            posterImageContainer,
+            statusContainer,
+            originStackView
         ])
 
         vStackView.axis = .vertical
@@ -57,6 +59,7 @@ final class CharacterDetailsTableViewCell: UITableViewCell {
 
         posterImageView.contentMode = .scaleAspectFill
         posterImageView.layer.cornerRadius = 20.0
+        posterImageView.clipsToBounds = true
         posterImageView.backgroundColor = ColorHelper.helpColorOne.color
 
         NSLayoutConstraint.activate([
@@ -65,6 +68,73 @@ final class CharacterDetailsTableViewCell: UITableViewCell {
         ])
 
         return posterImageView
+    }()
+
+    private lazy var statusContainer: UIView = {
+        let statusContainer: UIView = UIView()
+
+        statusContainer.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            statusContainer.heightConstraint(constant: 40.0)
+        ])
+
+        statusView.fixCenterX(statusContainer)
+
+        return statusContainer
+    }()
+
+    private lazy var statusView: UIView = {
+        let statusView: UIView = UIView()
+
+        statusView.translatesAutoresizingMaskIntoConstraints = false
+        statusView.layer.cornerRadius = 15.0
+
+        NSLayoutConstraint.activate([
+            statusView.widthConstraint(constant: 150.0),
+            statusView.heightConstraint(constant: 40.0)
+        ])
+
+        statusLabel.fixCenterXAndY(statusView)
+
+        return statusView
+    }()
+
+    private lazy var statusLabel: UILabel = {
+        let statusLabel: UILabel = UILabel()
+
+        statusLabel.textColor = ColorHelper.textColorThree.color
+        statusLabel.font = FontHelper.latoBold(14.0).font
+
+        return statusLabel
+    }()
+
+    private lazy var originStackView: UIStackView = {
+        let originStackView: UIStackView = UIStackView(arrangedSubviews: [originTitleLabel, originLabel])
+
+        originStackView.axis = .vertical
+        originStackView.spacing = 2.0
+
+        return originStackView
+    }()
+
+    private lazy var originTitleLabel: UILabel = {
+        let originTitleLabel: UILabel = UILabel()
+
+        originTitleLabel.text = StringHelper.lastKnownLocation
+        originTitleLabel.textColor = ColorHelper.textColorTwo.color
+        originTitleLabel.font = FontHelper.latoRegular(14.0).font
+
+        return originTitleLabel
+    }()
+
+    private lazy var originLabel: UILabel = {
+        let originLabel: UILabel = UILabel()
+
+        originLabel.textColor = ColorHelper.textColorOne.color
+        originLabel.font = FontHelper.latoRegular(14.0).font
+
+        return originLabel
     }()
 
     private var viewModel: CharactersListItemViewModel!
@@ -122,14 +192,13 @@ final class CharacterDetailsTableViewCell: UITableViewCell {
     }
 
     private func updateLabels() {
-//        nameLabel.text = viewModel.name
-//        originLabel.text = viewModel.origin
-//        statusLabel.text = "\(viewModel.status.rawValue.capitalizingFirstLetter()) - \(viewModel.species)"
+        originLabel.text = viewModel.origin
+        statusLabel.text = "\(viewModel.status.rawValue.capitalizingFirstLetter()) - \(viewModel.species)"
     }
 
     private func updateStatusViewBackgroundColor() {
-//        statusView.backgroundColor = if viewModel.status == .alive { ColorHelper.successColor.color }
-//        else { ColorHelper.errorColor.color }
+        statusView.backgroundColor = if viewModel.status == .alive { ColorHelper.successColor.color }
+        else { ColorHelper.errorColor.color }
     }
 
     // MARK: - Configuration
