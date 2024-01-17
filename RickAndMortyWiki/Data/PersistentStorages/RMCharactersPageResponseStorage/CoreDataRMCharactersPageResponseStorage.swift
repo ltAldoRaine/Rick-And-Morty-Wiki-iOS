@@ -23,7 +23,7 @@ final class CoreDataRMCharactersPageResponseStorage {
         let request: NSFetchRequest = RMCharactersPageRequestEntity.fetchRequest()
 
         request.predicate = NSPredicate(format: "%K = %@ AND %K = %d",
-                                        #keyPath(RMCharactersPageRequestEntity.query), requestDto.query,
+                                        #keyPath(RMCharactersPageRequestEntity.name), requestDto.name,
                                         #keyPath(RMCharactersPageRequestEntity.page), requestDto.page)
         return request
     }

@@ -28,7 +28,7 @@ final class DefaultFilterRMCharactersUseCase: FilterRMCharactersUseCase {
         completion: @escaping (Result<RMCharactersPage, Error>) -> Void
     ) -> Cancellable? {
         return rmCharactersRepository.fetchRMCharacters(
-            query: requestValue.query,
+            name: requestValue.name,
             page: requestValue.page,
             cached: cached,
             completion: { result in
@@ -38,6 +38,6 @@ final class DefaultFilterRMCharactersUseCase: FilterRMCharactersUseCase {
 }
 
 struct FilterRMCharactersUseCaseRequestValue {
-    let query: String
+    let name: String
     let page: Int
 }

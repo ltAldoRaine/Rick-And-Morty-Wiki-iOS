@@ -29,8 +29,8 @@
         <relationship name="response" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RMCharactersPageResponseEntity" inverseName="info" inverseEntity="RMCharactersPageResponseEntity"/>
     </entity>
     <entity name="RMCharactersPageRequestEntity" representedClassName="RMCharactersPageRequestEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="page" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="query" optional="YES" attributeType="String"/>
         <relationship name="response" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="RMCharactersPageResponseEntity" inverseName="request" inverseEntity="RMCharactersPageResponseEntity"/>
     </entity>
     <entity name="RMCharactersPageResponseEntity" representedClassName="RMCharactersPageResponseEntity" syncable="YES" codeGenerationType="class">

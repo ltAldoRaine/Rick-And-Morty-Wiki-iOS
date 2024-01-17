@@ -20,7 +20,7 @@ enum CharactersListViewModelLoading {
 protocol CharactersListViewModelInput {
     func viewDidLoad()
     func didLoadNextPage()
-    func didFilter(query: String)
+    func didFilter(with name: String)
     func didCancelSearch()
     func didSelectItem(at index: Int)
 }
@@ -28,7 +28,7 @@ protocol CharactersListViewModelInput {
 protocol CharactersListViewModelOutput {
     var items: [CharactersListItemViewModel] { get }
     var loading: CharactersListViewModelLoading? { get }
-    var query: String { get }
+    var name: String { get }
     var error: String { get }
     var isEmpty: Bool { get }
     var screenTitle: String { get }
@@ -38,7 +38,7 @@ protocol CharactersListViewModelOutput {
 
     var itemsPublisher: AnyPublisher<[CharactersListItemViewModel], Never> { get }
     var loadingPublisher: AnyPublisher<CharactersListViewModelLoading?, Never> { get }
-    var queryPublisher: AnyPublisher<String, Never> { get }
+    var namePublisher: AnyPublisher<String, Never> { get }
     var errorPublisher: AnyPublisher<String, Never> { get }
 }
 
@@ -47,7 +47,7 @@ typealias CharactersListViewModel = CharactersListViewModelInput & CharactersLis
 final class DefaultCharactersListViewModel: CharactersListViewModel {
     @Published var items: [CharactersListItemViewModel] = []
     @Published var loading: CharactersListViewModelLoading?
-    @Published var query = ""
+    @Published var name = ""
     @Published var error = ""
 
     private let filterCharactersUseCase: FilterRMCharactersUseCase
@@ -61,10 +61,10 @@ final class DefaultCharactersListViewModel: CharactersListViewModel {
         }
     }
 
-    let screenTitle = NSLocalizedString("Characters", comment: "")
-    let emptyDataText = NSLocalizedString("No data available", comment: "")
-    let errorTitle = NSLocalizedString("Error", comment: "")
-    let searchBarPlaceholder = NSLocalizedString("Search", comment: "")
+    let screenTitle = StringHelper.screenTitle
+    let emptyDataText = StringHelper.emptyDataText
+    let errorTitle = StringHelper.errorTitle
+    let searchBarPlaceholder = StringHelper.searchBarPlaceholder
 
     var isEmpty: Bool { items.isEmpty }
 
@@ -91,10 +91,10 @@ final class DefaultCharactersListViewModel: CharactersListViewModel {
             currentPage = charactersPage.info.pages
         }
 
-        totalPageCount = charactersPage.info.count
+        totalPageCount = charactersPage.info.pages
 
         pages = pages
-            .filter({ $0.info.next != charactersPage.info.next })
+            .filter { $0.info.next != charactersPage.info.next }
             + [charactersPage]
 
         items = pages.characters.map(CharactersListItemViewModel.init)
@@ -108,13 +108,13 @@ final class DefaultCharactersListViewModel: CharactersListViewModel {
         items.removeAll()
     }
 
-    private func load(charactersQuery: String, loading: CharactersListViewModelLoading) {
+    private func load(characterName: String, loading: CharactersListViewModelLoading) {
         self.loading = loading
 
-        query = charactersQuery
+        name = characterName
 
         charactersLoadTask = filterCharactersUseCase.execute(
-            requestValue: .init(query: charactersQuery, page: nextPage),
+            requestValue: .init(name: characterName, page: nextPage),
             cached: { [weak self] page in
                 guard let self else { return }
 
@@ -140,14 +140,18 @@ final class DefaultCharactersListViewModel: CharactersListViewModel {
 
     private func handle(error: Error) {
         self.error = error.isInternetConnectionError ?
-            NSLocalizedString("No internet connection", comment: "") :
-            NSLocalizedString("Failed loading characters", comment: "")
+            StringHelper.noInternetConnection :
+            StringHelper.failedLoadingCharacters
     }
 
-    private func update(charactersQuery: String) {
+    private func update(characterName: String) {
         resetPages()
 
-        load(charactersQuery: charactersQuery, loading: .fullScreen)
+        load(characterName: characterName, loading: .fullScreen)
+    }
+
+    private func freshLoad() {
+        update(characterName: "")
     }
 }
 
@@ -160,8 +164,8 @@ extension DefaultCharactersListViewModel {
         $loading.eraseToAnyPublisher()
     }
 
-    var queryPublisher: AnyPublisher<String, Never> {
-        $query.eraseToAnyPublisher()
+    var namePublisher: AnyPublisher<String, Never> {
+        $name.eraseToAnyPublisher()
     }
 
     var errorPublisher: AnyPublisher<String, Never> {
@@ -169,28 +173,29 @@ extension DefaultCharactersListViewModel {
     }
 
     func viewDidLoad() {
-        didFilter(query: query)
+        freshLoad()
     }
 
     func didLoadNextPage() {
         guard hasMorePages,
               loading == .none else { return }
 
-        load(charactersQuery: query, loading: .nextPage)
+        load(characterName: name, loading: .nextPage)
     }
 
-    func didFilter(query: String) {
-        update(charactersQuery: query)
+    func didFilter(with name: String) {
+        guard !name.isEmpty else { return }
+
+        update(characterName: name)
     }
 
     func didCancelSearch() {
-        charactersLoadTask?.cancel()
+        freshLoad()
     }
 
     func didSelectItem(at index: Int) {
         actions?.showCharacterDetails(pages.characters[index])
     }
-    
 }
 
 private extension Array where Element == RMCharactersPage {

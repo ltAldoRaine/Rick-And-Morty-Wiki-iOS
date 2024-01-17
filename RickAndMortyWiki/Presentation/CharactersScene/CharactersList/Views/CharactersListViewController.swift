@@ -55,7 +55,7 @@ final class CharactersListViewController: UIViewController, Alertable {
     private lazy var charactersContainerView: UIView = {
         let charactersContainerView: UIView = UIView()
 
-        charactersTableViewController.view.fixInView(charactersContainerView, top: 15.0, trailing: 15.0, leading: 15.0)
+        charactersTableViewController.view.fixInView(charactersContainerView, top: 15.0, trailing: -15.0, leading: 15.0)
 
         return charactersContainerView
     }()
@@ -119,6 +119,7 @@ final class CharactersListViewController: UIViewController, Alertable {
 
     private func bindData() {
         viewModel.itemsPublisher
+            .receive(on: RunLoop.main)
             .sink { [weak self] _ in
                 guard let self else { return }
 
@@ -127,6 +128,7 @@ final class CharactersListViewController: UIViewController, Alertable {
             .store(in: &subscribers)
 
         viewModel.loadingPublisher
+            .receive(on: RunLoop.main)
             .sink { [weak self] in
                 guard let self else { return }
 
@@ -134,7 +136,8 @@ final class CharactersListViewController: UIViewController, Alertable {
             }
             .store(in: &subscribers)
 
-        viewModel.queryPublisher
+        viewModel.namePublisher
+            .receive(on: RunLoop.main)
             .sink { [weak self] in
                 guard let self else { return }
 
@@ -143,6 +146,7 @@ final class CharactersListViewController: UIViewController, Alertable {
             .store(in: &subscribers)
 
         viewModel.errorPublisher
+            .receive(on: RunLoop.main)
             .sink { [weak self] in
                 guard let self else { return }
 
@@ -204,11 +208,10 @@ final class CharactersListViewController: UIViewController, Alertable {
 // MARK: - UISearchBarDelegate
 
 extension CharactersListViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        guard let trimmedSearchText = searchBar.text?.trim(),
-              !trimmedSearchText.isEmpty else { return }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchText = searchBar.text else { return }
 
-        viewModel.didFilter(query: searchText)
+        viewModel.didFilter(with: searchText)
     }
 
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
@@ -219,9 +222,7 @@ extension CharactersListViewController: UISearchBarDelegate {
         searchBar.showsCancelButton = false
         searchBar.searchTextField.endEditing(true)
 
-        if searchBar.text?.isEmpty == false {
-            viewModel.didCancelSearch()
-        }
+        viewModel.didCancelSearch()
 
         searchBar.text = nil
     }

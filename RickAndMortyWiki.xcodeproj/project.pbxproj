@@ -31,6 +31,7 @@
 		3D26B4F72B540681008D8B53 /* CoreDataRMCharactersPageResponseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26B4F62B540681008D8B53 /* CoreDataRMCharactersPageResponseStorage.swift */; };
 		3D26B4FA2B5406A7008D8B53 /* RMCharactersPageResponseEntity+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26B4F92B5406A7008D8B53 /* RMCharactersPageResponseEntity+Mapping.swift */; };
 		3D26B4FC2B5406CA008D8B53 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26B4FB2B5406CA008D8B53 /* CoreDataStorage.swift */; };
+		3D4ABFA82B57A05E00CCFAAA /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4ABFA72B57A05E00CCFAAA /* StringHelper.swift */; };
 		3DBCB7922B553F4900BD3306 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCB7912B553F4900BD3306 /* AppAppearance.swift */; };
 		3DBCB7942B5540EC00BD3306 /* AppConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCB7932B5540EC00BD3306 /* AppConfigurations.swift */; };
 		3DBCB7962B55431C00BD3306 /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCB7952B55431C00BD3306 /* AppFlowCoordinator.swift */; };
@@ -135,6 +136,7 @@
 		3D26B4F62B540681008D8B53 /* CoreDataRMCharactersPageResponseStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRMCharactersPageResponseStorage.swift; sourceTree = "<group>"; };
 		3D26B4F92B5406A7008D8B53 /* RMCharactersPageResponseEntity+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RMCharactersPageResponseEntity+Mapping.swift"; sourceTree = "<group>"; };
 		3D26B4FB2B5406CA008D8B53 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
+		3D4ABFA72B57A05E00CCFAAA /* StringHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelper.swift; sourceTree = "<group>"; };
 		3DBCB7912B553F4900BD3306 /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
 		3DBCB7932B5540EC00BD3306 /* AppConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurations.swift; sourceTree = "<group>"; };
 		3DBCB7952B55431C00BD3306 /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -618,6 +620,7 @@
 				3DDA5D4B2B56BA9500D8A5C7 /* ColorHelper.swift */,
 				3DDA5D562B56D36C00D8A5C7 /* FontHelper.swift */,
 				3DDA5D492B56B95200D8A5C7 /* ImageHelper.swift */,
+				3D4ABFA72B57A05E00CCFAAA /* StringHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -785,7 +788,7 @@
 			};
 			buildConfigurationList = 3DBED8292B503CA8000753B6 /* Build configuration list for PBXProject "RickAndMortyWiki" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = es;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				Base,
@@ -885,6 +888,7 @@
 				3DBCB7CC2B55977800BD3306 /* CharactersListTableViewController.swift in Sources */,
 				3DBCB7D02B559CB800BD3306 /* AccessibilityIdentifier.swift in Sources */,
 				3D26B4D52B53F0E9008D8B53 /* FetchRMCharacterUseCase.swift in Sources */,
+				3D4ABFA82B57A05E00CCFAAA /* StringHelper.swift in Sources */,
 				3DBED8342B503CA8000753B6 /* SceneDelegate.swift in Sources */,
 				3DDFF60A2B5429A200136E70 /* RMEpisodesResponseStorage.swift in Sources */,
 				3DBCB79B2B5547AE00BD3306 /* CharactersSceneDIContainer.swift in Sources */,
@@ -1098,7 +1102,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IMAGE_BASE_URL = "https://rickandmortyapi.com/api/character/avatar/";
 				INFOPLIST_FILE = RickAndMortyWiki/Resources/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "${APP_DISPLAY_NAME}";
+				INFOPLIST_KEY_CFBundleDisplayName = "Rick&Morty";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
@@ -1136,7 +1140,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IMAGE_BASE_URL = "https://rickandmortyapi.com/api/character/avatar/";
 				INFOPLIST_FILE = RickAndMortyWiki/Resources/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "${APP_DISPLAY_NAME}";
+				INFOPLIST_KEY_CFBundleDisplayName = "Rick&Morty";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
@@ -1329,7 +1333,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IMAGE_BASE_URL = "https://rickandmortyapi.com/api/character/avatar/";
 				INFOPLIST_FILE = RickAndMortyWiki/Resources/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "${APP_DISPLAY_NAME}";
+				INFOPLIST_KEY_CFBundleDisplayName = "Rick&Morty";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
@@ -1470,7 +1474,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IMAGE_BASE_URL = "https://rickandmortyapi.com/api/character/avatar/";
 				INFOPLIST_FILE = RickAndMortyWiki/Resources/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "${APP_DISPLAY_NAME}";
+				INFOPLIST_KEY_CFBundleDisplayName = "Rick&Morty";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;

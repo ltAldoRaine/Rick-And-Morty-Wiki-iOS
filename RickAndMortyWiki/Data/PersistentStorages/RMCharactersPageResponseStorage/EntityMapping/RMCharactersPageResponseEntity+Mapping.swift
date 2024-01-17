@@ -67,7 +67,7 @@ extension RMCharactersPageRequestDTO {
     func toEntity(in context: NSManagedObjectContext) -> RMCharactersPageRequestEntity {
         let entity: RMCharactersPageRequestEntity = .init(context: context)
 
-        entity.query = query
+        entity.name = name
         entity.page = Int32(page)
 
         return entity

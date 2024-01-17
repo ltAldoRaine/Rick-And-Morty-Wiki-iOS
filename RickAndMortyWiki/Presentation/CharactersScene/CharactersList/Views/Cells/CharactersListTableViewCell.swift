@@ -68,7 +68,8 @@ final class CharactersListTableViewCell: UITableViewCell {
 
         nameLabel.textColor = ColorHelper.textColorOne.color
         nameLabel.font = FontHelper.latoBold(20.0).font
-
+        nameLabel.numberOfLines = 0
+        
         return nameLabel
     }()
 

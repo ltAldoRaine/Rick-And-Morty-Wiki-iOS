@@ -101,12 +101,12 @@ extension DefaultRMCharactersRepository: RMCharactersRepository {
     }
 
     func fetchRMCharacters(
-        query: String,
+        name: String,
         page: Int,
         cached: @escaping (RMCharactersPage) -> Void,
         completion: @escaping (Result<RMCharactersPage, Error>
         ) -> Void) -> Cancellable? {
-        let requestDTO = RMCharactersPageRequestDTO(query: query, page: page)
+        let requestDTO = RMCharactersPageRequestDTO(name: name, page: page)
         let task = RepositoryTask()
 
         rmCharactersPageResponseCache.getResponse(for: requestDTO) { [weak self, backgroundQueue] result in

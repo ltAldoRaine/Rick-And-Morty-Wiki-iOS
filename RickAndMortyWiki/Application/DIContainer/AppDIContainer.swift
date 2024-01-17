@@ -15,9 +15,11 @@ final class AppDIContainer {
     lazy var apiDataTransferService: DataTransferService = {
         let config = ApiDataNetworkConfig(
             baseURL: URL(string: appConfiguration.apiBaseURL)!,
-            queryParameters: [
-                "language": NSLocale.preferredLanguages.first ?? "en"
-            ]
+
+            // MARK: - Rick And Morty Api doesn't support multi language
+
+            // "language": NSLocale.preferredLanguages.first ?? "en"
+            queryParameters: [:]
         )
 
         let apiDataNetwork = DefaultNetworkService(config: config)

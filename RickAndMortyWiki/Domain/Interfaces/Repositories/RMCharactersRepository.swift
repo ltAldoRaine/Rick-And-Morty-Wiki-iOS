@@ -24,7 +24,7 @@ protocol RMCharactersRepository {
 
     @discardableResult
     func fetchRMCharacters(
-        query: String,
+        name: String,
         page: Int,
         cached: @escaping (RMCharactersPage) -> Void,
         completion: @escaping (Result<RMCharactersPage, Error>) -> Void

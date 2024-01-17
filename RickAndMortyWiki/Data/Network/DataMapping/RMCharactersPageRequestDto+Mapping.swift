@@ -10,6 +10,6 @@ import Foundation
 // MARK: - Data Transfer Object
 
 struct RMCharactersPageRequestDTO: Encodable {
-    let query: String
+    let name: String
     let page: Int
 }
