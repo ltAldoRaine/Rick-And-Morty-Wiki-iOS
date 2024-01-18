@@ -7,6 +7,8 @@
 
 import Foundation
 
+// MARK: - RF
+
 struct AccessibilityIdentifier {
     static let characterDetailsView = "AccessibilityIdentifierCharacterDetailsView"
     static let searchField = "AccessibilityIdentifierSearchCharacters"

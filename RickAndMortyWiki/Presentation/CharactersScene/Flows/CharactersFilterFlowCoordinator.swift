@@ -11,7 +11,7 @@ protocol CharactersFilterFlowCoordinatorDependencies {
     func makeCharactersListViewController(
         actions: CharactersListViewModelActions
     ) -> CharactersListViewController
-    func makeCharacterDetailsViewController(character: RMCharacter) -> UIViewController
+    func makeCharacterDetailsViewController(character: RMCharacter?, characterId: Int?, actions: CharactersListViewModelActions) -> UIViewController
 }
 
 final class CharactersFilterFlowCoordinator {
@@ -37,8 +37,10 @@ final class CharactersFilterFlowCoordinator {
         charactersListVC = vc
     }
 
-    private func showCharacterDetails(character: RMCharacter) {
-        let vc = dependencies.makeCharacterDetailsViewController(character: character)
+    private func showCharacterDetails(character: RMCharacter?, characterId: Int?) {
+        let actions = CharactersListViewModelActions(showCharacterDetails: showCharacterDetails)
+
+        let vc = dependencies.makeCharacterDetailsViewController(character: character, characterId: characterId, actions: actions)
 
         navigationController?.pushViewController(vc, animated: true)
     }

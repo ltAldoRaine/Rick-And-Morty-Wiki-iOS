@@ -10,7 +10,7 @@ import Foundation
 struct APIEndpoints {
     static func getRMCharacter(with rmCharacterRequestDto: RMCharacterRequestDTO) -> Endpoint<RMCharactersPageResponseDTO.RMCharacterDTO> {
         return Endpoint(
-            path: "characters/\(rmCharacterRequestDto.id)",
+            path: "character/\(rmCharacterRequestDto.id)",
             method: .get
         )
     }
@@ -39,7 +39,7 @@ struct APIEndpoints {
 
     static func getRMEpisodes(with rmEpisodesRequestDto: RMEpisodesRequestDTO) -> Endpoint<[RMEpisodeDTO]> {
         return Endpoint(
-            path: "episode/\(rmEpisodesRequestDto.ids.map { "\($0)" }.joined(separator: ","))",
+            path: "episode/\(rmEpisodesRequestDto.ids.map { "\($0)" }.joined(separator: ",")),",
             method: .get
         )
     }

@@ -32,6 +32,7 @@ final class CharacterDetailsTableViewCell: UITableViewCell {
         ])
 
         leadingVStackView.axis = .vertical
+        leadingVStackView.spacing = 10.0
 
         let trailingVStackView: UIStackView = UIStackView(arrangedSubviews: [
             episodesQuantityStackView,
@@ -39,6 +40,7 @@ final class CharacterDetailsTableViewCell: UITableViewCell {
         ])
 
         trailingVStackView.axis = .vertical
+        trailingVStackView.spacing = 10.0
 
         let separatorView = UIView()
 
@@ -333,9 +335,11 @@ final class CharacterDetailsTableViewCell: UITableViewCell {
     }
 
     func configure(
-        with viewModel: CharactersListItemViewModel,
+        with viewModel: CharactersListItemViewModel?,
         posterImagesRepository: RMPosterImagesRepository?
     ) {
+        guard let viewModel else { return }
+
         self.viewModel = viewModel
         self.posterImagesRepository = posterImagesRepository
 

@@ -93,17 +93,21 @@ final class CharactersSceneDIContainer: CharactersFilterFlowCoordinatorDependenc
 
     // MARK: - Character Details
 
-    func makeCharacterDetailsViewController(character: RMCharacter) -> UIViewController {
+    func makeCharacterDetailsViewController(character: RMCharacter?, characterId: Int?, actions: CharactersListViewModelActions) -> UIViewController {
         CharacterDetailsViewController(
-            with: makeCharacterDetailsViewModel(character: character),
+            with: makeCharacterDetailsViewModel(character: character, characterId: characterId, actions: actions),
             posterImagesRepository: makeRMPosterImagesRepository()
         )
     }
 
-    func makeCharacterDetailsViewModel(character: RMCharacter) -> CharacterDetailsViewModel {
+    func makeCharacterDetailsViewModel(character: RMCharacter?, characterId: Int?, actions: CharactersListViewModelActions) -> CharacterDetailsViewModel {
         DefaultCharacterDetailsViewModel(
             character: character,
-            posterImagesRepository: makeRMPosterImagesRepository()
+            characterId: characterId, 
+            fetchRMCharacterUseCase: makeFetchRMCharacterUseCase(),
+            fetchRMEpisodesUseCase: makeFetchRMEpisodesUseCase(),
+            posterImagesRepository: makeRMPosterImagesRepository(),
+            actions: actions
         )
     }
 

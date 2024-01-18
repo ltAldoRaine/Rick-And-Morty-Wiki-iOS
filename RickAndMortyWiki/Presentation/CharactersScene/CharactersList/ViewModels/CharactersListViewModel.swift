@@ -9,7 +9,7 @@ import Combine
 import Foundation
 
 struct CharactersListViewModelActions {
-    let showCharacterDetails: (RMCharacter) -> Void
+    let showCharacterDetails: (RMCharacter?, Int?) -> Void
 }
 
 enum CharactersListViewModelLoading {
@@ -84,7 +84,7 @@ final class DefaultCharactersListViewModel: CharactersListViewModel {
     }
 
     private func appendPage(_ charactersPage: RMCharactersPage) {
-        if let nextPage = charactersPage.info.next?.urlQueryParamter("page"),
+        if let nextPage = charactersPage.info.next?.urlQueryParameter("page"),
            let nextPageInt = Int(nextPage) {
             currentPage = nextPageInt - 1
         } else {
@@ -196,7 +196,7 @@ extension DefaultCharactersListViewModel {
     func didSelectItem(at index: Int) {
         guard let character = pages.characters[safe: index] else { return }
 
-        actions?.showCharacterDetails(character)
+        actions?.showCharacterDetails(character, nil)
     }
 }
 

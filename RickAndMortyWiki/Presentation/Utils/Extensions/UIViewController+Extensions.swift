@@ -12,6 +12,8 @@
 
 import UIKit
 
+// MARK: - RF
+
 protocol ViewControllerLifecycleBehavior {
     func viewDidLoad(viewController: UIViewController)
     func viewWillAppear(viewController: UIViewController)

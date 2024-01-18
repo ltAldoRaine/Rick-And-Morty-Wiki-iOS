@@ -8,7 +8,7 @@
 import Combine
 import UIKit
 
-final class CharacterDetailsViewController: UIViewController {
+final class CharacterDetailsViewController: UIViewController, Alertable {
     // MARK: - Properties
 
     private lazy var contentView: UIView = {
@@ -16,7 +16,7 @@ final class CharacterDetailsViewController: UIViewController {
 
         contentView.backgroundColor = ColorHelper.backgroundColorOne.color
 
-        characterDetailsContainerView.fixInViewSafe(contentView, top: 20.0, trailing: -15.0, leading: 15.0)
+        characterDetailsContainerView.fixInViewSafe(contentView, trailing: -15.0, leading: 15.0)
 
         return contentView
     }()
@@ -79,7 +79,6 @@ final class CharacterDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupViews()
         setupBehaviours()
 
         bindData()
@@ -98,11 +97,18 @@ final class CharacterDetailsViewController: UIViewController {
                 self.reloadItem(item)
             }
             .store(in: &subscribers)
+
+        viewModel.errorPublisher
+            .receive(on: RunLoop.main)
+            .sink { [weak self] in
+                guard let self else { return }
+
+                showError($0)
+            }
+            .store(in: &subscribers)
     }
 
     // MARK: - Setup
-
-    private func setupViews() {}
 
     private func setupBehaviours() {
         addBehaviors([
@@ -113,11 +119,19 @@ final class CharacterDetailsViewController: UIViewController {
 
     // MARK: - Data Handling
 
-    private func reloadItem(_ item: CharactersListItemViewModel?) {
-        updateTitle(item: item)
+    private func reloadItem(_ data: CharactersListItemViewModel?) {
+        updateTitle(with: data)
+        
+        characterDetailsTableViewController.reloadItems()
     }
 
-    private func updateTitle(item: CharactersListItemViewModel?) {
-        title = item?.name
+    private func updateTitle(with data: CharactersListItemViewModel?) {
+        title = data?.name
+    }
+
+    private func showError(_ error: String) {
+        guard !error.isEmpty else { return }
+
+        presentAlert(title: viewModel.errorTitle, message: error)
     }
 }

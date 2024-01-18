@@ -11,6 +11,17 @@
         }
       }
     },
+    "Episodes" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Episodes"
+          }
+        }
+      }
+    },
     "Error" : {
       "localizations" : {
         "es" : {
@@ -32,7 +43,14 @@
       }
     },
     "Gender:" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gender:"
+          }
+        }
+      }
     },
     "Last known location:" : {
       "extractionState" : "manual",

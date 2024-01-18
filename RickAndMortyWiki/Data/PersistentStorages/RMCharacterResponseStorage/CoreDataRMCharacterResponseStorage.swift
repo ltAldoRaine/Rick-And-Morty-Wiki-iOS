@@ -22,7 +22,7 @@ final class CoreDataRMCharacterResponseStorage {
     ) -> NSFetchRequest<RMCharacterRequestEntity> {
         let request: NSFetchRequest = RMCharacterRequestEntity.fetchRequest()
 
-        request.predicate = NSPredicate(format: "%K = %@",
+        request.predicate = NSPredicate(format: "%K = %d",
                                         #keyPath(RMCharacterRequestEntity.character_id), requestDto.id)
         return request
     }

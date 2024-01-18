@@ -74,7 +74,6 @@ final class CharactersListViewController: UIViewController, Alertable {
     private lazy var emptyDataLabel: UILabel = {
         let emptyDataLabel: UILabel = UILabel()
 
-        emptyDataLabel.backgroundColor = .white
         emptyDataLabel.textAlignment = .center
         emptyDataLabel.font = FontHelper.latoMedium(20.0).font
 
@@ -182,11 +181,11 @@ final class CharactersListViewController: UIViewController, Alertable {
     private func updateLoading(_ loading: CharactersListViewModelLoading?) {
         emptyDataLabel.isHidden = true
         charactersContainerView.isHidden = true
-        LoadingView.hide()
+        LoadingIndicator.hide()
 
         switch loading {
         case .fullScreen:
-            LoadingView.show()
+            LoadingIndicator.show()
         case .nextPage:
             charactersContainerView.isHidden = false
         case .none:

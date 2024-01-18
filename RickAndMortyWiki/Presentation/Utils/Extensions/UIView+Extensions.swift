@@ -7,6 +7,8 @@
 
 import UIKit
 
+// MARK: - RF
+
 extension UIView {
     func fixInViewSafe(
         _ container: UIView?,

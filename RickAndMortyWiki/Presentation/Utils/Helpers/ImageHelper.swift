@@ -8,17 +8,7 @@
 import UIKit
 
 enum ImageHelper: String {
-    case backgroundColorOne
-    case errorColor
-    case helpColorOne
-    case helpColorTwo
-    case inputsStrokesButtonsColor
-    case successColor
-    case textColorFour
-    case textColorOne
-    case textColorThree
-    case textColorTwo
-    case warningColor
+    case arrow
 
     var image: UIImage? {
         UIImage(named: rawValue.capitalizingFirstLetter())

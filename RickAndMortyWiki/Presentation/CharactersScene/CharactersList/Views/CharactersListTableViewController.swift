@@ -47,7 +47,6 @@ final class CharactersListTableViewController: UITableViewController {
     private func setupViews() {
         tableView.estimatedRowHeight = CharactersListTableViewCell.defaultHeight
 
-//        tableView.rowHeight = UITableView.automaticDimension
         tableView.rowHeight = CharactersListTableViewCell.defaultHeight
         tableView.separatorStyle = .none
         tableView.backgroundColor = .clear

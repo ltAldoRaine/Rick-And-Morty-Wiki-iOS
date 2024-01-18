@@ -8,14 +8,11 @@
 import UIKit
 
 extension UITableViewController {
-    func makeActivityIndicatorView(size: CGSize) -> UIActivityIndicatorView {
+    func makeActivityIndicatorView(size: CGSize = CGSize(width: 40, height: 40)) -> UIActivityIndicatorView {
         let activityIndicatorView: UIActivityIndicatorView = UIActivityIndicatorView(style: .medium)
 
         activityIndicatorView.backgroundColor = ColorHelper.helpColorOne.color
-
         activityIndicatorView.frame = CGRect(origin: .zero, size: size)
-        activityIndicatorView.isHidden = false
-
         activityIndicatorView.startAnimating()
 
         return activityIndicatorView

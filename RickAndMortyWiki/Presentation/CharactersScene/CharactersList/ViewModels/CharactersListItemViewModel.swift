@@ -31,6 +31,8 @@ struct CharactersListItemViewModel: Equatable {
     let location: String
     let posterImagePath: String
     let episode: [String]
+
+    var episodes: [EpisodesListItemViewModel]
 }
 
 extension CharactersListItemViewModel {
@@ -43,5 +45,7 @@ extension CharactersListItemViewModel {
         location = character.location.name
         posterImagePath = character.image
         episode = character.episode
+
+        episodes = []
     }
 }

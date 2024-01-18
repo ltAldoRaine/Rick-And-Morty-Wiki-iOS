@@ -5,7 +5,7 @@
 //  Created by Beka Gelashvili on 15.01.24.
 //
 
-import UIKit
+import Foundation
 
 extension DataTransferError: ConnectionError {
     var isInternetConnectionError: Bool {
