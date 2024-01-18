@@ -12,7 +12,7 @@ struct EpisodesListItemViewModel: Equatable {
     let episode: String
     let characters: [String]
 
-    var isExpanded: Bool
+    var isExpanded: Bool = false
 }
 
 extension EpisodesListItemViewModel {
@@ -20,7 +20,5 @@ extension EpisodesListItemViewModel {
         name = episode.name
         self.episode = episode.episode
         characters = episode.characters
-
-        isExpanded = false
     }
 }

@@ -44,6 +44,8 @@ final class CharactersListCollectionViewCell: UICollectionViewCell {
         }
     }
 
+    // MARK: - Lifecycle
+
     override func prepareForReuse() {
         super.prepareForReuse()
 

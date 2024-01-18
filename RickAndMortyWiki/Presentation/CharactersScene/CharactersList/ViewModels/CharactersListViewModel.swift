@@ -17,6 +17,8 @@ enum CharactersListViewModelLoading {
     case nextPage
 }
 
+// MARK: - ViewModel Input
+
 protocol CharactersListViewModelInput {
     func viewDidLoad()
     func didLoadNextPage()
@@ -24,6 +26,8 @@ protocol CharactersListViewModelInput {
     func didCancelSearch()
     func didSelectItem(at index: Int)
 }
+
+// MARK: - ViewModel Output
 
 protocol CharactersListViewModelOutput {
     var items: [CharactersListItemViewModel] { get }
@@ -42,13 +46,17 @@ protocol CharactersListViewModelOutput {
     var errorPublisher: AnyPublisher<String, Never> { get }
 }
 
+// MARK: - ViewModel Combined
+
 typealias CharactersListViewModel = CharactersListViewModelInput & CharactersListViewModelOutput
 
 final class DefaultCharactersListViewModel: CharactersListViewModel {
-    @Published var items: [CharactersListItemViewModel] = []
-    @Published var loading: CharactersListViewModelLoading?
-    @Published var name = ""
-    @Published var error = ""
+    // MARK: - Properties
+
+    @Published private(set) var items: [CharactersListItemViewModel] = []
+    @Published private(set) var loading: CharactersListViewModelLoading?
+    @Published private(set) var name = ""
+    @Published private(set) var error = ""
 
     private let filterCharactersUseCase: FilterRMCharactersUseCase
     private let mainQueue: DispatchQueueType
@@ -73,6 +81,8 @@ final class DefaultCharactersListViewModel: CharactersListViewModel {
     var hasMorePages: Bool { currentPage < totalPageCount }
     var nextPage: Int { hasMorePages ? currentPage + 1 : currentPage }
 
+    // MARK: - Initialization
+
     init(
         filterCharactersUseCase: FilterRMCharactersUseCase,
         actions: CharactersListViewModelActions? = nil,
@@ -82,6 +92,8 @@ final class DefaultCharactersListViewModel: CharactersListViewModel {
         self.actions = actions
         self.mainQueue = mainQueue
     }
+
+    // MARK: - Private Methods
 
     private func appendPage(_ charactersPage: RMCharactersPage) {
         if let nextPage = charactersPage.info.next?.urlQueryParameter("page"),

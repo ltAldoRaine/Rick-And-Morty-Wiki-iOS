@@ -262,9 +262,7 @@ final class CharacterDetailsTableViewCell: UITableViewCell {
     private var viewModel: CharactersListItemViewModel!
     private var posterImagesRepository: RMPosterImagesRepository?
     private var imageLoadTask: Cancellable? {
-        willSet {
-            imageLoadTask?.cancel()
-        }
+        willSet { imageLoadTask?.cancel() }
     }
 
     // MARK: - Initialization

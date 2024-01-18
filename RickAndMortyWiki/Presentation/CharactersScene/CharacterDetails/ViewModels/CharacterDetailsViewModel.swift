@@ -8,11 +8,15 @@
 import Combine
 import Foundation
 
+// MARK: - ViewModel Input
+
 protocol CharacterDetailsViewModelInput {
     func viewDidLoad()
     func didSelectItem(with characterId: Int?)
     func didToggleEpisode(at index: Int)
 }
+
+// MARK: - ViewModel Output
 
 protocol CharacterDetailsViewModelOutput {
     var item: CharactersListItemViewModel? { get }
@@ -23,11 +27,15 @@ protocol CharacterDetailsViewModelOutput {
     var errorPublisher: AnyPublisher<String, Never> { get }
 }
 
+// MARK: - Combined ViewModel
+
 protocol CharacterDetailsViewModel: CharacterDetailsViewModelInput, CharacterDetailsViewModelOutput { }
 
 final class DefaultCharacterDetailsViewModel: CharacterDetailsViewModel {
-    @Published var item: CharactersListItemViewModel?
-    @Published var error = ""
+    // MARK: - Properties
+
+    @Published private(set) var item: CharactersListItemViewModel?
+    @Published private(set) var error = ""
 
     private let fetchRMCharacterUseCase: FetchRMCharacterUseCase
     private let fetchRMEpisodesUseCase: FetchRMEpisodesUseCase
@@ -36,18 +44,16 @@ final class DefaultCharacterDetailsViewModel: CharacterDetailsViewModel {
     private let mainQueue: DispatchQueueType
 
     private var imageLoadTask: Cancellable? {
-        willSet {
-            imageLoadTask?.cancel()
-        }
+        willSet { imageLoadTask?.cancel() }
     }
 
     private var episodesLoadTask: Cancellable? {
-        willSet {
-            episodesLoadTask?.cancel()
-        }
+        willSet { episodesLoadTask?.cancel() }
     }
 
     let errorTitle = StringHelper.errorTitle
+
+    // MARK: - Initialization
 
     init(
         character: RMCharacter?,
@@ -64,12 +70,15 @@ final class DefaultCharacterDetailsViewModel: CharacterDetailsViewModel {
         self.actions = actions
         self.mainQueue = mainQueue
 
+        // Initialize item with provided character or load character if characterId is provided
         if let character {
             item = CharactersListItemViewModel(character: character)
         } else if let characterId {
             load(characterId: characterId)
         }
     }
+
+    // MARK: - Private Methods
 
     private func load(characterId: Int) {
 //        loading = loading
@@ -132,7 +141,7 @@ final class DefaultCharacterDetailsViewModel: CharacterDetailsViewModel {
             StringHelper.failedLoadingCharacters
     }
 
-    private func update() {
+    private func getEpisodesIds() -> [Int] {
         var episodesIds: [Int] = []
 
         item?.episode.forEach {
@@ -142,7 +151,11 @@ final class DefaultCharacterDetailsViewModel: CharacterDetailsViewModel {
             episodesIds.append(id)
         }
 
-        load(episodesIds: episodesIds)
+        return episodesIds
+    }
+
+    private func update() {
+        load(episodesIds: getEpisodesIds())
     }
 }
 
