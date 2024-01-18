@@ -141,7 +141,7 @@ extension CharacterDetailsTableViewController {
             headerTitle.textColor = ColorHelper.textColorOne.color
             headerTitle.backgroundColor = ColorHelper.backgroundColorOne.color
 
-            headerTitle.text = "Episodes"
+            headerTitle.text = StringHelper.episodes
 
             return headerTitle
         default:

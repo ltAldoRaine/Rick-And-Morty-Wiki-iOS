@@ -5,24 +5,27 @@
 //  Created by Beka Gelashvili on 15.01.24.
 //
 
-import SwiftUI
 import UIKit
 
 final class CharactersSceneDIContainer: CharactersFilterFlowCoordinatorDependencies {
+    // MARK: - Nested Types
+
     struct Dependencies {
         let apiDataTransferService: DataTransferService
         let imageDataTransferService: DataTransferService
     }
 
+    // MARK: - Properties
+
     private let dependencies: Dependencies
 
-    // MARK: - Persistent Storage
+    private lazy var rmCharacterResponseCache: RMCharacterResponseStorage = CoreDataRMCharacterResponseStorage()
+    private lazy var rmCharactersPageResponseCache: RMCharactersPageResponseStorage = CoreDataRMCharactersPageResponseStorage()
+    private lazy var rmCharactersResponseCache: RMCharactersResponseStorage = CoreDataRMCharactersResponseStorage()
+    private lazy var rmEpisodeResponseCache: RMEpisodeResponseStorage = CoreDataRMEpisodeResponseStorage()
+    private lazy var rmEpisodesResponseCache: RMEpisodesResponseStorage = CoreDataRMEpisodesResponseStorage()
 
-    lazy var rmCharacterResponseCache: RMCharacterResponseStorage = CoreDataRMCharacterResponseStorage()
-    lazy var rmCharactersPageResponseCache: RMCharactersPageResponseStorage = CoreDataRMCharactersPageResponseStorage()
-    lazy var rmCharactersResponseCache: RMCharactersResponseStorage = CoreDataRMCharactersResponseStorage()
-    lazy var rmEpisodeResponseCache: RMEpisodeResponseStorage = CoreDataRMEpisodeResponseStorage()
-    lazy var rmEpisodesResponseCache: RMEpisodesResponseStorage = CoreDataRMEpisodesResponseStorage()
+    // MARK: - Initialization
 
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
@@ -30,29 +33,29 @@ final class CharactersSceneDIContainer: CharactersFilterFlowCoordinatorDependenc
 
     // MARK: - Use Cases
 
-    func makeFetchRMCharactersUseCase() -> FetchRMCharactersUseCase {
+    private func makeFetchRMCharactersUseCase() -> FetchRMCharactersUseCase {
         DefaultFetchRMCharactersUseCase(rmCharactersRepository: makeRMCharactersRepository())
     }
 
-    func makeFetchRMCharacterUseCase() -> FetchRMCharacterUseCase {
+    private func makeFetchRMCharacterUseCase() -> FetchRMCharacterUseCase {
         DefaultFetchRMCharacterUseCase(rmCharactersRepository: makeRMCharactersRepository())
     }
 
-    func makeFilterRMCharactersUseCase() -> FilterRMCharactersUseCase {
+    private func makeFilterRMCharactersUseCase() -> FilterRMCharactersUseCase {
         DefaultFilterRMCharactersUseCase(rmCharactersRepository: makeRMCharactersRepository())
     }
 
-    func makeFetchRMEpisodesUseCase() -> FetchRMEpisodesUseCase {
+    private func makeFetchRMEpisodesUseCase() -> FetchRMEpisodesUseCase {
         DefaultFetchRMEpisodesUseCase(rmEpisodesRepository: makeRMEpisodesRepository())
     }
 
-    func makeFetchRMEpisodeUseCase() -> FetchRMEpisodeUseCase {
+    private func makeFetchRMEpisodeUseCase() -> FetchRMEpisodeUseCase {
         DefaultFetchRMEpisodeUseCase(rmEpisodesRepository: makeRMEpisodesRepository())
     }
 
     // MARK: - Repositories
 
-    func makeRMCharactersRepository() -> RMCharactersRepository {
+    private  func makeRMCharactersRepository() -> RMCharactersRepository {
         DefaultRMCharactersRepository(
             dataTransferService: dependencies.apiDataTransferService,
             rmCharacterResponseCache: rmCharacterResponseCache,
@@ -61,7 +64,7 @@ final class CharactersSceneDIContainer: CharactersFilterFlowCoordinatorDependenc
         )
     }
 
-    func makeRMEpisodesRepository() -> RMEpisodesRepository {
+    private func makeRMEpisodesRepository() -> RMEpisodesRepository {
         DefaultRMEpisodesRepository(
             dataTransferService: dependencies.apiDataTransferService,
             rmEpisodesResponseCache: rmEpisodesResponseCache,
@@ -69,7 +72,7 @@ final class CharactersSceneDIContainer: CharactersFilterFlowCoordinatorDependenc
         )
     }
 
-    func makeRMPosterImagesRepository() -> RMPosterImagesRepository {
+    private func makeRMPosterImagesRepository() -> RMPosterImagesRepository {
         DefaultRMPosterImagesRepository(
             dataTransferService: dependencies.imageDataTransferService
         )
@@ -103,7 +106,7 @@ final class CharactersSceneDIContainer: CharactersFilterFlowCoordinatorDependenc
     func makeCharacterDetailsViewModel(character: RMCharacter?, characterId: Int?, actions: CharactersListViewModelActions) -> CharacterDetailsViewModel {
         DefaultCharacterDetailsViewModel(
             character: character,
-            characterId: characterId, 
+            characterId: characterId,
             fetchRMCharacterUseCase: makeFetchRMCharacterUseCase(),
             fetchRMEpisodesUseCase: makeFetchRMEpisodesUseCase(),
             posterImagesRepository: makeRMPosterImagesRepository(),

@@ -8,21 +8,28 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-    let appDIContainer = AppDIContainer()
+    // MARK: - Properties
 
-    var appFlowCoordinator: AppFlowCoordinator?
+    private let appDIContainer = AppDIContainer()
+
+    private var appFlowCoordinator: AppFlowCoordinator?
+
     var window: UIWindow?
 
-    private func openWindow(with scene: UIScene) {
-        guard let scene = (scene as? UIWindowScene) else { return }
+    // MARK: - UIWindow Setup
 
+    private func setupWindow(with scene: UIWindowScene) {
         AppAppearance.setupAppearance()
 
         window = UIWindow(windowScene: scene)
 
+        guard let window = window else {
+            fatalError("Error creating UIWindow.")
+        }
+
         let navigationController = UINavigationController()
 
-        window?.rootViewController = navigationController
+        window.rootViewController = navigationController
 
         appFlowCoordinator = AppFlowCoordinator(
             appDIContainer: appDIContainer,
@@ -31,24 +38,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         appFlowCoordinator?.start()
 
-        window?.makeKeyAndVisible()
+        window.makeKeyAndVisible()
     }
 
+    // MARK: - UIScene Lifecycle
+
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        openWindow(with: scene)
+        guard let scene = (scene as? UIWindowScene) else { return }
+
+        setupWindow(with: scene)
     }
 
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-        openWindow(with: scene)
+        guard let scene = (scene as? UIWindowScene) else { return }
+
+        setupWindow(with: scene)
     }
-
-    func sceneDidDisconnect(_ scene: UIScene) {}
-
-    func sceneDidBecomeActive(_ scene: UIScene) {}
-
-    func sceneWillResignActive(_ scene: UIScene) {}
-
-    func sceneWillEnterForeground(_ scene: UIScene) {}
-
-    func sceneDidEnterBackground(_ scene: UIScene) {}
 }

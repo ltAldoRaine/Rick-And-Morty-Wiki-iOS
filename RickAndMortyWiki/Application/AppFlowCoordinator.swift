@@ -7,11 +7,20 @@
 
 import UIKit
 
+/// Coordinator responsible for starting the main flow of the app.
 final class AppFlowCoordinator {
+    // MARK: - Properties
+
     private let appDIContainer: AppDIContainer
+    private var navigationController: UINavigationController
 
-    var navigationController: UINavigationController
+    // MARK: - Initialization
 
+    /// Initializes the coordinator with the necessary dependencies.
+    ///
+    /// - Parameters:
+    ///   - appDIContainer: The dependency container for the app.
+    ///   - navigationController: The navigation controller to manage the flow.
     init(
         appDIContainer: AppDIContainer,
         navigationController: UINavigationController
@@ -20,6 +29,9 @@ final class AppFlowCoordinator {
         self.navigationController = navigationController
     }
 
+    // MARK: - Public Methods
+
+    /// Starts the main flow of the app.
     func start() {
         let charactersSceneDIContainer = appDIContainer.makeCharactersSceneDIContainer()
 

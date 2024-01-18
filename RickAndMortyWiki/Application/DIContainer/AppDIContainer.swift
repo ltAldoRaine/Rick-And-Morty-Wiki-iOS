@@ -8,17 +8,19 @@
 import Foundation
 
 final class AppDIContainer {
-    lazy var appConfiguration = AppConfiguration()
+    // MARK: - Properties
+
+    private lazy var appConfiguration = AppConfiguration()
 
     // MARK: - Network
 
-    lazy var apiDataTransferService: DataTransferService = {
+    private lazy var apiDataTransferService: DataTransferService = {
+        guard let baseURL = URL(string: appConfiguration.apiBaseURL) else {
+            fatalError("Error: Invalid API base URL.")
+        }
+
         let config = ApiDataNetworkConfig(
-            baseURL: URL(string: appConfiguration.apiBaseURL)!,
-
-            // MARK: - Rick And Morty Api doesn't support multi language
-
-            // "language": NSLocale.preferredLanguages.first ?? "en"
+            baseURL: baseURL,
             queryParameters: [:]
         )
 
@@ -27,9 +29,13 @@ final class AppDIContainer {
         return DefaultDataTransferService(with: apiDataNetwork)
     }()
 
-    lazy var imageDataTransferService: DataTransferService = {
+    private lazy var imageDataTransferService: DataTransferService = {
+        guard let baseURL = URL(string: appConfiguration.imagesBaseURL) else {
+            fatalError("Error: Invalid Images base URL.")
+        }
+
         let config = ApiDataNetworkConfig(
-            baseURL: URL(string: appConfiguration.imagesBaseURL)!
+            baseURL: baseURL
         )
 
         let imagesDataNetwork = DefaultNetworkService(config: config)
