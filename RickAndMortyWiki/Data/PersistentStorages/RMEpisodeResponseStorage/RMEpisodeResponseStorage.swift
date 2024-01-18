@@ -8,9 +8,11 @@
 import Foundation
 
 protocol RMEpisodeResponseStorage {
+    typealias ResultType = Result<RMEpisodeDTO?, Error>
+
     func getResponse(
         for request: RMEpisodeRequestDTO,
-        completion: @escaping (Result<RMEpisodeDTO?, Error>) -> Void
+        completion: @escaping (ResultType) -> Void
     )
 
     func save(response: RMEpisodeDTO, for requestDto: RMEpisodeRequestDTO)

@@ -45,7 +45,7 @@ extension DefaultRMCharactersRepository: RMCharactersRepository {
 
             guard !task.isCancelled else { return }
 
-            let endpoint = APIEndpoints.getRMCharacter(with: requestDTO)
+            let endpoint = APIEndpoints.getSingleRMCharacter(with: requestDTO)
 
             task.networkTask = self?.dataTransferService.request(
                 with: endpoint,
@@ -80,7 +80,7 @@ extension DefaultRMCharactersRepository: RMCharactersRepository {
 
             guard !task.isCancelled else { return }
 
-            let endpoint = APIEndpoints.getRMCharacters(with: requestDTO)
+            let endpoint = APIEndpoints.getRMCharactersList(with: requestDTO)
 
             task.networkTask = self?.dataTransferService.request(
                 with: endpoint,

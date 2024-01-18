@@ -9,13 +9,17 @@ import CoreData
 import Foundation
 
 final class CoreDataRMCharacterResponseStorage {
+    // MARK: - Properties
+
     private let coreDataStorage: CoreDataStorage
+
+    // MARK: - Initialization
 
     init(coreDataStorage: CoreDataStorage = CoreDataStorage.shared) {
         self.coreDataStorage = coreDataStorage
     }
 
-    // MARK: - Private
+    // MARK: - Private Methods
 
     private func fetchRequest(
         for requestDto: RMCharacterRequestDTO
@@ -24,13 +28,14 @@ final class CoreDataRMCharacterResponseStorage {
 
         request.predicate = NSPredicate(format: "%K = %d",
                                         #keyPath(RMCharacterRequestEntity.character_id), requestDto.id)
+
         return request
     }
 
     private func deleteResponse(
         for requestDto: RMCharacterRequestDTO,
         in context: NSManagedObjectContext
-    ) {
+    ) throws {
         let request = fetchRequest(for: requestDto)
 
         do {
@@ -38,7 +43,7 @@ final class CoreDataRMCharacterResponseStorage {
                 context.delete(result)
             }
         } catch {
-            print(error)
+            throw CoreDataStorageError.deleteError(error)
         }
     }
 }
@@ -46,7 +51,7 @@ final class CoreDataRMCharacterResponseStorage {
 extension CoreDataRMCharacterResponseStorage: RMCharacterResponseStorage {
     func getResponse(
         for requestDto: RMCharacterRequestDTO,
-        completion: @escaping (Result<RMCharactersPageResponseDTO.RMCharacterDTO?, Error>) -> Void
+        completion: @escaping (ResultType) -> Void
     ) {
         coreDataStorage.performBackgroundTask { context in
             do {
@@ -66,7 +71,7 @@ extension CoreDataRMCharacterResponseStorage: RMCharacterResponseStorage {
     ) {
         coreDataStorage.performBackgroundTask { context in
             do {
-                self.deleteResponse(for: requestDto, in: context)
+                try self.deleteResponse(for: requestDto, in: context)
 
                 let requestEntity = requestDto.toEntity(in: context)
 

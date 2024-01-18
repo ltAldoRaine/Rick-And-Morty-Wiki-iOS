@@ -8,44 +8,50 @@
 import Foundation
 
 struct APIEndpoints {
-    static func getRMCharacter(with rmCharacterRequestDto: RMCharacterRequestDTO) -> Endpoint<RMCharactersPageResponseDTO.RMCharacterDTO> {
-        return Endpoint(
+    /// Returns the endpoint for fetching a single Rick and Morty character by ID.
+    static func getSingleRMCharacter(with rmCharacterRequestDto: RMCharacterRequestDTO) -> Endpoint<RMCharactersPageResponseDTO.RMCharacterDTO> {
+        Endpoint(
             path: "character/\(rmCharacterRequestDto.id)",
             method: .get
         )
     }
 
-    static func getRMCharacters(with rmCharactersRequestDto: RMCharactersRequestDTO) -> Endpoint<[RMCharactersPageResponseDTO.RMCharacterDTO]> {
-        return Endpoint(
+    /// Returns the endpoint for fetching a list of Rick and Morty characters by IDs.
+    static func getRMCharactersList(with rmCharactersRequestDto: RMCharactersRequestDTO) -> Endpoint<[RMCharactersPageResponseDTO.RMCharacterDTO]> {
+        Endpoint(
             path: "characters/\(rmCharactersRequestDto.ids.map { "\($0)" }.joined(separator: ","))",
             method: .get
         )
     }
 
+    /// Returns the endpoint for fetching a list of Rick and Morty characters based on page and name.
     static func getRMCharacters(with rmCharactersPageRequestDTO: RMCharactersPageRequestDTO) -> Endpoint<RMCharactersPageResponseDTO> {
-        return Endpoint(
+        Endpoint(
             path: "character",
             method: .get,
             queryParametersEncodable: rmCharactersPageRequestDTO
         )
     }
 
+    /// Returns the endpoint for fetching a single Rick and Morty episode by ID.
     static func getRMEpisode(with rmEpisodeRequestDto: RMEpisodeRequestDTO) -> Endpoint<RMEpisodeDTO> {
-        return Endpoint(
+        Endpoint(
             path: "episode/\(rmEpisodeRequestDto.id)",
             method: .get
         )
     }
 
+    /// Returns the endpoint for fetching a list of Rick and Morty episodes by IDs.
     static func getRMEpisodes(with rmEpisodesRequestDto: RMEpisodesRequestDTO) -> Endpoint<[RMEpisodeDTO]> {
-        return Endpoint(
-            path: "episode/\(rmEpisodesRequestDto.ids.map { "\($0)" }.joined(separator: ",")),",
+        Endpoint(
+            path: "episode/\(rmEpisodesRequestDto.ids.map { "\($0)" }.joined(separator: ","))",
             method: .get
         )
     }
 
+    /// Returns the endpoint for fetching the poster image of a Rick and Morty character.
     static func getRMCharacterPoster(path: String) -> Endpoint<Data> {
-        return Endpoint(
+        Endpoint(
             path: path,
             method: .get,
             responseDecoder: RawDataResponseDecoder()

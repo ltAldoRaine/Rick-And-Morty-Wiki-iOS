@@ -9,13 +9,17 @@ import CoreData
 import Foundation
 
 final class CoreDataRMCharactersResponseStorage {
+    // MARK: - Properties
+
     private let coreDataStorage: CoreDataStorage
+
+    // MARK: - Initialization
 
     init(coreDataStorage: CoreDataStorage = CoreDataStorage.shared) {
         self.coreDataStorage = coreDataStorage
     }
 
-    // MARK: - Private
+    // MARK: - Private Methods
 
     private func fetchRequest(
         for requestDto: RMCharactersRequestDTO
@@ -24,13 +28,14 @@ final class CoreDataRMCharactersResponseStorage {
 
         request.predicate = NSPredicate(format: "%K = %@",
                                         #keyPath(RMEpisodesRequestEntity.episodes_ids), requestDto.ids.map { "\($0)" }.joined(separator: ","))
+
         return request
     }
 
     private func deleteResponse(
         for requestDto: RMCharactersRequestDTO,
         in context: NSManagedObjectContext
-    ) {
+    ) throws {
         let request = fetchRequest(for: requestDto)
 
         do {
@@ -38,7 +43,7 @@ final class CoreDataRMCharactersResponseStorage {
                 context.delete(result)
             }
         } catch {
-            print(error)
+            throw CoreDataStorageError.deleteError(error)
         }
     }
 }
@@ -46,11 +51,12 @@ final class CoreDataRMCharactersResponseStorage {
 extension CoreDataRMCharactersResponseStorage: RMCharactersResponseStorage {
     func getResponse(
         for requestDto: RMCharactersRequestDTO,
-        completion: @escaping (Result<[RMCharactersPageResponseDTO.RMCharacterDTO]?, Error>) -> Void
+        completion: @escaping (ResultType) -> Void
     ) {
         coreDataStorage.performBackgroundTask { context in
             do {
                 let fetchRequest = self.fetchRequest(for: requestDto)
+
                 let requestEntity = try context.fetch(fetchRequest).first
 
                 completion(.success(requestEntity?.response?.toDTO()))
@@ -66,7 +72,7 @@ extension CoreDataRMCharactersResponseStorage: RMCharactersResponseStorage {
     ) {
         coreDataStorage.performBackgroundTask { context in
             do {
-                self.deleteResponse(for: requestDto, in: context)
+                try self.deleteResponse(for: requestDto, in: context)
 
                 let requestEntity = requestDto.toEntity(in: context)
 

@@ -8,9 +8,11 @@
 import Foundation
 
 protocol RMCharactersPageResponseStorage {
+    typealias ResultType = Result<RMCharactersPageResponseDTO?, Error>
+
     func getResponse(
         for request: RMCharactersPageRequestDTO,
-        completion: @escaping (Result<RMCharactersPageResponseDTO?, Error>) -> Void
+        completion: @escaping (ResultType) -> Void
     )
 
     func save(response: RMCharactersPageResponseDTO, for requestDto: RMCharactersPageRequestDTO)

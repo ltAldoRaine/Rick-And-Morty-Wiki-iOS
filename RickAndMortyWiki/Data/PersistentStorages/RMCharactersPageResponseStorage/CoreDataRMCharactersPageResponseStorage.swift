@@ -9,13 +9,17 @@ import CoreData
 import Foundation
 
 final class CoreDataRMCharactersPageResponseStorage {
+    // MARK: - Properties
+
     private let coreDataStorage: CoreDataStorage
+
+    // MARK: - Initialization
 
     init(coreDataStorage: CoreDataStorage = CoreDataStorage.shared) {
         self.coreDataStorage = coreDataStorage
     }
 
-    // MARK: - Private
+    // MARK: - Private Methods
 
     private func fetchRequest(
         for requestDto: RMCharactersPageRequestDTO
@@ -31,7 +35,7 @@ final class CoreDataRMCharactersPageResponseStorage {
     private func deleteResponse(
         for requestDto: RMCharactersPageRequestDTO,
         in context: NSManagedObjectContext
-    ) {
+    ) throws {
         let request = fetchRequest(for: requestDto)
 
         do {
@@ -39,7 +43,7 @@ final class CoreDataRMCharactersPageResponseStorage {
                 context.delete(result)
             }
         } catch {
-            print(error)
+            throw CoreDataStorageError.deleteError(error)
         }
     }
 }
@@ -47,7 +51,7 @@ final class CoreDataRMCharactersPageResponseStorage {
 extension CoreDataRMCharactersPageResponseStorage: RMCharactersPageResponseStorage {
     func getResponse(
         for requestDto: RMCharactersPageRequestDTO,
-        completion: @escaping (Result<RMCharactersPageResponseDTO?, Error>) -> Void
+        completion: @escaping (ResultType) -> Void
     ) {
         coreDataStorage.performBackgroundTask { context in
             do {
@@ -67,10 +71,10 @@ extension CoreDataRMCharactersPageResponseStorage: RMCharactersPageResponseStora
     ) {
         coreDataStorage.performBackgroundTask { context in
             do {
-                self.deleteResponse(for: requestDto, in: context)
+                try self.deleteResponse(for: requestDto, in: context)
 
                 let requestEntity = requestDto.toEntity(in: context)
-                
+
                 requestEntity.response = responseDto.toEntity(in: context)
 
                 try context.save()
