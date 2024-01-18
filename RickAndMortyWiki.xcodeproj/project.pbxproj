@@ -37,6 +37,13 @@
 		3D4ABFB12B581AB400CCFAAA /* EpisodesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4ABFB02B581AB400CCFAAA /* EpisodesListTableViewCell.swift */; };
 		3D4ABFB52B581F6C00CCFAAA /* EpisodesListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4ABFB42B581F6C00CCFAAA /* EpisodesListItemViewModel.swift */; };
 		3DB3F7EA2B59081B006B7E44 /* EpisodesCharactersListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB3F7E92B59081B006B7E44 /* EpisodesCharactersListItemViewModel.swift */; };
+		3DB3F7F02B5938B9006B7E44 /* FilterRMCharactersUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB3F7EF2B5938B9006B7E44 /* FilterRMCharactersUseCaseTests.swift */; };
+		3DB3F7FB2B5939CC006B7E44 /* RMCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF4A2C52B5266BF000C3108 /* RMCharacter.swift */; };
+		3DB3F7FC2B593A9D006B7E44 /* RMCharacterOrigin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26B4DA2B53F583008D8B53 /* RMCharacterOrigin.swift */; };
+		3DB3F7FD2B593A9F006B7E44 /* RMCharacterLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26B4DC2B53F58D008D8B53 /* RMCharacterLocation.swift */; };
+		3DB3F7FE2B593BB4006B7E44 /* RMCharactersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26B4C02B53E13B008D8B53 /* RMCharactersRepository.swift */; };
+		3DB3F7FF2B593BEE006B7E44 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26B4CB2B53EA73008D8B53 /* Cancellable.swift */; };
+		3DB3F8002B593C84006B7E44 /* FilterRMCharactersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26B4BC2B53E0FB008D8B53 /* FilterRMCharactersUseCase.swift */; };
 		3DBCB7922B553F4900BD3306 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCB7912B553F4900BD3306 /* AppAppearance.swift */; };
 		3DBCB7942B5540EC00BD3306 /* AppConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCB7932B5540EC00BD3306 /* AppConfigurations.swift */; };
 		3DBCB7962B55431C00BD3306 /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCB7952B55431C00BD3306 /* AppFlowCoordinator.swift */; };
@@ -149,6 +156,7 @@
 		3D4ABFB02B581AB400CCFAAA /* EpisodesListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesListTableViewCell.swift; sourceTree = "<group>"; };
 		3D4ABFB42B581F6C00CCFAAA /* EpisodesListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesListItemViewModel.swift; sourceTree = "<group>"; };
 		3DB3F7E92B59081B006B7E44 /* EpisodesCharactersListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesCharactersListItemViewModel.swift; sourceTree = "<group>"; };
+		3DB3F7EF2B5938B9006B7E44 /* FilterRMCharactersUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterRMCharactersUseCaseTests.swift; sourceTree = "<group>"; };
 		3DBCB7912B553F4900BD3306 /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
 		3DBCB7932B5540EC00BD3306 /* AppConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurations.swift; sourceTree = "<group>"; };
 		3DBCB7952B55431C00BD3306 /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -526,6 +534,22 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		3DB3F7EB2B593872006B7E44 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				3DB3F7EC2B593878006B7E44 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		3DB3F7EC2B593878006B7E44 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				3DB3F7EF2B5938B9006B7E44 /* FilterRMCharactersUseCaseTests.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
 		3DBCB7972B55475E00BD3306 /* DIContainer */ = {
 			isa = PBXGroup;
 			children = (
@@ -630,6 +654,7 @@
 		3DBED84A2B503CA9000753B6 /* RickAndMortyWikiTests */ = {
 			isa = PBXGroup;
 			children = (
+				3DB3F7EB2B593872006B7E44 /* Domain */,
 			);
 			path = RickAndMortyWikiTests;
 			sourceTree = "<group>";
@@ -807,6 +832,7 @@
 					};
 					3DBED8462B503CA9000753B6 = {
 						CreatedOnToolsVersion = 15.0.1;
+						LastSwiftMigration = 1500;
 						TestTargetID = 3DBED82D2B503CA8000753B6;
 					};
 					3DBED8502B503CA9000753B6 = {
@@ -962,6 +988,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DB3F8002B593C84006B7E44 /* FilterRMCharactersUseCase.swift in Sources */,
+				3DB3F7FF2B593BEE006B7E44 /* Cancellable.swift in Sources */,
+				3DB3F7FE2B593BB4006B7E44 /* RMCharactersRepository.swift in Sources */,
+				3DB3F7FB2B5939CC006B7E44 /* RMCharacter.swift in Sources */,
+				3DB3F7F02B5938B9006B7E44 /* FilterRMCharactersUseCaseTests.swift in Sources */,
+				3DB3F7FC2B593A9D006B7E44 /* RMCharacterOrigin.swift in Sources */,
+				3DB3F7FD2B593A9F006B7E44 /* RMCharacterLocation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1205,6 +1238,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5YFJP9Y83V;
@@ -1217,6 +1251,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RickAndMortyWiki.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RickAndMortyWiki";
@@ -1228,6 +1263,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5YFJP9Y83V;
@@ -1398,6 +1434,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5YFJP9Y83V;
@@ -1410,6 +1447,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RickAndMortyWiki.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RickAndMortyWiki";
@@ -1539,6 +1577,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5YFJP9Y83V;

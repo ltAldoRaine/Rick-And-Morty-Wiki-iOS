@@ -30,3 +30,19 @@ protocol RMCharactersRepository {
         completion: @escaping (Result<RMCharactersPage, Error>) -> Void
     ) -> Cancellable?
 }
+
+extension RMCharactersRepository {
+    @discardableResult
+    func fetchRMCharacterById(
+        id: Int,
+        cached: @escaping (RMCharacter) -> Void,
+        completion: @escaping (Result<RMCharacter, Error>) -> Void
+    ) -> Cancellable? { return nil }
+
+    @discardableResult
+    func fetchRMCharactersByIds(
+        ids: [Int],
+        cached: @escaping ([RMCharacter]) -> Void,
+        completion: @escaping (Result<[RMCharacter], Error>) -> Void
+    ) -> Cancellable? { return nil }
+}
