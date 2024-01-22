@@ -203,9 +203,9 @@
 		3D4ABFB42B581F6C00CCFAAA /* EpisodesListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesListItemViewModel.swift; sourceTree = "<group>"; };
 		3D7EBCD62B5EE36000995A45 /* screenshot-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screenshot-2.png"; sourceTree = "<group>"; };
 		3D7EBCD72B5EE36000995A45 /* screenshot-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screenshot-8.png"; sourceTree = "<group>"; };
-		3D7EBCD82B5EE36000995A45 /* screenshot-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screenshot-3.png"; sourceTree = "<group>"; };
+		3D7EBCD82B5EE36000995A45 /* screenshot-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screenshot-4.png"; sourceTree = "<group>"; };
 		3D7EBCD92B5EE36000995A45 /* screenshot-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screenshot-5.png"; sourceTree = "<group>"; };
-		3D7EBCDA2B5EE36000995A45 /* screenshot-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screenshot-4.png"; sourceTree = "<group>"; };
+		3D7EBCDA2B5EE36000995A45 /* screenshot-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screenshot-3.png"; sourceTree = "<group>"; };
 		3D7EBCDB2B5EE36000995A45 /* screenshot-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screenshot-7.png"; sourceTree = "<group>"; };
 		3D7EBCDC2B5EE36000995A45 /* screenshot-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screenshot-6.png"; sourceTree = "<group>"; };
 		3D7EBCDD2B5EE36000995A45 /* screenshot-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screenshot-1.png"; sourceTree = "<group>"; };
@@ -670,8 +670,8 @@
 			children = (
 				3D7EBCDD2B5EE36000995A45 /* screenshot-1.png */,
 				3D7EBCD62B5EE36000995A45 /* screenshot-2.png */,
-				3D7EBCD82B5EE36000995A45 /* screenshot-3.png */,
-				3D7EBCDA2B5EE36000995A45 /* screenshot-4.png */,
+				3D7EBCD82B5EE36000995A45 /* screenshot-4.png */,
+				3D7EBCDA2B5EE36000995A45 /* screenshot-3.png */,
 				3D7EBCD92B5EE36000995A45 /* screenshot-5.png */,
 				3D7EBCDC2B5EE36000995A45 /* screenshot-6.png */,
 				3D7EBCDB2B5EE36000995A45 /* screenshot-7.png */,
