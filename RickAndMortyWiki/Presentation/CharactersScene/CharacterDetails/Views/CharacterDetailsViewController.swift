@@ -74,6 +74,8 @@ final class CharacterDetailsViewController: UIViewController, Alertable {
 
     override func loadView() {
         view = contentView
+
+        view.accessibilityIdentifier = AccessibilityIdentifier.characterDetailsView
     }
 
     override func viewDidLoad() {
@@ -121,7 +123,7 @@ final class CharacterDetailsViewController: UIViewController, Alertable {
 
     private func reloadItem(_ data: CharactersListItemViewModel?) {
         updateTitle(with: data)
-        
+
         characterDetailsTableViewController.reloadItems()
     }
 

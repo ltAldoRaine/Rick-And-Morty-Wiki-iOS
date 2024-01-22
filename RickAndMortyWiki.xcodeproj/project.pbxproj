@@ -38,6 +38,8 @@
 		3D208B9C2B5EC1DB00C64AE4 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26B4E72B540256008D8B53 /* Endpoint.swift */; };
 		3D208B9D2B5EC2D600C64AE4 /* DataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26B4E42B540202008D8B53 /* DataTransferService.swift */; };
 		3D208B9F2B5EC2F500C64AE4 /* DataTransferServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D208B9E2B5EC2F500C64AE4 /* DataTransferServiceTests.swift */; };
+		3D208BA02B5EC5F800C64AE4 /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCB7CF2B559CB800BD3306 /* AccessibilityIdentifier.swift */; };
+		3D208BA12B5EC63500C64AE4 /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCB7CF2B559CB800BD3306 /* AccessibilityIdentifier.swift */; };
 		3D26B4BD2B53E0FB008D8B53 /* FilterRMCharactersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26B4BC2B53E0FB008D8B53 /* FilterRMCharactersUseCase.swift */; };
 		3D26B4C12B53E13B008D8B53 /* RMCharactersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26B4C02B53E13B008D8B53 /* RMCharactersRepository.swift */; };
 		3D26B4C42B53E1DA008D8B53 /* DefaultRMCharactersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26B4C32B53E1DA008D8B53 /* DefaultRMCharactersRepository.swift */; };
@@ -1120,6 +1122,7 @@
 				3D208B8E2B5EB41400C64AE4 /* String+Extensions.swift in Sources */,
 				3D208B9C2B5EC1DB00C64AE4 /* Endpoint.swift in Sources */,
 				3D208B762B5E9F7D00C64AE4 /* FetchRMCharacterUseCase.swift in Sources */,
+				3D208BA02B5EC5F800C64AE4 /* AccessibilityIdentifier.swift in Sources */,
 				3D208B792B5EA1D700C64AE4 /* FetchRMEpisodesUseCase.swift in Sources */,
 				3DB3F7FE2B593BB4006B7E44 /* RMCharactersRepository.swift in Sources */,
 				3D208B832B5EAC8200C64AE4 /* CharactersListViewModel.swift in Sources */,
@@ -1153,6 +1156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DBED8562B503CA9000753B6 /* RickAndMortyWikiUITests.swift in Sources */,
+				3D208BA12B5EC63500C64AE4 /* AccessibilityIdentifier.swift in Sources */,
 				3DBED8582B503CA9000753B6 /* RickAndMortyWikiUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
