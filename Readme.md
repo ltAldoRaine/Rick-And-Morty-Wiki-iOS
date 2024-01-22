@@ -38,12 +38,14 @@ The app utilizes the [Rick and Morty API](https://rickandmortyapi.com/) to fetch
 
 Here are some of the screenshots from the application
 
-![Screenshot (624)](https://raw.githubusercontent.com/ltAldoRaine/Rick-And-Morty-Wiki-iOS/main/RickAndMortyWiki/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon.jpg)
-![Screenshot (624)](https://raw.githubusercontent.com/ltAldoRaine/Rick-And-Morty-Wiki-iOS/main/RickAndMortyWiki/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon.jpg)
-![Screenshot (624)](https://raw.githubusercontent.com/ltAldoRaine/Rick-And-Morty-Wiki-iOS/main/RickAndMortyWiki/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon.jpg)
-![Screenshot (624)](https://raw.githubusercontent.com/ltAldoRaine/Rick-And-Morty-Wiki-iOS/main/RickAndMortyWiki/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon.jpg)
-![Screenshot (624)](https://raw.githubusercontent.com/ltAldoRaine/Rick-And-Morty-Wiki-iOS/main/RickAndMortyWiki/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon.jpg)
-![Screenshot (624)](https://raw.githubusercontent.com/ltAldoRaine/Rick-And-Morty-Wiki-iOS/main/RickAndMortyWiki/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon.jpg)
+<p align="center">
+  <img src="screenshot1.png" width="200" alt="Screenshot 1">
+  <img src="screenshot2.png" width="200" alt="Screenshot 2">
+  <img src="screenshot3.png" width="200" alt="Screenshot 3">
+  <img src="screenshot4.png" width="200" alt="Screenshot 4">
+  <img src="screenshot5.png" width="200" alt="Screenshot 5">
+  <img src="screenshot6.png" width="200" alt="Screenshot 6">
+</p>
 
 ## Getting Started
 
