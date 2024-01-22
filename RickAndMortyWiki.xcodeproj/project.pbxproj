@@ -69,6 +69,16 @@
 		3D4ABFAD2B57F9CF00CCFAAA /* CharacterDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4ABFAC2B57F9CF00CCFAAA /* CharacterDetailsTableViewCell.swift */; };
 		3D4ABFB12B581AB400CCFAAA /* EpisodesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4ABFB02B581AB400CCFAAA /* EpisodesListTableViewCell.swift */; };
 		3D4ABFB52B581F6C00CCFAAA /* EpisodesListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4ABFB42B581F6C00CCFAAA /* EpisodesListItemViewModel.swift */; };
+		3D57961A2B5EDD2F00FFE8DE /* screenshot-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D5796102B5EDD2F00FFE8DE /* screenshot-2.png */; };
+		3D57961B2B5EDD2F00FFE8DE /* screenshot-5.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D5796112B5EDD2F00FFE8DE /* screenshot-5.png */; };
+		3D57961C2B5EDD2F00FFE8DE /* screenshot-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D5796122B5EDD2F00FFE8DE /* screenshot-7.png */; };
+		3D57961D2B5EDD2F00FFE8DE /* screenshot-8.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D5796132B5EDD2F00FFE8DE /* screenshot-8.png */; };
+		3D57961E2B5EDD2F00FFE8DE /* screenshot-9.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D5796142B5EDD2F00FFE8DE /* screenshot-9.png */; };
+		3D57961F2B5EDD2F00FFE8DE /* screenshot-10.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D5796152B5EDD2F00FFE8DE /* screenshot-10.png */; };
+		3D5796202B5EDD2F00FFE8DE /* screenshot-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D5796162B5EDD2F00FFE8DE /* screenshot-4.png */; };
+		3D5796212B5EDD2F00FFE8DE /* screenshot-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D5796172B5EDD2F00FFE8DE /* screenshot-1.png */; };
+		3D5796222B5EDD2F00FFE8DE /* screenshot-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D5796182B5EDD2F00FFE8DE /* screenshot-3.png */; };
+		3D5796232B5EDD2F00FFE8DE /* screenshot-11.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D5796192B5EDD2F00FFE8DE /* screenshot-11.png */; };
 		3DB3F7EA2B59081B006B7E44 /* EpisodesCharactersListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB3F7E92B59081B006B7E44 /* EpisodesCharactersListItemViewModel.swift */; };
 		3DB3F7F02B5938B9006B7E44 /* FilterRMCharactersUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB3F7EF2B5938B9006B7E44 /* FilterRMCharactersUseCaseTests.swift */; };
 		3DB3F7FB2B5939CC006B7E44 /* RMCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF4A2C52B5266BF000C3108 /* RMCharacter.swift */; };
@@ -201,6 +211,16 @@
 		3D4ABFAC2B57F9CF00CCFAAA /* CharacterDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		3D4ABFB02B581AB400CCFAAA /* EpisodesListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesListTableViewCell.swift; sourceTree = "<group>"; };
 		3D4ABFB42B581F6C00CCFAAA /* EpisodesListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesListItemViewModel.swift; sourceTree = "<group>"; };
+		3D5796102B5EDD2F00FFE8DE /* screenshot-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "screenshot-2.png"; path = "../../../../../../Desktop/screenshot-2.png"; sourceTree = "<group>"; };
+		3D5796112B5EDD2F00FFE8DE /* screenshot-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "screenshot-5.png"; path = "../../../../../../Desktop/screenshot-5.png"; sourceTree = "<group>"; };
+		3D5796122B5EDD2F00FFE8DE /* screenshot-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "screenshot-7.png"; path = "../../../../../../Desktop/screenshot-7.png"; sourceTree = "<group>"; };
+		3D5796132B5EDD2F00FFE8DE /* screenshot-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "screenshot-8.png"; path = "../../../../../../Desktop/screenshot-8.png"; sourceTree = "<group>"; };
+		3D5796142B5EDD2F00FFE8DE /* screenshot-9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "screenshot-9.png"; path = "../../../../../../Desktop/screenshot-9.png"; sourceTree = "<group>"; };
+		3D5796152B5EDD2F00FFE8DE /* screenshot-10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "screenshot-10.png"; path = "../../../../../../Desktop/screenshot-10.png"; sourceTree = "<group>"; };
+		3D5796162B5EDD2F00FFE8DE /* screenshot-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "screenshot-4.png"; path = "../../../../../../Desktop/screenshot-4.png"; sourceTree = "<group>"; };
+		3D5796172B5EDD2F00FFE8DE /* screenshot-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "screenshot-1.png"; path = "../../../../../../Desktop/screenshot-1.png"; sourceTree = "<group>"; };
+		3D5796182B5EDD2F00FFE8DE /* screenshot-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "screenshot-3.png"; path = "../../../../../../Desktop/screenshot-3.png"; sourceTree = "<group>"; };
+		3D5796192B5EDD2F00FFE8DE /* screenshot-11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "screenshot-11.png"; path = "../../../../../../Desktop/screenshot-11.png"; sourceTree = "<group>"; };
 		3DB3F7E92B59081B006B7E44 /* EpisodesCharactersListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesCharactersListItemViewModel.swift; sourceTree = "<group>"; };
 		3DB3F7EF2B5938B9006B7E44 /* FilterRMCharactersUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterRMCharactersUseCaseTests.swift; sourceTree = "<group>"; };
 		3DBCB7912B553F4900BD3306 /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
@@ -375,6 +395,7 @@
 		3D26B4A82B53D7B9008D8B53 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3D57960F2B5EDD2100FFE8DE /* Screenshots */,
 				3DDA5D4F2B56D2AC00D8A5C7 /* Fonts */,
 				3DBED83D2B503CA9000753B6 /* Assets.xcassets */,
 				3DBED8422B503CA9000753B6 /* Info.plist */,
@@ -654,6 +675,23 @@
 				3D4ABFB02B581AB400CCFAAA /* EpisodesListTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		3D57960F2B5EDD2100FFE8DE /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				3D5796172B5EDD2F00FFE8DE /* screenshot-1.png */,
+				3D5796102B5EDD2F00FFE8DE /* screenshot-2.png */,
+				3D5796182B5EDD2F00FFE8DE /* screenshot-3.png */,
+				3D5796162B5EDD2F00FFE8DE /* screenshot-4.png */,
+				3D5796112B5EDD2F00FFE8DE /* screenshot-5.png */,
+				3D5796122B5EDD2F00FFE8DE /* screenshot-7.png */,
+				3D5796132B5EDD2F00FFE8DE /* screenshot-8.png */,
+				3D5796142B5EDD2F00FFE8DE /* screenshot-9.png */,
+				3D5796152B5EDD2F00FFE8DE /* screenshot-10.png */,
+				3D5796192B5EDD2F00FFE8DE /* screenshot-11.png */,
+			);
+			path = Screenshots;
 			sourceTree = "<group>";
 		};
 		3DB3F7EB2B593872006B7E44 /* Domain */ = {
@@ -999,12 +1037,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D57961C2B5EDD2F00FFE8DE /* screenshot-7.png in Resources */,
+				3D5796232B5EDD2F00FFE8DE /* screenshot-11.png in Resources */,
+				3D57961A2B5EDD2F00FFE8DE /* screenshot-2.png in Resources */,
 				3DDA5D542B56D2F500D8A5C7 /* Lato-Medium.ttf in Resources */,
+				3D5796222B5EDD2F00FFE8DE /* screenshot-3.png in Resources */,
 				3DDA5D552B56D2F700D8A5C7 /* Lato-Regular.ttf in Resources */,
+				3D5796202B5EDD2F00FFE8DE /* screenshot-4.png in Resources */,
+				3D57961F2B5EDD2F00FFE8DE /* screenshot-10.png in Resources */,
+				3D57961E2B5EDD2F00FFE8DE /* screenshot-9.png in Resources */,
+				3D57961B2B5EDD2F00FFE8DE /* screenshot-5.png in Resources */,
 				3DBED8412B503CA9000753B6 /* LaunchScreen.storyboard in Resources */,
 				3DBCB7BB2B555FFA00BD3306 /* Localizable.xcstrings in Resources */,
 				3DBED83E2B503CA9000753B6 /* Assets.xcassets in Resources */,
+				3D57961D2B5EDD2F00FFE8DE /* screenshot-8.png in Resources */,
 				3DDA5D532B56D2F300D8A5C7 /* Lato-Bold.ttf in Resources */,
+				3D5796212B5EDD2F00FFE8DE /* screenshot-1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1260,6 +1308,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				EXCLUDED_SOURCE_FILE_NAMES = "";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1274,6 +1323,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INCLUDED_SOURCE_FILE_NAMES = "screenshot-*.png";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -1325,6 +1375,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				EXCLUDED_SOURCE_FILE_NAMES = "";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1333,6 +1384,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INCLUDED_SOURCE_FILE_NAMES = "screenshot-*.png";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -1430,9 +1482,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5YFJP9Y83V;
+				EXCLUDED_SOURCE_FILE_NAMES = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devlab.RickAndMortyWikiTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1455,9 +1509,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5YFJP9Y83V;
+				EXCLUDED_SOURCE_FILE_NAMES = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devlab.RickAndMortyWikiTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1554,6 +1610,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				EXCLUDED_SOURCE_FILE_NAMES = "";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1568,6 +1625,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INCLUDED_SOURCE_FILE_NAMES = "screenshot-*.png";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -1627,9 +1685,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5YFJP9Y83V;
+				EXCLUDED_SOURCE_FILE_NAMES = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devlab.RickAndMortyWikiTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1705,6 +1765,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				EXCLUDED_SOURCE_FILE_NAMES = "";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1713,6 +1774,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INCLUDED_SOURCE_FILE_NAMES = "screenshot-*.png";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -1771,9 +1833,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5YFJP9Y83V;
+				EXCLUDED_SOURCE_FILE_NAMES = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devlab.RickAndMortyWikiTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
