@@ -179,10 +179,6 @@ class CharactersListViewModelTests: XCTestCase {
 
         viewModel.didLoadNextPage()
 
-        print("VASKA \(viewModel.currentPage)")
-        print("VASKA \(viewModel.hasMorePages)")
-        print("VASKA \(viewModel.totalPageCount)")
-
         // then
         let expectedItems = charactersPages
             .flatMap { $0.results }
