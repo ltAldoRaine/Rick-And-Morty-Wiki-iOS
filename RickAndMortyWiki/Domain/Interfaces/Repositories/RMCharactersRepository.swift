@@ -45,4 +45,12 @@ extension RMCharactersRepository {
         cached: @escaping ([RMCharacter]) -> Void,
         completion: @escaping (Result<[RMCharacter], Error>) -> Void
     ) -> Cancellable? { return nil }
+
+    @discardableResult
+    func fetchRMCharacters(
+        name: String,
+        page: Int,
+        cached: @escaping (RMCharactersPage) -> Void,
+        completion: @escaping (Result<RMCharactersPage, Error>) -> Void
+    ) -> Cancellable? { return nil }
 }

@@ -94,7 +94,9 @@ final class FilterRMCharactersUseCaseTests: XCTestCase {
             cached: @escaping (RMCharactersPage) -> Void,
             completion: @escaping (Result<RMCharactersPage, Error>) -> Void) -> Cancellable? {
             completion(result)
+
             fetchCompletionCallsCount += 1
+
             return nil
         }
     }
@@ -102,6 +104,7 @@ final class FilterRMCharactersUseCaseTests: XCTestCase {
     func testFilterCharactersUseCase_whenSuccessfullyFetchesCharactersForName() {
         // given
         var useCaseCompletionCallsCount = 0
+
         let charactersRepository = CharactersRepositoryMock(
             result: .success(FilterRMCharactersUseCaseTests.charactersPages[0])
         )
@@ -114,6 +117,7 @@ final class FilterRMCharactersUseCaseTests: XCTestCase {
             name: "",
             page: 0
         )
+
         _ = useCase.execute(
             requestValue: requestValue,
             cached: { _ in }
@@ -122,7 +126,35 @@ final class FilterRMCharactersUseCaseTests: XCTestCase {
         }
 
         // then
+        XCTAssertEqual(useCaseCompletionCallsCount, 1)
+        XCTAssertEqual(charactersRepository.fetchCompletionCallsCount, 1)
+    }
 
+    func testFilterCharactersUseCase_whenFailedFetchingCharactersForName() {
+        // given
+        var useCaseCompletionCallsCount = 0
+
+        let charactersRepository = CharactersRepositoryMock(
+            result: .failure(CharactersRepositorySuccessTestError.failedFetching)
+        )
+        let useCase = DefaultFilterRMCharactersUseCase(
+            rmCharactersRepository: charactersRepository
+        )
+
+        // when
+        let requestValue = FilterRMCharactersUseCaseRequestValue(
+            name: "",
+            page: 0
+        )
+
+        _ = useCase.execute(
+            requestValue: requestValue,
+            cached: { _ in }
+        ) { _ in
+            useCaseCompletionCallsCount += 1
+        }
+
+        // then
         XCTAssertEqual(useCaseCompletionCallsCount, 1)
         XCTAssertEqual(charactersRepository.fetchCompletionCallsCount, 1)
     }
