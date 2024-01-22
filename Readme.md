@@ -28,7 +28,7 @@ The Rick and Morty Wiki App is a mobile application designed to provide users wi
 
 ## Architecture
 
-The Rick and Morty Wiki App follows a clean architecture pattern using Swift and the MVVM (Model-View-ViewModel) design pattern. The Combine framework is employed for reactive programming, enhancing data flow and interaction.
+The Rick and Morty Wiki App follows a clean architecture using Swift and the MVVM (Model-View-ViewModel) architectural pattern. The Combine framework is employed for reactive programming, enhancing data flow and interaction.
 
 ## API
 
