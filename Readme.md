@@ -34,6 +34,17 @@ The Rick and Morty Wiki App follows a clean architecture using Swift and the MVV
 
 The app utilizes the [Rick and Morty API](https://rickandmortyapi.com/) to fetch information about characters and episodes. This API serves as a valuable resource for accessing comprehensive data related to the Rick and Morty universe.
 
+## Screenshots
+
+Here are some of the screenshots from the application
+
+![Screenshot (624)](https://raw.githubusercontent.com/ltAldoRaine/Rick-And-Morty-Wiki-iOS/main/RickAndMortyWiki/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon.jpg)
+![Screenshot (624)](https://raw.githubusercontent.com/ltAldoRaine/Rick-And-Morty-Wiki-iOS/main/RickAndMortyWiki/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon.jpg)
+![Screenshot (624)](https://raw.githubusercontent.com/ltAldoRaine/Rick-And-Morty-Wiki-iOS/main/RickAndMortyWiki/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon.jpg)
+![Screenshot (624)](https://raw.githubusercontent.com/ltAldoRaine/Rick-And-Morty-Wiki-iOS/main/RickAndMortyWiki/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon.jpg)
+![Screenshot (624)](https://raw.githubusercontent.com/ltAldoRaine/Rick-And-Morty-Wiki-iOS/main/RickAndMortyWiki/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon.jpg)
+![Screenshot (624)](https://raw.githubusercontent.com/ltAldoRaine/Rick-And-Morty-Wiki-iOS/main/RickAndMortyWiki/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon.jpg)
+
 ## Getting Started
 
 To run the app locally, follow these steps:
