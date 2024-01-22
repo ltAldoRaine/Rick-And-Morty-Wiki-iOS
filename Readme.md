@@ -36,7 +36,7 @@ The app utilizes the [Rick and Morty API](https://rickandmortyapi.com/) to fetch
 
 ## Screenshots
 
-Here are some of the screenshots from the application
+Here are some of the screenshots from the application.
 
 <p align="center">
   <img src="RickAndMortyWiki/Resources/Screenshots/screenshot-1.png" width="20%" alt="Screenshot 1">
