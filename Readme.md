@@ -39,12 +39,11 @@ The app utilizes the [Rick and Morty API](https://rickandmortyapi.com/) to fetch
 Here are some of the screenshots from the application
 
 <p align="center">
-  <img src="screenshot1.png" width="200" alt="Screenshot 1">
-  <img src="screenshot2.png" width="200" alt="Screenshot 2">
-  <img src="screenshot3.png" width="200" alt="Screenshot 3">
-  <img src="screenshot4.png" width="200" alt="Screenshot 4">
-  <img src="screenshot5.png" width="200" alt="Screenshot 5">
-  <img src="screenshot6.png" width="200" alt="Screenshot 6">
+  <img src="RickAndMortyWiki/Resources/Screenshots/screenshot-1.png" width="200" alt="Screenshot 1">
+  <img src="RickAndMortyWiki/Resources/Screenshots/screenshot-2.png" width="200" alt="Screenshot 2">
+  <img src="RickAndMortyWiki/Resources/Screenshots/screenshot-3.png" width="200" alt="Screenshot 3">
+  <img src="RickAndMortyWiki/Resources/Screenshots/screenshot-4.png" width="200" alt="Screenshot 4">
+  <img src="RickAndMortyWiki/Resources/Screenshots/screenshot-5.png" width="200" alt="Screenshot 5">
 </p>
 
 ## Getting Started
