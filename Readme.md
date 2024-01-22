@@ -46,6 +46,15 @@ Here are some of the screenshots from the application
   <img src="RickAndMortyWiki/Resources/Screenshots/screenshot-5.png" width="20%" alt="Screenshot 5">
 </p>
 
+<p align="center">
+  <img src="RickAndMortyWiki/Resources/Screenshots/screenshot-6.png" width="20%" alt="Screenshot 1">
+  <img src="RickAndMortyWiki/Resources/Screenshots/screenshot-7.png" width="20%" alt="Screenshot 2">
+  <img src="RickAndMortyWiki/Resources/Screenshots/screenshot-8.png" width="20%" alt="Screenshot 3">
+  <img src="RickAndMortyWiki/Resources/Screenshots/screenshot-9.png" width="20%" alt="Screenshot 4">
+  <img src="RickAndMortyWiki/Resources/Screenshots/screenshot-10.png" width="20%" alt="Screenshot 5">
+</p>
+
+
 ## Getting Started
 
 To run the app locally, follow these steps:
