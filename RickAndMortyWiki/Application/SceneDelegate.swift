@@ -43,7 +43,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     // MARK: - UIScene Lifecycle
 
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+    func scene(
+        _ scene:
+        UIScene,
+        willConnectTo
+        session: UISceneSession,
+        options connectionOptions: UIScene.ConnectionOptions
+    ) {
         guard let scene = (scene as? UIWindowScene) else { return }
 
         setupWindow(with: scene)

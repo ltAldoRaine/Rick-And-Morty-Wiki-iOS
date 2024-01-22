@@ -26,8 +26,11 @@ final class CoreDataRMEpisodesResponseStorage {
     ) -> NSFetchRequest<RMEpisodesRequestEntity> {
         let request: NSFetchRequest = RMEpisodesRequestEntity.fetchRequest()
 
-        request.predicate = NSPredicate(format: "%K = %@",
-                                        #keyPath(RMEpisodesRequestEntity.episodes_ids), requestDto.ids.map { "\($0)" }.joined(separator: ","))
+        request.predicate = NSPredicate(
+            format: "%K = %@",
+            #keyPath(RMEpisodesRequestEntity.episodes_ids),
+            requestDto.ids.map { "\($0)" }.joined(separator: ",")
+        )
 
         return request
     }
@@ -80,8 +83,12 @@ extension CoreDataRMEpisodesResponseStorage: RMEpisodesResponseStorage {
 
                 try context.save()
             } catch {
-                // TODO: - Log to Crashlytics
-                debugPrint("CoreDataRMEpisodesResponseStorage Unresolved error \(error), \((error as NSError).userInfo)")
+                debugPrint(
+                    """
+                    CoreDataRMEpisodesResponseStorage
+                    Unresolved error \(error), \((error as NSError).userInfo)
+                    """
+                )
             }
         }
     }

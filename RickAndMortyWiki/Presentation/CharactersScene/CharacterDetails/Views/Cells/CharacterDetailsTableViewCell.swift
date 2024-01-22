@@ -79,7 +79,7 @@ final class CharacterDetailsTableViewCell: UITableViewCell {
         posterImageContainer.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            posterImageContainer.heightConstraint(constant: 200.0),
+            posterImageContainer.heightConstraint(constant: 200.0)
         ])
 
         posterImageView.fixCenterX(posterImageContainer)
@@ -173,7 +173,12 @@ final class CharacterDetailsTableViewCell: UITableViewCell {
     }()
 
     private lazy var lastKnowLocationStackView: UIStackView = {
-        let lastKnowLocationStackView: UIStackView = UIStackView(arrangedSubviews: [lastKnowLocationTitleLabel, lastKnowLocationLabel])
+        let lastKnowLocationStackView: UIStackView = UIStackView(
+            arrangedSubviews: [
+                lastKnowLocationTitleLabel,
+                lastKnowLocationLabel
+            ]
+        )
 
         lastKnowLocationStackView.axis = .vertical
         lastKnowLocationStackView.spacing = 2.0
@@ -201,7 +206,11 @@ final class CharacterDetailsTableViewCell: UITableViewCell {
     }()
 
     private lazy var episodesQuantityStackView: UIStackView = {
-        let episodesQuantityStackView: UIStackView = UIStackView(arrangedSubviews: [episodesQuantityTitleLabel, episodesQuantityLabel])
+        let episodesQuantityStackView: UIStackView = UIStackView(
+            arrangedSubviews: [
+                episodesQuantityTitleLabel, episodesQuantityLabel
+            ]
+        )
 
         episodesQuantityStackView.axis = .vertical
         episodesQuantityStackView.spacing = 2.0
@@ -320,8 +329,11 @@ final class CharacterDetailsTableViewCell: UITableViewCell {
     }
 
     private func updateStatusViewBackgroundColor() {
-        statusView.backgroundColor = if viewModel.status == .alive { ColorHelper.successColor.color }
-        else { ColorHelper.errorColor.color }
+        statusView.backgroundColor = if viewModel.status == .alive {
+            ColorHelper.successColor.color
+        } else {
+            ColorHelper.errorColor.color
+        }
     }
 
     // MARK: - Configuration

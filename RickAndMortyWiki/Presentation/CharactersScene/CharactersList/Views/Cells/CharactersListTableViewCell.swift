@@ -69,7 +69,7 @@ final class CharactersListTableViewCell: UITableViewCell {
         nameLabel.textColor = ColorHelper.textColorOne.color
         nameLabel.font = FontHelper.latoBold(20.0).font
         nameLabel.numberOfLines = 0
-        
+
         return nameLabel
     }()
 
@@ -107,7 +107,12 @@ final class CharactersListTableViewCell: UITableViewCell {
     }()
 
     private lazy var originStackView: UIStackView = {
-        let originStackView: UIStackView = UIStackView(arrangedSubviews: [lastKnowLocationTitleLabel, lastKnowLocationLabel])
+        let originStackView: UIStackView = UIStackView(
+            arrangedSubviews: [
+                lastKnowLocationTitleLabel,
+                lastKnowLocationLabel
+            ]
+        )
 
         originStackView.axis = .vertical
         originStackView.spacing = 2.0
@@ -195,8 +200,11 @@ final class CharactersListTableViewCell: UITableViewCell {
     }
 
     private func updateStatusViewBackgroundColor() {
-        statusView.backgroundColor = if viewModel.status == .alive { ColorHelper.successColor.color }
-        else { ColorHelper.errorColor.color }
+        statusView.backgroundColor = if viewModel.status == .alive {
+            ColorHelper.successColor.color
+        } else {
+            ColorHelper.errorColor.color
+        }
     }
 
     // MARK: - Configuration

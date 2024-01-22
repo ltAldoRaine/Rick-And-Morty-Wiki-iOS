@@ -15,7 +15,7 @@ class RickAndMortyWikiUITests: XCTestCase {
 
     // NOTE: for UI tests to work the keyboard of simulator must be on.
     // Keyboard shortcut COMMAND + SHIFT + K while simulator has focus
-    func testOpenCharacterDetails_whenSearchRickSanchezAndTapOnFirstResultRow_thenCharacterDetailsViewOpensWithTitleRickSanchez() {
+    func testOpenCharacterDetails_whenSearchRickSanchezAndTapOnFirstRow_thenDetailsOpensWithTitleRickSanchez() {
         let app = XCUIApplication()
 
         // Search for Rick Sanchez
@@ -24,7 +24,12 @@ class RickAndMortyWikiUITests: XCTestCase {
         app.searchFields[AccessibilityIdentifier.searchField].tap()
 
         if !app.keys["A"].waitForExistence(timeout: 5) {
-            XCTFail("The keyboard could not be found. Use keyboard shortcut COMMAND + SHIFT + K while simulator has focus on text input")
+            XCTFail(
+                """
+                The keyboard could not be found. Use keyboard shortcut
+                COMMAND + SHIFT + K while simulator has focus on text input
+                """
+            )
         }
 
         _ = app.searchFields[AccessibilityIdentifier.searchField].waitForExistence(timeout: 10)

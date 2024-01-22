@@ -1,5 +1,5 @@
 //
-//  CharactersFilterFlowCoordinator.swift
+//  CharactersFlowCoordinator.swift
 //  RickAndMortyWiki
 //
 //  Created by Beka Gelashvili on 15.01.24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol CharactersFilterFlowCoordinatorDependencies {
+protocol CharactersFlowCoordinatorDependencies {
     func makeCharactersListViewController(
         actions: CharactersListViewModelActions
     ) -> CharactersListViewController
@@ -21,13 +21,13 @@ protocol CharactersFilterFlowCoordinatorDependencies {
 final class CharactersFilterFlowCoordinator {
     // MARK: - Properties
 
-    private let dependencies: CharactersFilterFlowCoordinatorDependencies
+    private let dependencies: CharactersFlowCoordinatorDependencies
 
     private weak var navigationController: UINavigationController?
     private weak var charactersListVC: CharactersListViewController?
 
     init(navigationController: UINavigationController,
-         dependencies: CharactersFilterFlowCoordinatorDependencies) {
+         dependencies: CharactersFlowCoordinatorDependencies) {
         self.navigationController = navigationController
         self.dependencies = dependencies
     }
@@ -37,9 +37,13 @@ final class CharactersFilterFlowCoordinator {
     private func showCharacterDetails(character: RMCharacter?, characterId: Int?) {
         let actions = CharactersListViewModelActions(showCharacterDetails: showCharacterDetails)
 
-        let vc = dependencies.makeCharacterDetailsViewController(character: character, characterId: characterId, actions: actions)
+        let characterDetailsVC = dependencies.makeCharacterDetailsViewController(
+            character: character,
+            characterId: characterId,
+            actions: actions
+        )
 
-        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(characterDetailsVC, animated: true)
     }
 
     // MARK: - Start Flow
@@ -47,10 +51,10 @@ final class CharactersFilterFlowCoordinator {
     func start() {
         let actions = CharactersListViewModelActions(showCharacterDetails: showCharacterDetails)
 
-        let vc = dependencies.makeCharactersListViewController(actions: actions)
+        let charactersListVC = dependencies.makeCharactersListViewController(actions: actions)
 
-        navigationController?.pushViewController(vc, animated: false)
+        navigationController?.pushViewController(charactersListVC, animated: false)
 
-        charactersListVC = vc
+        self.charactersListVC = charactersListVC
     }
 }

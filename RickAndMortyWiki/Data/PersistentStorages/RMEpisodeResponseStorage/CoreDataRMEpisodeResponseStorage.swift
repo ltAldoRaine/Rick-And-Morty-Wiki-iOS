@@ -79,7 +79,6 @@ extension CoreDataRMEpisodeResponseStorage: RMEpisodeResponseStorage {
 
                 try context.save()
             } catch {
-                // TODO: - Log to Crashlytics
                 debugPrint("CoreDataRMEpisodeResponseStorage Unresolved error \(error), \((error as NSError).userInfo)")
             }
         }

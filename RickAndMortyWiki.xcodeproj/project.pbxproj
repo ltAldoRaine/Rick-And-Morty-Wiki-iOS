@@ -83,7 +83,7 @@
 		3DBCB7992B55477A00BD3306 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCB7982B55477A00BD3306 /* AppDIContainer.swift */; };
 		3DBCB79B2B5547AE00BD3306 /* CharactersSceneDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCB79A2B5547AE00BD3306 /* CharactersSceneDIContainer.swift */; };
 		3DBCB79D2B554AEE00BD3306 /* FetchRMCharactersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCB79C2B554AEE00BD3306 /* FetchRMCharactersUseCase.swift */; };
-		3DBCB7A02B554EA200BD3306 /* CharactersFilterFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCB79F2B554EA200BD3306 /* CharactersFilterFlowCoordinator.swift */; };
+		3DBCB7A02B554EA200BD3306 /* CharactersFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCB79F2B554EA200BD3306 /* CharactersFlowCoordinator.swift */; };
 		3DBCB7A22B5550C400BD3306 /* CharactersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCB7A12B5550C400BD3306 /* CharactersListViewModel.swift */; };
 		3DBCB7A42B55534600BD3306 /* DispatchQueueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCB7A32B55534600BD3306 /* DispatchQueueType.swift */; };
 		3DBCB7A62B55540500BD3306 /* ConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCB7A52B55540500BD3306 /* ConnectionError.swift */; };
@@ -99,7 +99,7 @@
 		3DBCB7D22B559DBF00BD3306 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCB7D12B559DBF00BD3306 /* Alertable.swift */; };
 		3DBCB7D42B559E6C00BD3306 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCB7D32B559E6C00BD3306 /* LoadingIndicator.swift */; };
 		3DBCB7D62B559F9800BD3306 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCB7D52B559F9800BD3306 /* UIViewController+Extensions.swift */; };
-		3DBCB7D92B559FDB00BD3306 /* BackButtonEmptyTitleNavigationBarBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCB7D82B559FDB00BD3306 /* BackButtonEmptyTitleNavigationBarBehavior.swift */; };
+		3DBCB7D92B559FDB00BD3306 /* BackButtonNavigationBarBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCB7D82B559FDB00BD3306 /* BackButtonNavigationBarBehavior.swift */; };
 		3DBCB7DB2B559FF000BD3306 /* BlackStyleNavigationBarBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCB7DA2B559FF000BD3306 /* BlackStyleNavigationBarBehavior.swift */; };
 		3DBCB7DD2B55A10500BD3306 /* UITableViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCB7DC2B55A10500BD3306 /* UITableViewController+Extensions.swift */; };
 		3DBCB7DF2B55A19300BD3306 /* DataTransferError+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCB7DE2B55A19300BD3306 /* DataTransferError+Extensions.swift */; };
@@ -171,6 +171,7 @@
 		3D208B972B5EC09A00C64AE4 /* NetworkSessionManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionManagerMock.swift; sourceTree = "<group>"; };
 		3D208B9A2B5EC1C200C64AE4 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
 		3D208B9E2B5EC2F500C64AE4 /* DataTransferServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferServiceTests.swift; sourceTree = "<group>"; };
+		3D208BA32B5EC98300C64AE4 /* SwiftLint.pkg */ = {isa = PBXFileReference; lastKnownFileType = file; name = SwiftLint.pkg; path = ../../../Desktop/SwiftLint.pkg; sourceTree = "<group>"; };
 		3D26B4BC2B53E0FB008D8B53 /* FilterRMCharactersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterRMCharactersUseCase.swift; sourceTree = "<group>"; };
 		3D26B4C02B53E13B008D8B53 /* RMCharactersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharactersRepository.swift; sourceTree = "<group>"; };
 		3D26B4C32B53E1DA008D8B53 /* DefaultRMCharactersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRMCharactersRepository.swift; sourceTree = "<group>"; };
@@ -208,7 +209,7 @@
 		3DBCB7982B55477A00BD3306 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
 		3DBCB79A2B5547AE00BD3306 /* CharactersSceneDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersSceneDIContainer.swift; sourceTree = "<group>"; };
 		3DBCB79C2B554AEE00BD3306 /* FetchRMCharactersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRMCharactersUseCase.swift; sourceTree = "<group>"; };
-		3DBCB79F2B554EA200BD3306 /* CharactersFilterFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersFilterFlowCoordinator.swift; sourceTree = "<group>"; };
+		3DBCB79F2B554EA200BD3306 /* CharactersFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersFlowCoordinator.swift; sourceTree = "<group>"; };
 		3DBCB7A12B5550C400BD3306 /* CharactersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewModel.swift; sourceTree = "<group>"; };
 		3DBCB7A32B55534600BD3306 /* DispatchQueueType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueType.swift; sourceTree = "<group>"; };
 		3DBCB7A52B55540500BD3306 /* ConnectionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionError.swift; sourceTree = "<group>"; };
@@ -224,7 +225,7 @@
 		3DBCB7D12B559DBF00BD3306 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		3DBCB7D32B559E6C00BD3306 /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
 		3DBCB7D52B559F9800BD3306 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
-		3DBCB7D82B559FDB00BD3306 /* BackButtonEmptyTitleNavigationBarBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonEmptyTitleNavigationBarBehavior.swift; sourceTree = "<group>"; };
+		3DBCB7D82B559FDB00BD3306 /* BackButtonNavigationBarBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonNavigationBarBehavior.swift; sourceTree = "<group>"; };
 		3DBCB7DA2B559FF000BD3306 /* BlackStyleNavigationBarBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackStyleNavigationBarBehavior.swift; sourceTree = "<group>"; };
 		3DBCB7DC2B55A10500BD3306 /* UITableViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewController+Extensions.swift"; sourceTree = "<group>"; };
 		3DBCB7DE2B55A19300BD3306 /* DataTransferError+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataTransferError+Extensions.swift"; sourceTree = "<group>"; };
@@ -361,6 +362,14 @@
 				3D208B9E2B5EC2F500C64AE4 /* DataTransferServiceTests.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		3D208BA22B5EC98300C64AE4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D208BA32B5EC98300C64AE4 /* SwiftLint.pkg */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		3D26B4A82B53D7B9008D8B53 /* Resources */ = {
@@ -679,7 +688,7 @@
 		3DBCB79E2B554E9100BD3306 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
-				3DBCB79F2B554EA200BD3306 /* CharactersFilterFlowCoordinator.swift */,
+				3DBCB79F2B554EA200BD3306 /* CharactersFlowCoordinator.swift */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -728,7 +737,7 @@
 		3DBCB7D72B559FBC00BD3306 /* Behaviors */ = {
 			isa = PBXGroup;
 			children = (
-				3DBCB7D82B559FDB00BD3306 /* BackButtonEmptyTitleNavigationBarBehavior.swift */,
+				3DBCB7D82B559FDB00BD3306 /* BackButtonNavigationBarBehavior.swift */,
 				3DBCB7DA2B559FF000BD3306 /* BlackStyleNavigationBarBehavior.swift */,
 			);
 			path = Behaviors;
@@ -741,6 +750,7 @@
 				3DBED84A2B503CA9000753B6 /* RickAndMortyWikiTests */,
 				3DBED8542B503CA9000753B6 /* RickAndMortyWikiUITests */,
 				3DBED82F2B503CA8000753B6 /* Products */,
+				3D208BA22B5EC98300C64AE4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -892,6 +902,7 @@
 				3DBED82A2B503CA8000753B6 /* Sources */,
 				3DBED82B2B503CA8000753B6 /* Frameworks */,
 				3DBED82C2B503CA8000753B6 /* Resources */,
+				3D57960D2B5ECA6F00FFE8DE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1013,6 +1024,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3D57960D2B5ECA6F00FFE8DE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3DBED82A2B503CA8000753B6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1027,7 +1059,7 @@
 				3D26B4CE2B53EB47008D8B53 /* RMPosterImagesRepository.swift in Sources */,
 				3D26B4D02B53ED7C008D8B53 /* RMEpisodesRepository.swift in Sources */,
 				3D26B4E02B53F7CB008D8B53 /* RMCharactersRequestDTO+Mapping.swift in Sources */,
-				3DBCB7D92B559FDB00BD3306 /* BackButtonEmptyTitleNavigationBarBehavior.swift in Sources */,
+				3DBCB7D92B559FDB00BD3306 /* BackButtonNavigationBarBehavior.swift in Sources */,
 				3D26B4E32B53F7F5008D8B53 /* RMCharactersPageResponseDTO+Mapping.swift in Sources */,
 				3DBCB79D2B554AEE00BD3306 /* FetchRMCharactersUseCase.swift in Sources */,
 				3DBCB7AF2B555A2C00BD3306 /* CharacterDetailsViewController.swift in Sources */,
@@ -1073,7 +1105,7 @@
 				3DBCB7942B5540EC00BD3306 /* AppConfigurations.swift in Sources */,
 				3D26B4DD2B53F58D008D8B53 /* RMCharacterLocation.swift in Sources */,
 				3DDFF6072B5425E800136E70 /* DefaultRMEpisodesRepository.swift in Sources */,
-				3DBCB7A02B554EA200BD3306 /* CharactersFilterFlowCoordinator.swift in Sources */,
+				3DBCB7A02B554EA200BD3306 /* CharactersFlowCoordinator.swift in Sources */,
 				3DBCB7BD2B556B1900BD3306 /* CharactersListItemViewModel.swift in Sources */,
 				3D26B4F22B540489008D8B53 /* APIEndpoints.swift in Sources */,
 				3DBCB7C12B556BD300BD3306 /* CharactersListTableViewCell.swift in Sources */,
@@ -1322,6 +1354,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5YFJP9Y83V;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				IMAGE_BASE_URL = "https://rickandmortyapi.com/api/character/avatar/";
 				INFOPLIST_FILE = RickAndMortyWiki/Resources/Info.plist;
@@ -1360,6 +1393,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5YFJP9Y83V;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				IMAGE_BASE_URL = "https://rickandmortyapi.com/api/character/avatar/";
 				INFOPLIST_FILE = RickAndMortyWiki/Resources/Info.plist;
@@ -1556,6 +1590,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5YFJP9Y83V;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				IMAGE_BASE_URL = "https://rickandmortyapi.com/api/character/avatar/";
 				INFOPLIST_FILE = RickAndMortyWiki/Resources/Info.plist;
@@ -1699,6 +1734,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5YFJP9Y83V;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				IMAGE_BASE_URL = "https://rickandmortyapi.com/api/character/avatar/";
 				INFOPLIST_FILE = RickAndMortyWiki/Resources/Info.plist;

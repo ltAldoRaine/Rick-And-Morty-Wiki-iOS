@@ -139,7 +139,9 @@ extension UIViewController {
             }
         }
 
-        private func applyBehaviors(body: (_ behavior: ViewControllerLifecycleBehavior, _ viewController: UIViewController) -> Void) {
+        private func applyBehaviors(
+            body: (_ behavior: ViewControllerLifecycleBehavior, _ viewController: UIViewController) -> Void
+        ) {
             guard let parent = parent else { return }
 
             for behavior in behaviors {

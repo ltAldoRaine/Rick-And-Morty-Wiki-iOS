@@ -6,6 +6,12 @@
 //
 
 protocol FilterRMCharactersUseCase {
+    typealias ResultType = (
+        FilterRMCharactersUseCaseRequestValue,
+        (RMCharactersPage) -> Void,
+        (Result<RMCharactersPage, Error>) -> Void
+    ) -> Void
+
     func execute(
         requestValue: FilterRMCharactersUseCaseRequestValue,
         cached: @escaping (RMCharactersPage) -> Void,

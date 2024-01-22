@@ -32,10 +32,11 @@ final class CharacterDetailsViewController: UIViewController, Alertable {
     }()
 
     private lazy var characterDetailsTableViewController: CharacterDetailsTableViewController = {
-        let characterDetailsTableViewController: CharacterDetailsTableViewController = CharacterDetailsTableViewController(
-            with: viewModel,
-            posterImagesRepository: posterImagesRepository
-        )
+        let characterDetailsTableViewController: CharacterDetailsTableViewController =
+            CharacterDetailsTableViewController(
+                with: viewModel,
+                posterImagesRepository: posterImagesRepository
+            )
 
         return characterDetailsTableViewController
     }()
@@ -114,7 +115,7 @@ final class CharacterDetailsViewController: UIViewController, Alertable {
 
     private func setupBehaviours() {
         addBehaviors([
-            BackButtonEmptyTitleNavigationBarBehavior(),
+            BackButtonNavigationBarBehavior(),
             BlackStyleNavigationBarBehavior()
         ])
     }

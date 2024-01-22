@@ -33,7 +33,7 @@ extension RMCharactersPageInfoResponseEntity {
 }
 
 extension RMCharacterResponseEntity {
-    func toDTO() -> RMCharactersPageResponseDTO.RMCharacterDTO? {
+    func toDTO() -> RMCharacterDTO? {
         guard let name,
               let status,
               let species,
@@ -49,12 +49,12 @@ extension RMCharacterResponseEntity {
         return .init(
             id: Int(character_id),
             name: name,
-            status: RMCharactersPageResponseDTO.RMCharacterDTO.StatusDTO(rawValue: status) ?? .none,
+            status: RMCharacterDTO.StatusDTO(rawValue: status) ?? .none,
             species: species,
             type: type,
-            gender: RMCharactersPageResponseDTO.RMCharacterDTO.GenderDTO(rawValue: gender) ?? .none,
-            origin: RMCharactersPageResponseDTO.RMCharacterDTO.RMCharacterOriginDto(name: origin, url: ""),
-            location: RMCharactersPageResponseDTO.RMCharacterDTO.RMCharacterLocationDto(name: location, url: ""),
+            gender: RMCharacterDTO.GenderDTO(rawValue: gender) ?? .none,
+            origin: RMCharacterDTO.RMCharacterOriginDto(name: origin, url: ""),
+            location: RMCharacterDTO.RMCharacterLocationDto(name: location, url: ""),
             image: image,
             episode: episode,
             url: url,
@@ -101,7 +101,7 @@ extension RMCharactersPageResponseDTO.RMCharactersPageInfoDTO {
     }
 }
 
-extension RMCharactersPageResponseDTO.RMCharacterDTO {
+extension RMCharacterDTO {
     func toEntity(in context: NSManagedObjectContext) -> RMCharacterResponseEntity {
         let entity: RMCharacterResponseEntity = .init(context: context)
 

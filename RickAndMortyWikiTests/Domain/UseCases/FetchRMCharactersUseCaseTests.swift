@@ -103,10 +103,10 @@ final class FetchRMCharactersUseCaseTests: XCTestCase {
 
         _ = useCase.execute(
             requestValue: requestValue,
-            cached: { _ in }
-        ) { _ in
-            useCaseCompletionCallsCount += 1
-        }
+            cached: { _ in },
+            completion: { _ in
+                useCaseCompletionCallsCount += 1
+            })
 
         // then
         XCTAssertEqual(useCaseCompletionCallsCount, 1)
@@ -129,10 +129,10 @@ final class FetchRMCharactersUseCaseTests: XCTestCase {
 
         _ = useCase.execute(
             requestValue: requestValue,
-            cached: { _ in }
-        ) { _ in
-            useCaseCompletionCallsCount += 1
-        }
+            cached: { _ in },
+            completion: { _ in
+                useCaseCompletionCallsCount += 1
+            })
 
         // then
         XCTAssertEqual(useCaseCompletionCallsCount, 1)

@@ -26,8 +26,11 @@ final class CoreDataRMCharactersResponseStorage {
     ) -> NSFetchRequest<RMCharactersRequestEntity> {
         let request: NSFetchRequest = RMCharactersRequestEntity.fetchRequest()
 
-        request.predicate = NSPredicate(format: "%K = %@",
-                                        #keyPath(RMEpisodesRequestEntity.episodes_ids), requestDto.ids.map { "\($0)" }.joined(separator: ","))
+        request.predicate = NSPredicate(
+            format: "%K = %@",
+            #keyPath(RMEpisodesRequestEntity.episodes_ids),
+            requestDto.ids.map { "\($0)" }.joined(separator: ",")
+        )
 
         return request
     }
@@ -67,7 +70,7 @@ extension CoreDataRMCharactersResponseStorage: RMCharactersResponseStorage {
     }
 
     func save(
-        response responseDto: [RMCharactersPageResponseDTO.RMCharacterDTO],
+        response responseDto: [RMCharacterDTO],
         for requestDto: RMCharactersRequestDTO
     ) {
         coreDataStorage.performBackgroundTask { context in
@@ -80,8 +83,12 @@ extension CoreDataRMCharactersResponseStorage: RMCharactersResponseStorage {
 
                 try context.save()
             } catch {
-                // TODO: - Log to Crashlytics
-                debugPrint("CoreDataRMCharactersResponseStorage Unresolved error \(error), \((error as NSError).userInfo)")
+                debugPrint(
+                    """
+                    CoreDataRMCharactersResponseStorage
+                    Unresolved error \(error), \((error as NSError).userInfo)
+                    """
+                )
             }
         }
     }

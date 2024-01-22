@@ -79,8 +79,12 @@ extension CoreDataRMCharactersPageResponseStorage: RMCharactersPageResponseStora
 
                 try context.save()
             } catch {
-                // TODO: - Log to Crashlytics
-                debugPrint("CoreDataRMCharactersPageResponseStorage Unresolved error \(error), \((error as NSError).userInfo)")
+                debugPrint(
+                    """
+                    CoreDataRMCharactersPageResponseStorage
+                    Unresolved error \(error), \((error as NSError).userInfo)
+                    """
+                )
             }
         }
     }

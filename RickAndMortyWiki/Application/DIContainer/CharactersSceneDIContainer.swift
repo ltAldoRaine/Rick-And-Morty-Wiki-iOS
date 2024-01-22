@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CharactersSceneDIContainer: CharactersFilterFlowCoordinatorDependencies {
+final class CharactersSceneDIContainer: CharactersFlowCoordinatorDependencies {
     // MARK: - Nested Types
 
     struct Dependencies {
@@ -20,7 +20,8 @@ final class CharactersSceneDIContainer: CharactersFilterFlowCoordinatorDependenc
     private let dependencies: Dependencies
 
     private lazy var rmCharacterResponseCache: RMCharacterResponseStorage = CoreDataRMCharacterResponseStorage()
-    private lazy var rmCharactersPageResponseCache: RMCharactersPageResponseStorage = CoreDataRMCharactersPageResponseStorage()
+    private lazy var rmCharactersPageResponseCache: RMCharactersPageResponseStorage =
+        CoreDataRMCharactersPageResponseStorage()
     private lazy var rmCharactersResponseCache: RMCharactersResponseStorage = CoreDataRMCharactersResponseStorage()
     private lazy var rmEpisodeResponseCache: RMEpisodeResponseStorage = CoreDataRMEpisodeResponseStorage()
     private lazy var rmEpisodesResponseCache: RMEpisodesResponseStorage = CoreDataRMEpisodesResponseStorage()
@@ -55,7 +56,7 @@ final class CharactersSceneDIContainer: CharactersFilterFlowCoordinatorDependenc
 
     // MARK: - Repositories
 
-    private  func makeRMCharactersRepository() -> RMCharactersRepository {
+    private func makeRMCharactersRepository() -> RMCharactersRepository {
         DefaultRMCharactersRepository(
             dataTransferService: dependencies.apiDataTransferService,
             rmCharacterResponseCache: rmCharacterResponseCache,
@@ -96,14 +97,22 @@ final class CharactersSceneDIContainer: CharactersFilterFlowCoordinatorDependenc
 
     // MARK: - Character Details
 
-    func makeCharacterDetailsViewController(character: RMCharacter?, characterId: Int?, actions: CharactersListViewModelActions) -> UIViewController {
+    func makeCharacterDetailsViewController(
+        character: RMCharacter?,
+        characterId: Int?,
+        actions: CharactersListViewModelActions
+    ) -> UIViewController {
         CharacterDetailsViewController(
             with: makeCharacterDetailsViewModel(character: character, characterId: characterId, actions: actions),
             posterImagesRepository: makeRMPosterImagesRepository()
         )
     }
 
-    func makeCharacterDetailsViewModel(character: RMCharacter?, characterId: Int?, actions: CharactersListViewModelActions) -> CharacterDetailsViewModel {
+    func makeCharacterDetailsViewModel(
+        character: RMCharacter?,
+        characterId: Int?,
+        actions: CharactersListViewModelActions
+    ) -> CharacterDetailsViewModel {
         DefaultCharacterDetailsViewModel(
             character: character,
             characterId: characterId,
@@ -116,7 +125,9 @@ final class CharactersSceneDIContainer: CharactersFilterFlowCoordinatorDependenc
 
     // MARK: - Flow Coordinators
 
-    func makeCharactersFilterFlowCoordinator(navigationController: UINavigationController) -> CharactersFilterFlowCoordinator {
+    func makeCharactersFilterFlowCoordinator(
+        navigationController: UINavigationController
+    ) -> CharactersFilterFlowCoordinator {
         CharactersFilterFlowCoordinator(
             navigationController: navigationController,
             dependencies: self

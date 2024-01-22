@@ -21,68 +21,68 @@ extension RMCharactersPageResponseDTO {
         let next: String?
         let prev: String?
     }
+}
 
-    struct RMCharacterDTO: Decodable {
-        enum StatusDTO: String, Decodable {
-            case alive
-            case dead
-            case unknown
-            case none = ""
+struct RMCharacterDTO: Decodable {
+    enum StatusDTO: String, Decodable {
+        case alive
+        case dead
+        case unknown
+        case none = ""
 
-            init(from decoder: Decoder) throws {
-                let container = try decoder.singleValueContainer()
-                let rawString = try container.decode(String.self)
+        init(from decoder: Decoder) throws {
+            let container = try decoder.singleValueContainer()
+            let rawString = try container.decode(String.self)
 
-                if let statusDTO = StatusDTO(rawValue: rawString.lowercased()) {
-                    self = statusDTO
-                } else {
-                    self = .none
-                }
+            if let statusDTO = StatusDTO(rawValue: rawString.lowercased()) {
+                self = statusDTO
+            } else {
+                self = .none
             }
         }
-
-        enum GenderDTO: String, Decodable {
-            case female
-            case male
-            case genderless
-            case unknown
-            case none = ""
-
-            init(from decoder: Decoder) throws {
-                let container = try decoder.singleValueContainer()
-                let rawString = try container.decode(String.self)
-
-                if let genderDTO = GenderDTO(rawValue: rawString.lowercased()) {
-                    self = genderDTO
-                } else {
-                    self = .none
-                }
-            }
-        }
-
-        struct RMCharacterOriginDto: Decodable {
-            let name: String
-            let url: String
-        }
-
-        struct RMCharacterLocationDto: Decodable {
-            let name: String
-            let url: String
-        }
-
-        let id: Int
-        let name: String
-        let status: StatusDTO
-        let species: String
-        let type: String
-        let gender: GenderDTO
-        let origin: RMCharacterOriginDto
-        let location: RMCharacterLocationDto
-        let image: String
-        let episode: [String]
-        let url: String
-        let created: String
     }
+
+    enum GenderDTO: String, Decodable {
+        case female
+        case male
+        case genderless
+        case unknown
+        case none = ""
+
+        init(from decoder: Decoder) throws {
+            let container = try decoder.singleValueContainer()
+            let rawString = try container.decode(String.self)
+
+            if let genderDTO = GenderDTO(rawValue: rawString.lowercased()) {
+                self = genderDTO
+            } else {
+                self = .none
+            }
+        }
+    }
+
+    struct RMCharacterOriginDto: Decodable {
+        let name: String
+        let url: String
+    }
+
+    struct RMCharacterLocationDto: Decodable {
+        let name: String
+        let url: String
+    }
+
+    let id: Int
+    let name: String
+    let status: StatusDTO
+    let species: String
+    let type: String
+    let gender: GenderDTO
+    let origin: RMCharacterOriginDto
+    let location: RMCharacterLocationDto
+    let image: String
+    let episode: [String]
+    let url: String
+    let created: String
 }
 
 // MARK: - Mappings to Domain
@@ -107,7 +107,7 @@ extension RMCharactersPageResponseDTO.RMCharactersPageInfoDTO {
     }
 }
 
-extension RMCharactersPageResponseDTO.RMCharacterDTO {
+extension RMCharacterDTO {
     func toDomain() -> RMCharacter {
         return .init(
             id: RMCharacter.Identifier(id),
@@ -126,13 +126,13 @@ extension RMCharactersPageResponseDTO.RMCharacterDTO {
     }
 }
 
-extension [RMCharactersPageResponseDTO.RMCharacterDTO] {
+extension [RMCharacterDTO] {
     func toDomain() -> [RMCharacter] {
         return map { $0.toDomain() }
     }
 }
 
-extension RMCharactersPageResponseDTO.RMCharacterDTO.StatusDTO {
+extension RMCharacterDTO.StatusDTO {
     func toDomain() -> RMCharacter.Status {
         switch self {
         case .alive: return .alive
@@ -143,7 +143,7 @@ extension RMCharactersPageResponseDTO.RMCharacterDTO.StatusDTO {
     }
 }
 
-extension RMCharactersPageResponseDTO.RMCharacterDTO.GenderDTO {
+extension RMCharacterDTO.GenderDTO {
     func toDomain() -> RMCharacter.Gender {
         switch self {
         case .female: return .female
@@ -155,7 +155,7 @@ extension RMCharactersPageResponseDTO.RMCharacterDTO.GenderDTO {
     }
 }
 
-extension RMCharactersPageResponseDTO.RMCharacterDTO.RMCharacterOriginDto {
+extension RMCharacterDTO.RMCharacterOriginDto {
     func toDomain() -> RMCharacterOrigin {
         return .init(
             name: name,
@@ -164,7 +164,7 @@ extension RMCharactersPageResponseDTO.RMCharacterDTO.RMCharacterOriginDto {
     }
 }
 
-extension RMCharactersPageResponseDTO.RMCharacterDTO.RMCharacterLocationDto {
+extension RMCharacterDTO.RMCharacterLocationDto {
     func toDomain() -> RMCharacterLocation {
         return .init(
             name: name,

@@ -1,5 +1,5 @@
 //
-//  BackButtonEmptyTitleNavigationBarBehavior.swift
+//  BackButtonNavigationBarBehavior.swift
 //  RickAndMortyWiki
 //
 //  Created by Beka Gelashvili on 15.01.24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct BackButtonEmptyTitleNavigationBarBehavior: ViewControllerLifecycleBehavior {
+struct BackButtonNavigationBarBehavior: ViewControllerLifecycleBehavior {
     func viewDidLoad(viewController: UIViewController) {
         viewController.navigationItem.backBarButtonItem = UIBarButtonItem(
             title: "Back",

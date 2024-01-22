@@ -102,38 +102,110 @@ extension UIView {
     }
 
     func topConstraint(toItem: UIView, constant: CGFloat = 0) -> NSLayoutConstraint {
-        NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal, toItem: toItem, attribute: .top, multiplier: 1.0, constant: constant)
+        NSLayoutConstraint(
+            item: self,
+            attribute: .top,
+            relatedBy: .equal,
+            toItem: toItem,
+            attribute: .top,
+            multiplier: 1.0,
+            constant: constant
+        )
     }
 
     func trailingConstraint(toItem: UIView, constant: CGFloat = 0) -> NSLayoutConstraint {
-        NSLayoutConstraint(item: self, attribute: .trailing, relatedBy: .equal, toItem: toItem, attribute: .trailing, multiplier: 1.0, constant: constant)
+        NSLayoutConstraint(
+            item: self,
+            attribute: .trailing,
+            relatedBy: .equal,
+            toItem: toItem,
+            attribute: .trailing,
+            multiplier: 1.0,
+            constant: constant
+        )
     }
 
     func bottomContstrain(toItem: UIView, constant: CGFloat = 0) -> NSLayoutConstraint {
-        NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: .equal, toItem: toItem, attribute: .bottom, multiplier: 1.0, constant: constant)
+        NSLayoutConstraint(
+            item: self,
+            attribute: .bottom,
+            relatedBy: .equal,
+            toItem: toItem,
+            attribute: .bottom,
+            multiplier: 1.0,
+            constant: constant
+        )
     }
 
     func leadingConstraint(toItem: UIView, constant: CGFloat = 0) -> NSLayoutConstraint {
-        NSLayoutConstraint(item: self, attribute: .leading, relatedBy: .equal, toItem: toItem, attribute: .leading, multiplier: 1.0, constant: constant)
+        NSLayoutConstraint(
+            item: self,
+            attribute: .leading,
+            relatedBy: .equal,
+            toItem: toItem,
+            attribute: .leading,
+            multiplier: 1.0,
+            constant: constant
+        )
     }
 
     func heightConstraint(constant: CGFloat = 0) -> NSLayoutConstraint {
-        NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: constant)
+        NSLayoutConstraint(
+            item: self,
+            attribute: .height,
+            relatedBy: .equal,
+            toItem: nil,
+            attribute: .notAnAttribute,
+            multiplier: 1.0,
+            constant: constant
+        )
     }
 
     func widthConstraint(constant: CGFloat = 0) -> NSLayoutConstraint {
-        NSLayoutConstraint(item: self, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: constant)
+        NSLayoutConstraint(
+            item: self,
+            attribute: .width,
+            relatedBy: .equal,
+            toItem: nil,
+            attribute: .notAnAttribute,
+            multiplier: 1.0,
+            constant: constant
+        )
     }
 
     func aspectRatio(_ ratio: CGFloat) -> NSLayoutConstraint {
-        NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: self, attribute: .width, multiplier: ratio, constant: 0)
+        NSLayoutConstraint(
+            item: self,
+            attribute: .height,
+            relatedBy: .equal,
+            toItem: self,
+            attribute: .width,
+            multiplier: ratio,
+            constant: 0
+        )
     }
 
     func centerX(_ toItem: UIView, constant: CGFloat = 0) -> NSLayoutConstraint {
-        NSLayoutConstraint(item: self, attribute: .centerX, relatedBy: .equal, toItem: toItem, attribute: .centerX, multiplier: 1, constant: constant)
+        NSLayoutConstraint(
+            item: self,
+            attribute: .centerX,
+            relatedBy: .equal,
+            toItem: toItem,
+            attribute: .centerX,
+            multiplier: 1,
+            constant: constant
+        )
     }
 
     func centerY(_ toItem: UIView, constant: CGFloat = 0) -> NSLayoutConstraint {
-        NSLayoutConstraint(item: self, attribute: .centerY, relatedBy: .equal, toItem: toItem, attribute: .centerY, multiplier: 1, constant: constant)
+        NSLayoutConstraint(
+            item: self,
+            attribute: .centerY,
+            relatedBy: .equal,
+            toItem: toItem,
+            attribute: .centerY,
+            multiplier: 1,
+            constant: constant
+        )
     }
 }

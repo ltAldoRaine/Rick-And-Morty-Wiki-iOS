@@ -63,8 +63,14 @@ final class CharacterDetailsTableViewController: UITableViewController {
         tableView.separatorStyle = .none
         tableView.backgroundColor = .clear
 
-        tableView.register(CharacterDetailsTableViewCell.self, forCellReuseIdentifier: CharacterDetailsTableViewCell.reuseIdentifier)
-        tableView.register(EpisodesListTableViewCell.self, forCellReuseIdentifier: EpisodesListTableViewCell.reuseIdentifier)
+        tableView.register(
+            CharacterDetailsTableViewCell.self,
+            forCellReuseIdentifier: CharacterDetailsTableViewCell.reuseIdentifier
+        )
+        tableView.register(
+            EpisodesListTableViewCell.self,
+            forCellReuseIdentifier: EpisodesListTableViewCell.reuseIdentifier
+        )
     }
 
     // MARK: - Data Handling
@@ -97,7 +103,12 @@ extension CharacterDetailsTableViewController {
                 withIdentifier: CharacterDetailsTableViewCell.reuseIdentifier,
                 for: indexPath
             ) as? CharacterDetailsTableViewCell else {
-                assertionFailure("Cannot dequeue reusable cell \(CharacterDetailsTableViewCell.self) with reuseIdentifier: \(CharacterDetailsTableViewCell.reuseIdentifier)")
+                assertionFailure(
+                    """
+                    Cannot dequeue reusable cell \(CharacterDetailsTableViewCell.self)
+                    with reuseIdentifier: \(CharacterDetailsTableViewCell.reuseIdentifier)
+                    """
+                )
 
                 return UITableViewCell()
             }
@@ -111,7 +122,12 @@ extension CharacterDetailsTableViewController {
                 withIdentifier: EpisodesListTableViewCell.reuseIdentifier,
                 for: indexPath
             ) as? EpisodesListTableViewCell else {
-                assertionFailure("Cannot dequeue reusable cell \(EpisodesListTableViewCell.self) with reuseIdentifier: \(EpisodesListTableViewCell.reuseIdentifier)")
+                assertionFailure(
+                    """
+                    Cannot dequeue reusable cell \(EpisodesListTableViewCell.self)
+                    with reuseIdentifier: \(EpisodesListTableViewCell.reuseIdentifier)
+                    """
+                )
 
                 return UITableViewCell()
             }

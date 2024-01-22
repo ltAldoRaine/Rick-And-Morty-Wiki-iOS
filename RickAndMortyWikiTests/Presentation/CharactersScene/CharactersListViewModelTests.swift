@@ -60,13 +60,7 @@ class CharactersListViewModelTests: XCTestCase {
     class FilterCharactersUseCaseMock: FilterRMCharactersUseCase {
         var executeCallCount: Int = 0
 
-        typealias ExecuteBlock = (
-            FilterRMCharactersUseCaseRequestValue,
-            (RMCharactersPage) -> Void,
-            (Result<RMCharactersPage, Error>) -> Void
-        ) -> Void
-
-        lazy var _execute: ExecuteBlock = { _, _, _ in
+        lazy var executeClosure: ResultType = { _, _, _ in
             XCTFail("not implemented")
         }
 
@@ -77,7 +71,7 @@ class CharactersListViewModelTests: XCTestCase {
         ) -> Cancellable? {
             executeCallCount += 1
 
-            _execute(requestValue, cached, completion)
+            executeClosure(requestValue, cached, completion)
 
             return nil
         }
@@ -87,7 +81,7 @@ class CharactersListViewModelTests: XCTestCase {
         // given
         let filterCharactersUseCaseMock = FilterCharactersUseCaseMock()
 
-        filterCharactersUseCaseMock._execute = { requestValue, _, completion in
+        filterCharactersUseCaseMock.executeClosure = { requestValue, _, completion in
             XCTAssertEqual(requestValue.page, 1)
 
             completion(
@@ -126,7 +120,7 @@ class CharactersListViewModelTests: XCTestCase {
         // given
         let filterCharactersUseCaseMock = FilterCharactersUseCaseMock()
 
-        filterCharactersUseCaseMock._execute = { requestValue, _, completion in
+        filterCharactersUseCaseMock.executeClosure = { requestValue, _, completion in
             XCTAssertEqual(requestValue.page, 1)
 
             completion(.success(self.charactersPages[0]))
@@ -156,7 +150,7 @@ class CharactersListViewModelTests: XCTestCase {
         // given
         let filterCharactersUseCaseMock = FilterCharactersUseCaseMock()
 
-        filterCharactersUseCaseMock._execute = { requestValue, _, completion in
+        filterCharactersUseCaseMock.executeClosure = { requestValue, _, completion in
             XCTAssertEqual(requestValue.page, 1)
 
             completion(.success(self.charactersPages[0]))
@@ -171,7 +165,7 @@ class CharactersListViewModelTests: XCTestCase {
 
         XCTAssertEqual(filterCharactersUseCaseMock.executeCallCount, 1)
 
-        filterCharactersUseCaseMock._execute = { requestValue, _, completion in
+        filterCharactersUseCaseMock.executeClosure = { requestValue, _, completion in
             XCTAssertEqual(requestValue.page, 2)
 
             completion(.success(self.charactersPages[1]))
@@ -196,7 +190,7 @@ class CharactersListViewModelTests: XCTestCase {
         // given
         let filterCharactersUseCaseMock = FilterCharactersUseCaseMock()
 
-        filterCharactersUseCaseMock._execute = { requestValue, _, completion in
+        filterCharactersUseCaseMock.executeClosure = { requestValue, _, completion in
             XCTAssertEqual(requestValue.page, 1)
 
             completion(.failure(FilterCharactersUseCaseError.someError))
@@ -221,7 +215,7 @@ class CharactersListViewModelTests: XCTestCase {
         // given
         let filterCharactersUseCaseMock = FilterCharactersUseCaseMock()
 
-        filterCharactersUseCaseMock._execute = { requestValue, _, completion in
+        filterCharactersUseCaseMock.executeClosure = { requestValue, _, completion in
             XCTAssertEqual(requestValue.page, 1)
 
             completion(.success(self.charactersPages[0]))
@@ -236,7 +230,7 @@ class CharactersListViewModelTests: XCTestCase {
 
         XCTAssertEqual(filterCharactersUseCaseMock.executeCallCount, 1)
 
-        filterCharactersUseCaseMock._execute = { requestValue, _, completion in
+        filterCharactersUseCaseMock.executeClosure = { requestValue, _, completion in
             XCTAssertEqual(requestValue.page, 2)
 
             completion(.success(self.charactersPages[1]))
@@ -282,7 +276,7 @@ class CharactersListViewModelTests: XCTestCase {
             XCTAssertEqual(viewModel.items, expectedItems)
         }
 
-        filterCharactersUseCaseMock._execute = { requestValue, cached, completion in
+        filterCharactersUseCaseMock.executeClosure = { requestValue, cached, completion in
             XCTAssertEqual(requestValue.page, 1)
 
             cached(cachedPage)
@@ -325,7 +319,7 @@ class CharactersListViewModelTests: XCTestCase {
             mainQueue: DispatchQueueTypeMock()
         )
 
-        filterCharactersUseCaseMock._execute = { requestValue, cached, completion in
+        filterCharactersUseCaseMock.executeClosure = { requestValue, cached, completion in
             XCTAssertEqual(requestValue.page, 1)
 
             cached(cachedPage)

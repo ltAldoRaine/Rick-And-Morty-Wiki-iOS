@@ -49,7 +49,10 @@ final class EpisodesListTableViewCell: UITableViewCell {
         collectionView.dataSource = self
         collectionView.backgroundColor = .clear
 
-        collectionView.register(CharactersListCollectionViewCell.self, forCellWithReuseIdentifier: CharactersListCollectionViewCell.reuseIdentifier)
+        collectionView.register(
+            CharactersListCollectionViewCell.self,
+            forCellWithReuseIdentifier: CharactersListCollectionViewCell.reuseIdentifier
+        )
 
         return collectionView
     }()
@@ -185,12 +188,20 @@ extension EpisodesListTableViewCell: UICollectionViewDataSource, UICollectionVie
         viewModel.characters.count
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: CharactersListCollectionViewCell.reuseIdentifier,
             for: indexPath
         ) as? CharactersListCollectionViewCell else {
-            assertionFailure("Cannot dequeue reusable cell \(CharactersListCollectionViewCell.self) with reuseIdentifier: \(CharactersListCollectionViewCell.reuseIdentifier)")
+            assertionFailure(
+                """
+                Cannot dequeue reusable cell \(CharactersListCollectionViewCell.self)
+                with reuseIdentifier: \(CharactersListCollectionViewCell.reuseIdentifier)
+                """
+            )
 
             return UICollectionViewCell()
         }

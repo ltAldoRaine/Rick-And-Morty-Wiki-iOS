@@ -9,7 +9,7 @@ import CoreData
 import Foundation
 
 extension RMCharactersResponseEntity {
-    func toDTO() -> [RMCharactersPageResponseDTO.RMCharacterDTO]? {
+    func toDTO() -> [RMCharacterDTO]? {
         guard let results else { return nil }
 
         return results.allObjects.compactMap { ($0 as? RMCharacterResponseEntity)?.toDTO() }
@@ -26,7 +26,7 @@ extension RMCharactersRequestDTO {
     }
 }
 
-extension [RMCharactersPageResponseDTO.RMCharacterDTO] {
+extension [RMCharacterDTO] {
     func toEntity(in context: NSManagedObjectContext) -> RMCharactersResponseEntity {
         let entity: RMCharactersResponseEntity = .init(context: context)
 

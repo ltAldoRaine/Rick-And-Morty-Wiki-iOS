@@ -35,7 +35,9 @@ final class AppFlowCoordinator {
     func start() {
         let charactersSceneDIContainer = appDIContainer.makeCharactersSceneDIContainer()
 
-        let flow = charactersSceneDIContainer.makeCharactersFilterFlowCoordinator(navigationController: navigationController)
+        let flow = charactersSceneDIContainer.makeCharactersFilterFlowCoordinator(
+            navigationController: navigationController
+        )
 
         flow.start()
     }

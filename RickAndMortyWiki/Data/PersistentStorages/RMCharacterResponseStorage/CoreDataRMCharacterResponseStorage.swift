@@ -66,7 +66,7 @@ extension CoreDataRMCharacterResponseStorage: RMCharacterResponseStorage {
     }
 
     func save(
-        response responseDto: RMCharactersPageResponseDTO.RMCharacterDTO,
+        response responseDto: RMCharacterDTO,
         for requestDto: RMCharacterRequestDTO
     ) {
         coreDataStorage.performBackgroundTask { context in
@@ -79,8 +79,12 @@ extension CoreDataRMCharacterResponseStorage: RMCharacterResponseStorage {
 
                 try context.save()
             } catch {
-                // TODO: - Log to Crashlytics
-                debugPrint("CoreDataRMCharacterResponseStorage Unresolved error \(error), \((error as NSError).userInfo)")
+                debugPrint(
+                    """
+                    CoreDataRMCharacterResponseStorage Unresolved
+                    error \(error), \((error as NSError).userInfo)
+                    """
+                )
             }
         }
     }

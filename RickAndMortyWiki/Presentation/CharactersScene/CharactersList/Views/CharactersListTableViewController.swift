@@ -51,7 +51,10 @@ final class CharactersListTableViewController: UITableViewController {
         tableView.separatorStyle = .none
         tableView.backgroundColor = .clear
 
-        tableView.register(CharactersListTableViewCell.self, forCellReuseIdentifier: CharactersListTableViewCell.reuseIdentifier)
+        tableView.register(
+            CharactersListTableViewCell.self,
+            forCellReuseIdentifier: CharactersListTableViewCell.reuseIdentifier
+        )
     }
 
     // MARK: - Loading Indicator Management
@@ -98,13 +101,22 @@ extension CharactersListTableViewController {
             withIdentifier: CharactersListTableViewCell.reuseIdentifier,
             for: indexPath
         ) as? CharactersListTableViewCell else {
-            assertionFailure("Cannot dequeue reusable cell \(CharactersListTableViewCell.self) with reuseIdentifier: \(CharactersListTableViewCell.reuseIdentifier)")
+            assertionFailure(
+                """
+                Cannot dequeue reusable cell \(CharactersListTableViewCell.self)
+                with reuseIdentifier: \(CharactersListTableViewCell.reuseIdentifier)
+                """
+            )
 
             return UITableViewCell()
         }
 
         guard let item = viewModel.items[safe: indexPath.row] else {
-            assertionFailure("Unable to access element at index \(indexPath.row). Index is out of bounds.")
+            assertionFailure(
+                """
+                Unable to access element at index \(indexPath.row).
+                Index is out of bounds.
+                """)
 
             return UITableViewCell()
         }
@@ -115,7 +127,11 @@ extension CharactersListTableViewController {
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    override func tableView(
+        _ tableView: UITableView,
+        willDisplay cell: UITableViewCell,
+        forRowAt indexPath: IndexPath
+    ) {
         if indexPath.row == viewModel.items.count - 1 {
             viewModel.didLoadNextPage()
         }
