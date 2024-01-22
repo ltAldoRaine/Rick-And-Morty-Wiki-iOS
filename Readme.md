@@ -1,6 +1,6 @@
 # Rick and Morty Wiki App
 
-![App Logo]([link-to-your-logo.png](https://raw.githubusercontent.com/ltAldoRaine/Rick-And-Morty-Wiki-iOS/main/RickAndMortyWiki/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon.jpg))
+![https://raw.githubusercontent.com/ltAldoRaine/Rick-And-Morty-Wiki-iOS/main/RickAndMortyWiki/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon.jpg]([link-to-your-logo.png](https://raw.githubusercontent.com/ltAldoRaine/Rick-And-Morty-Wiki-iOS/main/RickAndMortyWiki/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon.jpg))
 
 ## Overview
 
