@@ -22,6 +22,7 @@ enum CharactersListViewModelLoading {
 protocol CharactersListViewModelInput {
     func viewDidLoad()
     func didLoadNextPage()
+    func freshLoad()
     func didFilter(with name: String)
     func didCancelSearch()
     func didSelectItem(at index: Int)
@@ -161,10 +162,6 @@ final class DefaultCharactersListViewModel: CharactersListViewModel {
 
         load(characterName: characterName, loading: .fullScreen)
     }
-
-    private func freshLoad() {
-        update(characterName: "")
-    }
 }
 
 extension DefaultCharactersListViewModel {
@@ -199,6 +196,10 @@ extension DefaultCharactersListViewModel {
         guard !name.isEmpty else { return }
 
         update(characterName: name)
+    }
+
+    func freshLoad() {
+        update(characterName: "")
     }
 
     func didCancelSearch() {
