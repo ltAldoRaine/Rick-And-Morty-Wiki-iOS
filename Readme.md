@@ -46,10 +46,10 @@ Here are some of the screenshots from the application.
 </p>
 
 <p align="center">
+  <img src="RickAndMortyWiki/Resources/Screenshots/screenshot-5.png" width="20%" alt="Screenshot 5">
   <img src="RickAndMortyWiki/Resources/Screenshots/screenshot-6.png" width="20%" alt="Screenshot 6">
   <img src="RickAndMortyWiki/Resources/Screenshots/screenshot-7.png" width="20%" alt="Screenshot 7">
   <img src="RickAndMortyWiki/Resources/Screenshots/screenshot-8.png" width="20%" alt="Screenshot 8">
-  <img src="RickAndMortyWiki/Resources/Screenshots/screenshot-9.png" width="20%" alt="Screenshot 9">
 </p>
 
 
