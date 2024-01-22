@@ -11,6 +11,6 @@ enum ImageHelper: String {
     case arrow
 
     var image: UIImage? {
-        UIImage(named: "screenshot-1")
+        UIImage(named: rawValue.capitalizingFirstLetter())
     }
 }
