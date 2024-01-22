@@ -34,6 +34,19 @@ The Rick and Morty Wiki App follows a clean architecture using Swift and the MVV
 
 The app utilizes the [Rick and Morty API](https://rickandmortyapi.com/) to fetch information about characters and episodes. This API serves as a valuable resource for accessing comprehensive data related to the Rick and Morty universe.
 
+## Screenshots
+
+Here are some of the screenshots from the application
+
+<p align="center">
+  <img src="screenshot1.png" width="200" alt="Screenshot 1">
+  <img src="screenshot2.png" width="200" alt="Screenshot 2">
+  <img src="screenshot3.png" width="200" alt="Screenshot 3">
+  <img src="screenshot4.png" width="200" alt="Screenshot 4">
+  <img src="screenshot5.png" width="200" alt="Screenshot 5">
+  <img src="screenshot6.png" width="200" alt="Screenshot 6">
+</p>
+
 ## Getting Started
 
 To run the app locally, follow these steps:
