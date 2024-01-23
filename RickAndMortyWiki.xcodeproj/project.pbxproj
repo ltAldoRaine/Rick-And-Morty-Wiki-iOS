@@ -69,14 +69,6 @@
 		3D4ABFAD2B57F9CF00CCFAAA /* CharacterDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4ABFAC2B57F9CF00CCFAAA /* CharacterDetailsTableViewCell.swift */; };
 		3D4ABFB12B581AB400CCFAAA /* EpisodesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4ABFB02B581AB400CCFAAA /* EpisodesListTableViewCell.swift */; };
 		3D4ABFB52B581F6C00CCFAAA /* EpisodesListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4ABFB42B581F6C00CCFAAA /* EpisodesListItemViewModel.swift */; };
-		3D7EBCF82B5EE4BE00995A45 /* screenshot-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D7EBCF02B5EE4BE00995A45 /* screenshot-7.png */; };
-		3D7EBCF92B5EE4BE00995A45 /* screenshot-8.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D7EBCF12B5EE4BE00995A45 /* screenshot-8.png */; };
-		3D7EBCFA2B5EE4BE00995A45 /* screenshot-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D7EBCF22B5EE4BE00995A45 /* screenshot-3.png */; };
-		3D7EBCFB2B5EE4BE00995A45 /* screenshot-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D7EBCF32B5EE4BE00995A45 /* screenshot-1.png */; };
-		3D7EBCFC2B5EE4BE00995A45 /* screenshot-5.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D7EBCF42B5EE4BE00995A45 /* screenshot-5.png */; };
-		3D7EBCFD2B5EE4BE00995A45 /* screenshot-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D7EBCF52B5EE4BE00995A45 /* screenshot-4.png */; };
-		3D7EBCFE2B5EE4BE00995A45 /* screenshot-6.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D7EBCF62B5EE4BE00995A45 /* screenshot-6.png */; };
-		3D7EBCFF2B5EE4BE00995A45 /* screenshot-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D7EBCF72B5EE4BE00995A45 /* screenshot-2.png */; };
 		3DB3F7EA2B59081B006B7E44 /* EpisodesCharactersListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB3F7E92B59081B006B7E44 /* EpisodesCharactersListItemViewModel.swift */; };
 		3DB3F7F02B5938B9006B7E44 /* FilterRMCharactersUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB3F7EF2B5938B9006B7E44 /* FilterRMCharactersUseCaseTests.swift */; };
 		3DB3F7FB2B5939CC006B7E44 /* RMCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF4A2C52B5266BF000C3108 /* RMCharacter.swift */; };
@@ -179,7 +171,7 @@
 		3D208B972B5EC09A00C64AE4 /* NetworkSessionManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionManagerMock.swift; sourceTree = "<group>"; };
 		3D208B9A2B5EC1C200C64AE4 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
 		3D208B9E2B5EC2F500C64AE4 /* DataTransferServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferServiceTests.swift; sourceTree = "<group>"; };
-		3D208BA32B5EC98300C64AE4 /* SwiftLint.pkg */ = {isa = PBXFileReference; lastKnownFileType = file; name = SwiftLint.pkg; path = ../../../Desktop/SwiftLint.pkg; sourceTree = "<group>"; };
+		3D208BA32B5EC98300C64AE4 /* SwiftLint.pkg */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.installer-pkg"; name = SwiftLint.pkg; path = ../../../Desktop/SwiftLint.pkg; sourceTree = "<group>"; };
 		3D26B4BC2B53E0FB008D8B53 /* FilterRMCharactersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterRMCharactersUseCase.swift; sourceTree = "<group>"; };
 		3D26B4C02B53E13B008D8B53 /* RMCharactersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharactersRepository.swift; sourceTree = "<group>"; };
 		3D26B4C32B53E1DA008D8B53 /* DefaultRMCharactersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRMCharactersRepository.swift; sourceTree = "<group>"; };
@@ -1031,19 +1023,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D7EBCFF2B5EE4BE00995A45 /* screenshot-2.png in Resources */,
-				3D7EBCFC2B5EE4BE00995A45 /* screenshot-5.png in Resources */,
-				3D7EBCFA2B5EE4BE00995A45 /* screenshot-3.png in Resources */,
 				3DDA5D542B56D2F500D8A5C7 /* Lato-Medium.ttf in Resources */,
 				3DDA5D552B56D2F700D8A5C7 /* Lato-Regular.ttf in Resources */,
-				3D7EBCFB2B5EE4BE00995A45 /* screenshot-1.png in Resources */,
 				3DBED8412B503CA9000753B6 /* LaunchScreen.storyboard in Resources */,
-				3D7EBCFD2B5EE4BE00995A45 /* screenshot-4.png in Resources */,
 				3DBCB7BB2B555FFA00BD3306 /* Localizable.xcstrings in Resources */,
-				3D7EBCFE2B5EE4BE00995A45 /* screenshot-6.png in Resources */,
 				3DBED83E2B503CA9000753B6 /* Assets.xcassets in Resources */,
-				3D7EBCF82B5EE4BE00995A45 /* screenshot-7.png in Resources */,
-				3D7EBCF92B5EE4BE00995A45 /* screenshot-8.png in Resources */,
 				3DDA5D532B56D2F300D8A5C7 /* Lato-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
