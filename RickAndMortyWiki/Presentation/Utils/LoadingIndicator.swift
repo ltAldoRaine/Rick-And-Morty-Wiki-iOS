@@ -21,8 +21,15 @@ class LoadingIndicator {
                 object: nil
             )
 
+            let keyWindow = UIApplication
+                .shared
+                .connectedScenes
+                .compactMap { $0 as? UIWindowScene }
+                .flatMap { $0.windows }
+                .last { $0.isKeyWindow }
+
             if spinner == nil,
-               let window = UIApplication.shared.keyWindow {
+               let window = keyWindow {
                 let bounds: CGRect = UIScreen.main.bounds
                 let spinner: UIActivityIndicatorView = UIActivityIndicatorView(frame: bounds)
 
