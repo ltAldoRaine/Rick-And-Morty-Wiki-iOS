@@ -339,7 +339,7 @@ final class CharacterDetailsTableViewCell: UITableViewCell {
     // MARK: - Configuration
 
     private func setupViews() {
-        mainView.fixInView(contentView)
+        mainView.fixInView(contentView, trailing: -15.0)
 
         selectionStyle = .none
     }

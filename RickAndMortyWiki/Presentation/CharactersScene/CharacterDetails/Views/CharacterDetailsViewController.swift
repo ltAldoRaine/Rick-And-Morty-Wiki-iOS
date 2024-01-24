@@ -16,7 +16,7 @@ final class CharacterDetailsViewController: UIViewController, Alertable {
 
         contentView.backgroundColor = ColorHelper.backgroundColorOne.color
 
-        characterDetailsContainerView.fixInViewSafe(contentView, trailing: -15.0, leading: 15.0)
+        characterDetailsContainerView.fixInViewSafe(contentView, leading: 15.0)
 
         return contentView
     }()
