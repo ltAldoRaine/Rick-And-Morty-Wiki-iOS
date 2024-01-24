@@ -52,6 +52,16 @@
         }
       }
     },
+    "Failed loading character details" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error al cargar los detalles del personaje"
+          }
+        }
+      }
+    },
     "Failed loading characters" : {
       "localizations" : {
         "es" : {

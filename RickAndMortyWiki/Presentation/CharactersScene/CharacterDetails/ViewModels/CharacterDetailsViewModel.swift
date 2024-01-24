@@ -87,6 +87,7 @@ final class DefaultCharacterDetailsViewModel: CharacterDetailsViewModel {
             requestValue: characterId,
             cached: { [weak self] character in
                 guard let self else { return }
+
                 self.item = CharactersListItemViewModel(character: character)
 
                 self.update()
@@ -117,6 +118,7 @@ final class DefaultCharacterDetailsViewModel: CharacterDetailsViewModel {
             requestValue: episodesIds,
             cached: { [weak self] episodes in
                 guard let self else { return }
+
                 self.item?.episodes = episodes.map(EpisodesListItemViewModel.init)
             },
             completion: { [weak self] result in
@@ -138,7 +140,7 @@ final class DefaultCharacterDetailsViewModel: CharacterDetailsViewModel {
     private func handle(error: Error) {
         self.error = error.isInternetConnectionError ?
             StringHelper.noInternetConnection :
-            StringHelper.failedLoadingCharacters
+            StringHelper.failedLoadingCharacterDetails
     }
 
     private func getEpisodesIds() -> [Int] {

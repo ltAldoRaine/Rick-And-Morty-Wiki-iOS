@@ -23,7 +23,7 @@ struct APIEndpoints {
         with rmCharactersRequestDto: RMCharactersRequestDTO
     ) -> Endpoint<[RMCharacterDTO]> {
         Endpoint(
-            path: "characters/\(rmCharactersRequestDto.ids.map { "\($0)" }.joined(separator: ","))",
+            path: "characters/\(rmCharactersRequestDto.ids.map { "\($0)" }.joined(separator: ",")),",
             method: .get
         )
     }
@@ -54,7 +54,7 @@ struct APIEndpoints {
         with rmEpisodesRequestDto: RMEpisodesRequestDTO
     ) -> Endpoint<[RMEpisodeDTO]> {
         Endpoint(
-            path: "episode/\(rmEpisodesRequestDto.ids.map { "\($0)" }.joined(separator: ","))",
+            path: "episode/\(rmEpisodesRequestDto.ids.map { "\($0)" }.joined(separator: ",")),",
             method: .get
         )
     }
