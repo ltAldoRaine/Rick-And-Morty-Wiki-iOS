@@ -152,9 +152,13 @@ final class DefaultCharactersListViewModel: CharactersListViewModel {
     }
 
     private func handle(error: Error) {
-        self.error = error.isInternetConnectionError ?
-            StringHelper.noInternetConnection :
+        self.error = if error.isInternetConnectionError {
+            StringHelper.noInternetConnection
+        } else if error.isDecodingError {
+            StringHelper.emptyDataText
+        } else {
             StringHelper.failedLoadingCharacters
+        }
     }
 
     private func update(characterName: String) {

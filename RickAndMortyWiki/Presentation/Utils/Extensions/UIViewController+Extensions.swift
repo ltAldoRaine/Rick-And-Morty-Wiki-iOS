@@ -45,29 +45,29 @@ extension UIViewController {
         let behaviorViewController = LifecycleBehaviorViewController(behaviors: behaviors)
 
         addChild(behaviorViewController)
-        
+
         view.addSubview(behaviorViewController.view)
-        
+
         behaviorViewController.didMove(toParent: self)
     }
 
     func add(child: UIViewController, container: UIView) {
         addChild(child)
-        
+
         child.view.frame = container.bounds
-        
+
         container.addSubview(child.view)
-        
+
         child.didMove(toParent: self)
     }
 
     func remove() {
-        guard parent != nil else {return}
-        
+        guard parent != nil else { return }
+
         willMove(toParent: nil)
-        
+
         removeFromParent()
-        
+
         view.removeFromSuperview()
     }
 

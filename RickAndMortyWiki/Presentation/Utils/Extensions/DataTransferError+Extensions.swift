@@ -16,4 +16,10 @@ extension DataTransferError: ConnectionError {
 
         return true
     }
+
+    var isDecodingError: Bool {
+        guard case DataTransferError.parsing = self else { return false }
+
+        return true
+    }
 }
