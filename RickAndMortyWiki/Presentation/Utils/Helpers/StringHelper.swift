@@ -19,4 +19,6 @@ struct StringHelper {
     static let numberOfEpisodes = NSLocalizedString("Number of episodes:", comment: "")
     static let gender = NSLocalizedString("Gender:", comment: "")
     static let episodes = NSLocalizedString("Episodes", comment: "")
+    static let back = NSLocalizedString("Back", comment: "")
+    static let done = NSLocalizedString("Done", comment: "")
 }

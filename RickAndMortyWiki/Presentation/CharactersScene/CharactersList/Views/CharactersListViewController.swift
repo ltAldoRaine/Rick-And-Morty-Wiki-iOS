@@ -168,7 +168,8 @@ final class CharactersListViewController: UIViewController, Alertable {
     private func setupBehaviours() {
         addBehaviors([
             BackButtonNavigationBarBehavior(),
-            BlackStyleNavigationBarBehavior()
+            BlackStyleNavigationBarBehavior(),
+            HideKeyboardWhenTappedAroundBehavior()
         ])
     }
 
@@ -220,8 +221,11 @@ extension CharactersListViewController: UISearchBarDelegate {
         searchBar.showsCancelButton = true
     }
 
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         searchBar.showsCancelButton = false
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.searchTextField.endEditing(true)
 
         viewModel.didCancelSearch()

@@ -10,7 +10,7 @@ import UIKit
 struct BackButtonNavigationBarBehavior: ViewControllerLifecycleBehavior {
     func viewDidLoad(viewController: UIViewController) {
         viewController.navigationItem.backBarButtonItem = UIBarButtonItem(
-            title: "Back",
+            title: StringHelper.back,
             style: .plain,
             target: nil,
             action: nil

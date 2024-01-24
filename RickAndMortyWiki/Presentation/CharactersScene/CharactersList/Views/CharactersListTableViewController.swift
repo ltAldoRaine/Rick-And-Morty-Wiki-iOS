@@ -50,6 +50,7 @@ final class CharactersListTableViewController: UITableViewController {
         tableView.rowHeight = CharactersListTableViewCell.defaultHeight
         tableView.separatorStyle = .none
         tableView.backgroundColor = .clear
+        tableView.keyboardDismissMode = .onDrag
 
         tableView.register(
             CharactersListTableViewCell.self,

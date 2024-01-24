@@ -110,6 +110,8 @@
 		3DBED8412B503CA9000753B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DBED83F2B503CA9000753B6 /* LaunchScreen.storyboard */; };
 		3DBED8562B503CA9000753B6 /* RickAndMortyWikiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBED8552B503CA9000753B6 /* RickAndMortyWikiUITests.swift */; };
 		3DBED8582B503CA9000753B6 /* RickAndMortyWikiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBED8572B503CA9000753B6 /* RickAndMortyWikiUITestsLaunchTests.swift */; };
+		3DD38B2A2B61027400111217 /* TapGestureRecognizerWithClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD38B292B61027400111217 /* TapGestureRecognizerWithClosure.swift */; };
+		3DD38B2E2B6117F300111217 /* HideKeyboardWhenTappedAroundBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD38B2D2B6117F300111217 /* HideKeyboardWhenTappedAroundBehavior.swift */; };
 		3DD7F1E32B58407C005687F2 /* CharacterDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD7F1E22B58407C005687F2 /* CharacterDetailsTableViewController.swift */; };
 		3DD7F1E52B585809005687F2 /* CharactersListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD7F1E42B585809005687F2 /* CharactersListCollectionViewCell.swift */; };
 		3DDA5D472B56A4B800D8A5C7 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDA5D462B56A4B800D8A5C7 /* String+Extensions.swift */; };
@@ -201,14 +203,6 @@
 		3D4ABFAC2B57F9CF00CCFAAA /* CharacterDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		3D4ABFB02B581AB400CCFAAA /* EpisodesListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesListTableViewCell.swift; sourceTree = "<group>"; };
 		3D4ABFB42B581F6C00CCFAAA /* EpisodesListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesListItemViewModel.swift; sourceTree = "<group>"; };
-		3D7EBCF02B5EE4BE00995A45 /* screenshot-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screenshot-7.png"; sourceTree = "<group>"; };
-		3D7EBCF12B5EE4BE00995A45 /* screenshot-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screenshot-8.png"; sourceTree = "<group>"; };
-		3D7EBCF22B5EE4BE00995A45 /* screenshot-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screenshot-3.png"; sourceTree = "<group>"; };
-		3D7EBCF32B5EE4BE00995A45 /* screenshot-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screenshot-1.png"; sourceTree = "<group>"; };
-		3D7EBCF42B5EE4BE00995A45 /* screenshot-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screenshot-5.png"; sourceTree = "<group>"; };
-		3D7EBCF52B5EE4BE00995A45 /* screenshot-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screenshot-4.png"; sourceTree = "<group>"; };
-		3D7EBCF62B5EE4BE00995A45 /* screenshot-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screenshot-6.png"; sourceTree = "<group>"; };
-		3D7EBCF72B5EE4BE00995A45 /* screenshot-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screenshot-2.png"; sourceTree = "<group>"; };
 		3DB3F7E92B59081B006B7E44 /* EpisodesCharactersListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesCharactersListItemViewModel.swift; sourceTree = "<group>"; };
 		3DB3F7EF2B5938B9006B7E44 /* FilterRMCharactersUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterRMCharactersUseCaseTests.swift; sourceTree = "<group>"; };
 		3DBCB7912B553F4900BD3306 /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
@@ -248,6 +242,8 @@
 		3DBED8512B503CA9000753B6 /* RickAndMortyWikiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickAndMortyWikiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DBED8552B503CA9000753B6 /* RickAndMortyWikiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyWikiUITests.swift; sourceTree = "<group>"; };
 		3DBED8572B503CA9000753B6 /* RickAndMortyWikiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyWikiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3DD38B292B61027400111217 /* TapGestureRecognizerWithClosure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapGestureRecognizerWithClosure.swift; sourceTree = "<group>"; };
+		3DD38B2D2B6117F300111217 /* HideKeyboardWhenTappedAroundBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboardWhenTappedAroundBehavior.swift; sourceTree = "<group>"; };
 		3DD7F1E22B58407C005687F2 /* CharacterDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailsTableViewController.swift; sourceTree = "<group>"; };
 		3DD7F1E42B585809005687F2 /* CharactersListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListCollectionViewCell.swift; sourceTree = "<group>"; };
 		3DDA5D462B56A4B800D8A5C7 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
@@ -383,7 +379,6 @@
 		3D26B4A82B53D7B9008D8B53 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3D7EBCEF2B5EE4B000995A45 /* Screenshots */,
 				3DDA5D4F2B56D2AC00D8A5C7 /* Fonts */,
 				3DBED83D2B503CA9000753B6 /* Assets.xcassets */,
 				3DBED8422B503CA9000753B6 /* Info.plist */,
@@ -665,21 +660,6 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		3D7EBCEF2B5EE4B000995A45 /* Screenshots */ = {
-			isa = PBXGroup;
-			children = (
-				3D7EBCF32B5EE4BE00995A45 /* screenshot-1.png */,
-				3D7EBCF72B5EE4BE00995A45 /* screenshot-2.png */,
-				3D7EBCF22B5EE4BE00995A45 /* screenshot-3.png */,
-				3D7EBCF52B5EE4BE00995A45 /* screenshot-4.png */,
-				3D7EBCF42B5EE4BE00995A45 /* screenshot-5.png */,
-				3D7EBCF62B5EE4BE00995A45 /* screenshot-6.png */,
-				3D7EBCF02B5EE4BE00995A45 /* screenshot-7.png */,
-				3D7EBCF12B5EE4BE00995A45 /* screenshot-8.png */,
-			);
-			path = Screenshots;
-			sourceTree = "<group>";
-		};
 		3DB3F7EB2B593872006B7E44 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -720,6 +700,7 @@
 		3DBCB7A92B55591F00BD3306 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3DD38B292B61027400111217 /* TapGestureRecognizerWithClosure.swift */,
 				3DBCB7D32B559E6C00BD3306 /* LoadingIndicator.swift */,
 				3DBCB7CF2B559CB800BD3306 /* AccessibilityIdentifier.swift */,
 				3DBCB7B32B555DAB00BD3306 /* Extensions */,
@@ -763,6 +744,7 @@
 			children = (
 				3DBCB7D82B559FDB00BD3306 /* BackButtonNavigationBarBehavior.swift */,
 				3DBCB7DA2B559FF000BD3306 /* BlackStyleNavigationBarBehavior.swift */,
+				3DD38B2D2B6117F300111217 /* HideKeyboardWhenTappedAroundBehavior.swift */,
 			);
 			path = Behaviors;
 			sourceTree = "<group>";
@@ -1108,6 +1090,7 @@
 				3D26B4DB2B53F583008D8B53 /* RMCharacterOrigin.swift in Sources */,
 				3DDA5D472B56A4B800D8A5C7 /* String+Extensions.swift in Sources */,
 				3DEF01DF2B54496D00DD587B /* RMCharactersResponseStorage.swift in Sources */,
+				3DD38B2E2B6117F300111217 /* HideKeyboardWhenTappedAroundBehavior.swift in Sources */,
 				3DEF01E12B544A0800DD587B /* RMCharactersPageRequestDto+Mapping.swift in Sources */,
 				3D26B4EA2B54027D008D8B53 /* NetworkConfig.swift in Sources */,
 				3D26B4EC2B5402BC008D8B53 /* NetworkService.swift in Sources */,
@@ -1128,6 +1111,7 @@
 				3DEF01CE2B54374300DD587B /* RMEpisodesResponseEntity+Mapping.swift in Sources */,
 				3DBCB7942B5540EC00BD3306 /* AppConfigurations.swift in Sources */,
 				3D26B4DD2B53F58D008D8B53 /* RMCharacterLocation.swift in Sources */,
+				3DD38B2A2B61027400111217 /* TapGestureRecognizerWithClosure.swift in Sources */,
 				3DDFF6072B5425E800136E70 /* DefaultRMEpisodesRepository.swift in Sources */,
 				3DBCB7A02B554EA200BD3306 /* CharactersFlowCoordinator.swift in Sources */,
 				3DBCB7BD2B556B1900BD3306 /* CharactersListItemViewModel.swift in Sources */,

@@ -20,7 +20,7 @@ extension Alertable where Self: UIViewController {
                                       preferredStyle: .alert)
 
         if actions.isEmpty {
-            alert.addAction(UIAlertAction(title: "Done", style: .cancel))
+            alert.addAction(UIAlertAction(title: StringHelper.done, style: .cancel))
         } else {
             actions.forEach {
                 alert.addAction($0)
