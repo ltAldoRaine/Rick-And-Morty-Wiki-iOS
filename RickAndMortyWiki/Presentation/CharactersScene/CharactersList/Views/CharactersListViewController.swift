@@ -168,8 +168,7 @@ final class CharactersListViewController: UIViewController, Alertable {
     private func setupBehaviours() {
         addBehaviors([
             BackButtonNavigationBarBehavior(),
-            BlackStyleNavigationBarBehavior(),
-            HideKeyboardWhenTappedAroundBehavior()
+            BlackStyleNavigationBarBehavior()
         ])
     }
 
