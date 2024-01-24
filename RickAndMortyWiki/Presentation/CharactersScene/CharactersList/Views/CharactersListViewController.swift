@@ -220,11 +220,9 @@ extension CharactersListViewController: UISearchBarDelegate {
         searchBar.showsCancelButton = true
     }
 
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        searchBar.showsCancelButton = false
-    }
-
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+
         searchBar.searchTextField.endEditing(true)
 
         viewModel.didCancelSearch()
